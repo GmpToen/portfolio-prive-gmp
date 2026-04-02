@@ -49,7 +49,12 @@ nav {
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
-.nav-logo-img { height: 38px; margin-right: 12px; }
+.nav-logo-img {
+    height: 70px;
+    /* Grand logo aussi sur PC */
+    margin-right: 15px;
+    width: auto;
+}
 .logo { display: flex; align-items: center; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
 nav ul { display: flex; list-style: none; align-items: center; gap: 24px; }
 .theme-btn { background: none; border: none; color: var(--text-main); cursor: pointer; font-size: 1.2rem; transition: transform 0.3s ease; }
@@ -157,16 +162,41 @@ nav ul { display: flex; list-style: none; align-items: center; gap: 24px; }
 .comp-tags span { background: rgba(59, 130, 246, 0.1); color: var(--primary); padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; }
 
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.8rem; }
-    .hero-btns { flex-direction: column; align-items: stretch; }
-    nav ul { gap: 12px; }
-}
+    /* On garde l'alignement horizontal mais on autorise le passage à la ligne si besoin */
+    .nav-container {
+        flex-direction: column; 
+        gap: 15px;
+    }
 
-model-viewer {
-    --poster-color: transparent;
-    outline: none;
-}
+    /* Le logo et son texte restent côte à côte */
+    .logo {
+        display: flex;
+        flex-direction: row; /* Aligné sur le côté */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 
+    .nav-logo-img {
+        height: 65px !important; /* On se fait plaisir sur la taille ! */
+        margin-right: 12px;
+        margin-bottom: 0; /* On enlève la marge du bas */
+    }
+
+    .logo span {
+        font-size: 1.1rem; /* Texte un peu plus grand pour équilibrer */
+        line-height: 1.1;
+        text-align: left;
+        max-width: 150px; /* Force le texte à aller à la ligne si trop long */
+    }
+
+    /* On resserre un peu le menu en dessous */
+    nav ul {
+        width: 100%;
+        justify-content: space-around;
+        gap: 5px;
+    }
+}
 
 
 
@@ -205,4 +235,91 @@ model-viewer {
 .skill-item:hover .skill-icon {
     /* La moto s'anime aussi */
     transform: scale(1.1) rotate(-10deg) !important;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 0; /* Réduit l'espace vertical */
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* On cache le texte "PORTFOLIO GMP" sur mobile pour gagner de la place */
+    .logo span {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        gap: 8px; /* Rapproche les boutons Accueil / Projets */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn-cv {
+        padding: 8px 15px; /* CV un peu plus compact */
+        font-size: 0.85rem;
+    }
+}
+
+
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    /* 2. Hero Section : On réduit les textes pour qu'ils ne sortent pas de l'écran */
+    .hero {
+        padding: 60px 15px; /* Moins de padding en haut pour voir le contenu de suite */
+    }
+
+    .hero h1 {
+        letter-spacing: -1px; /* On desserre un peu les lettres pour la lisibilité */
+        margin: 15px 0;
+    }
+
+    .description {
+        font-size: 1rem; /* Texte un peu plus petit pour le confort de lecture */
+        margin-bottom: 30px;
+    }
+
+    .hero .subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* Boutons l'un au-dessus de l'autre sur petit écran */
+    .hero-btns {
+        flex-direction: column;
+        align-items: stretch; /* Les boutons prennent toute la largeur */
+        gap: 15px;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 3. Grille de compétences : 1 seule colonne sur mobile */
+    .skills-grid {
+        grid-template-columns: 1fr; 
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .skill-item {
+        padding: 20px;
+        justify-content: center;
+    }
+
+/* Empêche la sélection de texte sur les éléments interactifs */
+.point, .btn-primary, .btn-secondary, .theme-btn, .nav-container a {
+    user-select: none; /* Standard */
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    -webkit-touch-callout: none; /* Empêche le menu contextuel sur iOS */
 }
