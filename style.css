@@ -44,7 +44,7 @@ a, a:visited, a:hover, a:active {
 nav { 
     background: var(--bg-nav); 
     padding: 1rem 5%; 
-    position: sticky; top: 0; z-index: 1000; 
+    top: 0; width: 100%; z-index: 1000; 
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -121,27 +121,38 @@ nav ul { display: flex; list-style: none; align-items: center; gap: 24px; }
 }
 
 /* --- SKILLS GRID --- */
-.skills-preview { padding: 100px 20px; text-align: center; }
-.skills-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-    gap: 32px; margin-top: 56px; max-width: 1200px; margin-left: auto; margin-right: auto;
+/* Conteneur principal des compétences */
+.skills-preview {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.skill-item { 
-    background: var(--bg-card); 
-    padding: 48px 32px; 
-    border-radius: 24px; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(255,255,255,0.03);
-    display: block;
-    box-shadow: var(--card-shadow);
+/* Flexbox pour l'alignement horizontal */
+.skills-grid {
+    display: flex;
+    justify-content: center; /* Centre les éléments */
+    gap: 30px;               /* Espace entre les blocs */
+    flex-wrap: wrap;         /* Permet de passer à la ligne sur mobile */
 }
 
-.skill-item:hover { 
-    transform: translateY(-12px) scale(1.02);
-    border-color: var(--primary);
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.4), 0 0 25px 0 var(--primary-glow);
+/* Style des items individuels */
+.skill-item {
+    flex: 1;                 /* Les blocs prennent la même largeur */
+    min-width: 250px;        /* Largeur minimale avant de passer à la ligne */
+    max-width: 350px;        /* Largeur maximale pour garder un beau design */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background: var(--bg-card); /* Assure-toi d'avoir cette variable ou mets une couleur */
+    border-radius: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
 }
 
 .skill-item i { font-size: 2.8rem; color: var(--primary); margin-bottom: 24px; display: block; }
@@ -161,42 +172,8 @@ nav ul { display: flex; list-style: none; align-items: center; gap: 24px; }
 .comp-tags { display: flex; gap: 10px; margin-top: 20px; }
 .comp-tags span { background: rgba(59, 130, 246, 0.1); color: var(--primary); padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; }
 
-@media (max-width: 768px) {
-    /* On garde l'alignement horizontal mais on autorise le passage à la ligne si besoin */
-    .nav-container {
-        flex-direction: column; 
-        gap: 15px;
-    }
 
-    /* Le logo et son texte restent côte à côte */
-    .logo {
-        display: flex;
-        flex-direction: row; /* Aligné sur le côté */
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
 
-    .nav-logo-img {
-        height: 65px !important; /* On se fait plaisir sur la taille ! */
-        margin-right: 12px;
-        margin-bottom: 0; /* On enlève la marge du bas */
-    }
-
-    .logo span {
-        font-size: 1.1rem; /* Texte un peu plus grand pour équilibrer */
-        line-height: 1.1;
-        text-align: left;
-        max-width: 150px; /* Force le texte à aller à la ligne si trop long */
-    }
-
-    /* On resserre un peu le menu en dessous */
-    nav ul {
-        width: 100%;
-        justify-content: space-around;
-        gap: 5px;
-    }
-}
 
 
 
@@ -235,35 +212,6 @@ nav ul { display: flex; list-style: none; align-items: center; gap: 24px; }
 .skill-item:hover .skill-icon {
     /* La moto s'anime aussi */
     transform: scale(1.1) rotate(-10deg) !important;
-}
-
-/* --- RESPONSIVE DESIGN --- */
-
-@media (max-width: 768px) {
-    nav {
-        padding: 10px 0; /* Réduit l'espace vertical */
-    }
-
-    .nav-container {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    /* On cache le texte "PORTFOLIO GMP" sur mobile pour gagner de la place */
-    .logo span {
-        font-size: 1rem;
-    }
-
-    nav ul {
-        gap: 8px; /* Rapproche les boutons Accueil / Projets */
-        justify-content: center;
-        width: 100%;
-    }
-
-    .btn-cv {
-        padding: 8px 15px; /* CV un peu plus compact */
-        font-size: 0.85rem;
-    }
 }
 
 
@@ -322,4 +270,347 @@ nav ul { display: flex; list-style: none; align-items: center; gap: 24px; }
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE/Edge */
     -webkit-touch-callout: none; /* Empêche le menu contextuel sur iOS */
+}
+
+/* --- CONFIGURATION MOBILE UNIQUE ET PROPRE --- */
+@media (max-width: 768px) {
+    /* 1. Navigation : On garde tout sur une seule ligne */
+    .nav-container {
+        flex-direction: row !important; 
+        justify-content: space-between;
+        padding: 5px 15px;
+    }
+
+    /* 2. On réduit la taille du logo pour gagner de la place */
+    .nav-logo-img {
+        height: 45px !important; 
+        margin-right: 0;
+    }
+
+    /* 3. On cache le texte "PORTFOLIO GMP" sur mobile (trop long) */
+    .logo span {
+        display: none !important; 
+    }
+
+    /* 4. On ajuste les liens du menu pour qu'ils ne se chevauchent pas */
+    nav ul {
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+        padding: 5px;
+    }
+
+    /* 5. Le bouton CV devient un peu plus discret */
+    .btn-cv {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* 6. Grille de compétences (Accueil) : une seule colonne */
+    .skills-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .skill-item {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* --- BOUTON RETOUR (À mettre HORS du bloc @media pour qu'il marche partout) --- */
+.back-btn-floating {
+    position: fixed;
+    bottom: 25px; /* En bas à droite : zone de confort du pouce */
+    right: 20px;
+    background: var(--primary);
+    color: white !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-btn-floating.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.back-btn-floating span {
+    display: none; /* On ne garde que l'icône sur mobile */
+}
+
+/* --- SÉCURITÉ ANTI-SCROLL HORIZONTAL --- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* --- BOUTON FLOTTANT RETOUR EN HAUT --- */
+.back-btn-floating {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #3b82f6; /* Ton bleu primary */
+    color: white !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 2000;
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.back-btn-floating.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-btn-floating:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* --- PAGE CONTACT --- */
+.contact-page {
+    padding: 120px 5% 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Infos de gauche */
+.info-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.info-item:last-child { margin-bottom: 0; }
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: rgba(59, 130, 246, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.info-item h3 { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 2px; }
+.info-item p, .info-item a { font-weight: 600; font-size: 1.1rem; }
+
+.status-box {
+    background: linear-gradient(135deg, var(--primary), #1d4ed8);
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.status-box h4 { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+
+/* Formulaire de droite */
+.contact-form-container {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-sub);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
+    color: var(--text-main);
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.light-mode .form-group input, 
+.light-mode .form-group select, 
+.light-mode .form-group textarea {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsiveness Contact */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-page {
+        padding-top: 100px;
+    }
+}
+
+/* --- BOUTON FLOTTANT DYNAMIQUE --- */
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px; /* Forme pilule au début */
+    box-shadow: 0 4px 15px var(--primary-glow);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: inherit;
+    font-weight: 600;
+}
+
+/* État quand on est au niveau du formulaire (Transformation en flèche haut) */
+.floating-contact.is-up {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Devient un cercle */
+    justify-content: center;
+}
+
+.floating-contact.is-up .btn-text {
+    display: none; /* Cache le texte */
+}
+
+.floating-contact.is-up i {
+    transform: rotate(180deg); /* La flèche bas pointe vers le haut */
+    font-size: 1.5rem;
+}
+
+.floating-contact:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Masquer le bouton sur PC si tu préfères qu'il soit uniquement mobile */
+@media (min-width: 769px) {
+    /* .floating-contact { display: none; } */ /* Décommente cette ligne pour cacher sur PC */
+}
+
+/* --- BOUTON REMONTER (STYLE CONTACT) --- */
+.floating-fixed-up {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white !important;
+    border: none;
+    border-radius: 50%; /* Toujours rond */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    z-index: 2000;
+    cursor: pointer;
+    box-shadow: 0 5px 20px var(--primary-glow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Caché par défaut */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+/* Affichage au scroll */
+.floating-fixed-up.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.floating-fixed-up:hover {
+    transform: scale(1.1) translateY(-5px);
+    filter: brightness(1.1);
+}
+
+.floating-fixed-up:active {
+    transform: scale(0.9);
 }

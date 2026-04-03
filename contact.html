@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Enzo Sanchez Sartori</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="common/Logo_IUT.png" alt="Logo IUT" class="nav-logo-img">
+            <span>PORTFOLIO GMP</span>
+        </a>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="common/cv.pdf" target="_blank" class="btn-cv">Mon CV</a></li>
+            <li><button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="contact-page">
+    <div class="contact-header">
+        <span class="badge">Disponibilité : Recherche d'alternance</span>
+        <h1>Parlons de votre projet</h1>
+        <p class="subtitle">Etudiant en Génie Mécanique, je suis ouvert aux opportunités et aux échanges techniques.</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="info-card">
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>enzosanchez2912@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h3>Localisation</h3>
+                        <p>Région Parisienne, France</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://fr.linkedin.com/in/enzo-sanchez-sartori-3853a0383" target="_blank">Enzo Sanchez Sartori</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-box">
+                <h4><i class="fa-solid fa-circle-check"></i> Statut actuel</h4>
+                <p>Actuellement en recherche d'une alternance 1 an ou 2 ans (Usinage, Bureau d'études ou Maintenance).</p>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+<form action="https://formspree.io/f/xeeprjkn" method="POST" class="contact-form">
+    <input type="hidden" name="_next" value="https://enzo-sanchez-sartori.fr/merci.html">
+    <input type="hidden" name="_subject" value="Nouveau message de votre Portfolio">
+    <input type="text" name="_gotcha" style="display:none"> 
+    <div class="form-group">
+        <label>Nom complet</label>
+        <input type="text" name="name" placeholder="Ex: Jean Dupont" required>
+    </div>
+    
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="nom@entreprise.com" required>
+    </div>
+    
+    <div class="form-group">
+        <label>Objet</label>
+        <select name="subject">
+            <option value="alternance">Offre d'alternance</option>
+            <option value="stage">Offre de stage</option>
+            <option value="projet">Collaboration projet</option>
+            <option value="autre">Autre demande</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" rows="5" placeholder="Votre message ici..." required></textarea>
+    </div>
+    
+    <button type="submit" class="btn-primary">Envoyer le message <i class="fa-solid fa-paper-plane"></i></button>
+</form>
+        </div>
+    </div>
+</section>
+
+<script>
+    const btn = document.getElementById("theme-toggle");
+    const icon = btn.querySelector("i");
+    function updateIcon() {
+        if (document.documentElement.classList.contains("light-mode")) {
+            icon.classList.replace("fa-moon", "fa-sun");
+        } else {
+            icon.classList.replace("fa-sun", "fa-moon");
+        }
+    }
+    updateIcon();
+    btn.addEventListener("click", () => {
+        const isLight = document.documentElement.classList.toggle("light-mode");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        updateIcon();
+    });
+</script>
+<button id="floating-btn" class="floating-contact">
+    <span class="btn-text">Me contacter</span>
+    <i class="fa-solid fa-chevron-down"></i>
+</button>
+
+<script>
+    // Gestion du Thème (Dark/Light)
+    const themeBtn = document.getElementById("theme-toggle");
+    const themeIcon = themeBtn.querySelector("i");
+    
+    function updateIcon() {
+        if (document.documentElement.classList.contains("light-mode")) {
+            themeIcon.classList.replace("fa-moon", "fa-sun");
+        } else {
+            themeIcon.classList.replace("fa-sun", "fa-moon");
+        }
+    }
+    
+    updateIcon();
+    
+    themeBtn.addEventListener("click", () => {
+        const isLight = document.documentElement.classList.toggle("light-mode");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        updateIcon();
+    });
+
+    // Gestion du Bouton Flottant
+    const floatBtn = document.getElementById('floating-btn');
+    const contactSection = document.querySelector('.contact-container');
+
+    window.addEventListener('scroll', () => {
+        // On récupère la position du formulaire
+        const sectionPos = contactSection.getBoundingClientRect().top;
+        
+        // Si le haut du formulaire est visible à l'écran
+        if (sectionPos <= 150) {
+            floatBtn.classList.add('is-up');
+        } else {
+            floatBtn.classList.remove('is-up');
+        }
+    });
+
+    floatBtn.addEventListener('click', () => {
+        if (floatBtn.classList.contains('is-up')) {
+            // Remonter tout en haut
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            // Descendre au formulaire avec un petit décalage pour le titre
+            const yOffset = 300; 
+            const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    });
+</script>

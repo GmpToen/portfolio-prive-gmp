@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message envoyé ! | Enzo Sanchez Sartori</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+    <style>
+        .thanks-container {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .thanks-icon {
+            font-size: 5rem;
+            color: #22c55e; /* Un beau vert succès */
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.4));
+        }
+        .thanks-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .thanks-container p {
+            color: var(--text-sub);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+    </style>
+<meta http-equiv="refresh" content="10; URL=index.html">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="common/Logo_IUT.png" alt="Logo IUT" class="nav-logo-img">
+            <span>PORTFOLIO GMP</span>
+        </a>
+    </div>
+</nav>
+
+<section class="thanks-container">
+    <div class="thanks-icon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <h1>Merci beaucoup !</h1>
+    <p>Votre message a bien été envoyé. Je reviendrai vers vous dans les plus brefs délais.</p>
+    
+    <a href="index.html" class="btn-primary">
+        <i class="fa-solid fa-house"></i> Retour à l'accueil
+    </a>
+</section>
+
+</body>
+</html>
