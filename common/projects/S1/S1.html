@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semestre 1 | Enzo Sanchez Sartori</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+<script>
+    if (localStorage.getItem("theme") === "light") {
+        document.documentElement.classList.add("light-mode");
+    } else {
+        document.documentElement.classList.remove("light-mode");
+    }
+</script>
+</head>
+   
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="common/Logo_IUT.png" alt="Logo IUT" class="nav-logo-img">
+            <span>PORTFOLIO GMP</span>
+        </a>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html" class="active">Projets</a></li>
+            <li><button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero" style="padding: 80px 20px 40px;">
+    <div class="hero-content">
+        <span class="badge">SAÉ - SEMESTRE 1</span>
+        <h1>Projets de Formation</h1>
+        <p class="description">Découvrez les Situations d'Apprentissage et d'Évaluation réalisées lors de mon premier semestre en GMP.</p>
+    </div>
+</header>
+
+<main class="container" style="max-width: 1100px; margin: 0 auto 100px; padding: 0 20px;">
+    
+    <section class="skill-item" style="display: flex; flex-wrap: wrap; gap: 40px; text-align: left; align-items: center; cursor: default;">
+        <div style="flex: 1; min-width: 300px;">
+            <div class="comp-tags">
+                <span>SAÉ 1.1</span>
+                <span>Conception</span>
+            </div>
+            <h2 style="margin: 15px 0; font-size: 2rem;">Système de [Nom du Projet]</h2>
+            <p style="color: var(--text-sub); margin-bottom: 20px;">
+                Étude technique et modélisation complète d'un mécanisme. Ce projet m'a permis de valider mes premières compétences en lecture de plan et en modélisation CAO.
+            </p>
+            <ul style="list-style: none; color: var(--text-sub); margin-bottom: 30px;">
+                <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 10px;"></i>Analyse fonctionnelle (APTE)</li>
+                <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 10px;"></i>Modélisation SolidWorks</li>
+                <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 10px;"></i>Mise en plan ISO</li>
+            </ul>
+            <div class="hero-btns" style="justify-content: flex-start;">
+                <a href="common/projects/S1/SAE11/rapport.pdf" target="_blank" class="btn-secondary" style="padding: 12px 24px;">Lire le rapport</a>
+            </div>
+        </div>
+
+        <div style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.2); border-radius: 20px; overflow: hidden; height: 400px; border: 1px solid rgba(255,255,255,0.05);">
+            <model-viewer 
+                src="common/projects/S1" 
+                poster="common/projects/S1/SAE11/preview.png"
+                alt="Modèle 3D SAÉ 1.1"
+                auto-rotate camera-controls
+                style="width: 100%; height: 100%; background-color: transparent;">
+            </model-viewer>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    const btn = document.getElementById("theme-toggle");
+    const icon = btn.querySelector("i");
+
+    // Fonction pour mettre à jour l'icône
+    function updateIcon(isLight) {
+        if (isLight) {
+            icon.classList.replace("fa-moon", "fa-sun");
+        } else {
+            icon.classList.replace("fa-sun", "fa-moon");
+        }
+    }
+
+    // Appliquer le thème au chargement si besoin (pour l'icône)
+    if (localStorage.getItem("theme") === "light") {
+        updateIcon(true);
+    }
+
+    btn.addEventListener("click", () => {
+        // On bascule la classe
+        const isLight = document.body.classList.toggle("light-mode");
+        
+        // --- LA LIGNE MANQUANTE ÉTAIT ICI ---
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        
+        updateIcon(isLight);
+    });
+</script>
+</body>
+</html>
