@@ -4,14 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Enzo Sanchez Sartori</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
-        if (localStorage.getItem("theme") === "light") {
-            document.documentElement.classList.add("light-mode");
-        }
-    </script>
+  
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/page.css">
+    <link rel="stylesheet" href="style/perso1.CSS">
+    <link rel="stylesheet" href="style/responsive.css">
+    <link rel="stylesheet" href="style/ui.css">
 </head>
+<script>
+// --- GESTION UNIQUE DU THÈME ---
+document.addEventListener("DOMContentLoaded", () => {
+    const themeBtn = document.getElementById("theme-toggle");
+    const themeIcon = themeBtn.querySelector("i");
+    const currentTheme = localStorage.getItem("theme");
+
+    // 1. Appliquer le thème sauvegardé au chargement
+    if (currentTheme === "light") {
+        document.documentElement.classList.add("light-mode");
+    } else {
+        document.documentElement.classList.remove("light-mode");
+    }
+    updateIcon();
+
+    // 2. Fonction pour mettre à jour l'icône
+    function updateIcon() {
+        if (document.documentElement.classList.contains("light-mode")) {
+            themeIcon.className = "fa-solid fa-sun";
+        } else {
+            themeIcon.className = "fa-solid fa-moon";
+        }
+    }
+
+    // 3. Écouter le clic sur le bouton
+    themeBtn.addEventListener("click", () => {
+        const isLight = document.documentElement.classList.toggle("light-mode");
+        
+        // Enregistrer le choix
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        
+        // Mettre à jour l'icône
+        updateIcon();
+    });
+});
+</script>
 <body>
 
 <nav>
@@ -104,64 +140,31 @@
     </div>
 </section>
 
-<script>
-    const btn = document.getElementById("theme-toggle");
-    const icon = btn.querySelector("i");
-    function updateIcon() {
-        if (document.documentElement.classList.contains("light-mode")) {
-            icon.classList.replace("fa-moon", "fa-sun");
-        } else {
-            icon.classList.replace("fa-sun", "fa-moon");
-        }
-    }
-    updateIcon();
-    btn.addEventListener("click", () => {
-        const isLight = document.documentElement.classList.toggle("light-mode");
-        localStorage.setItem("theme", isLight ? "light" : "dark");
-        updateIcon();
-    });
-</script>
+
 <button id="floating-btn" class="floating-contact">
     <span class="btn-text">Me contacter</span>
     <i class="fa-solid fa-chevron-down"></i>
 </button>
 
 <script>
-    // Gestion du Thème (Dark/Light)
-    const themeBtn = document.getElementById("theme-toggle");
-    const themeIcon = themeBtn.querySelector("i");
-    
-    function updateIcon() {
-        if (document.documentElement.classList.contains("light-mode")) {
-            themeIcon.classList.replace("fa-moon", "fa-sun");
-        } else {
-            themeIcon.classList.replace("fa-sun", "fa-moon");
-        }
-    }
-    
-    updateIcon();
-    
-    themeBtn.addEventListener("click", () => {
-        const isLight = document.documentElement.classList.toggle("light-mode");
-        localStorage.setItem("theme", isLight ? "light" : "dark");
-        updateIcon();
-    });
 
     // Gestion du Bouton Flottant
     const floatBtn = document.getElementById('floating-btn');
     const contactSection = document.querySelector('.contact-container');
 
-    window.addEventListener('scroll', () => {
-        // On récupère la position du formulaire
-        const sectionPos = contactSection.getBoundingClientRect().top;
-        
-        // Si le haut du formulaire est visible à l'écran
-        if (sectionPos <= 150) {
-            floatBtn.classList.add('is-up');
-        } else {
-            floatBtn.classList.remove('is-up');
-        }
-    });
+window.addEventListener('scroll', () => {
+    const floatBtn = document.getElementById('floating-btn');
+    const contactSection = document.querySelector('.contact-container');
+    
+    // On calcule si le formulaire est arrivé dans le champ de vision
+    const sectionPos = contactSection.getBoundingClientRect().top;
+
+    if (sectionPos <= 200) {
+        floatBtn.classList.add('is-up');
+    } else {
+        floatBtn.classList.remove('is-up');
+    }
+});
 
     floatBtn.addEventListener('click', () => {
         if (floatBtn.classList.contains('is-up')) {
@@ -175,3 +178,4 @@
         }
     });
 </script>
+</body>

@@ -1,0 +1,213 @@
+/* --- HERO SECTION --- */
+.hero { padding: 120px 20px; text-align: center; max-width: 1000px; margin: auto; }
+
+.hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin: 24px 0; font-weight: 900; letter-spacing: -2px; }
+.subtitle { font-size: 1.5rem; color: var(--text-sub); margin-bottom: 24px; font-weight: 500; }
+.description { max-width: 650px; margin: 0 auto 48px; color: var(--text-sub); font-size: 1.15rem; }
+
+/* --- PAGE CONTACT --- */
+/* --- PAGE CONTACT --- */
+.contact-page {
+    width: 100%;
+    overflow-x: hidden;
+    padding-top: 140px !important; /* Espace pour la nav */
+    display: block; /* On repasse en block pour laisser le container gérer la largeur */
+}
+
+.contact-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto; /* 50px d'espace sous le titre */
+    padding: 0 20px;
+}
+
+/* --- LE BADGE (Tes couleurs d'origine) --- */
+.contact-header .badge {
+    display: inline-block !important;
+    background: rgba(59, 130, 246, 0.15); 
+    color: #60a5fa; 
+    padding: 6px 16px; 
+    border-radius: 99px; 
+    font-weight: 700; 
+    font-size: 0.85rem;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* --- CONTAINER (Plus large pour le formulaire) --- */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* Les deux colonnes feront la même hauteur */
+    gap: 40px; /* Plus d'espace entre les deux blocs */
+    max-width: 1200px; /* On élargit pour le PC */
+    margin: 0 auto;
+    padding: 0 25px 100px; /* 100px en bas pour ne pas coller au footer */
+}
+
+/* Ajustement des blocs */
+.contact-info, .contact-form-container {
+    flex: 1;
+    min-width: 350px; /* Évite que le formulaire devienne trop petit */
+    max-width: 600px; 
+    width: 100%;
+}
+/* Infos de gauche */
+.info-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.info-item:last-child { margin-bottom: 0; }
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: rgba(59, 130, 246, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.info-item h3 { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 2px; }
+.info-item p, .info-item a { font-weight: 600; font-size: 1.1rem; }
+
+.status-box {
+    background: linear-gradient(135deg, var(--primary), #1d4ed8);
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.status-box h4 { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+
+/* Formulaire de droite */
+.contact-form-container {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-sub);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
+    color: var(--text-main);
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.light-mode .form-group input, 
+.light-mode .form-group select, 
+.light-mode .form-group textarea {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* --- BOUTON FLOTTANT DYNAMIQUE --- */
+.floating-contact {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    
+    height: 55px;
+    width: 160px; /* Largeur fixe du mode pilule */
+    border-radius: 50px;
+    box-shadow: 0 5px 20px var(--primary-glow);
+    z-index: 2000;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligne le contenu vers la gauche */
+    cursor: pointer;
+    overflow: hidden; /* Coupe tout ce qui dépasse pendant l'animation */
+    
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1.1rem;
+
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* LE TEXTE : Reste sur une seule ligne quoi qu'il arrive */
+.floating-contact .btn-text {
+    position: absolute;
+    left: 25px;
+    opacity: 1;
+    white-space: nowrap; /* EMPÊCHE LE TEXTE DE SE METTRE L'UN SUR L'AUTRE */
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* L'ICÔNE : Position fixe par rapport au bord DROIT */
+.floating-contact i {
+    position: absolute;
+    right: 18px; /* Ajuste cette valeur pour que ce soit centré dans le rond de 55px */
+    font-size: 1.3rem;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- ÉTAT ROND (is-up) --- */
+.floating-contact.is-up {
+    width: 55px; /* Se replie vers la droite (vers l'icône) */
+}
+
+.floating-contact.is-up .btn-text {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.floating-contact.is-up i {
+    transform: rotate(180deg);
+}
+
+/* Effets classiques */
+.floating-contact:hover { transform: scale(1.05); }
+.floating-contact:active { transform: scale(0.95); }

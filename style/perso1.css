@@ -1,0 +1,36 @@
+/* --- SECTION ANIMATION POCKET BIKE (VERSION FINALE) --- */
+
+/* La Moto */
+.skill-icon {
+    height: 3.2rem; /* Taille ajustée pour le titre */
+    width: auto;
+    display: inline-block; /* Permet l'alignement et la rotation */
+    filter: drop-shadow(0 0 8px var(--primary-glow));
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 0;
+}
+
+/* --- FIX FINAL CLÉ POCKET --- */
+
+.wrench-icon {
+    font-size: 1.4rem; 
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    /* On la descend de 6px de base pour l'aligner au texte */
+    transform: translateY(8px); 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* SYNCRO AU SURVOL */
+.skill-item:hover .wrench-icon {
+    /* TRÈS IMPORTANT : On garde le translateY(6px) pour qu'elle reste basse, 
+       et on ajoute scale et rotate */
+    transform: translateY(8px) scale(1.3) rotate(25deg) !important;
+    color: var(--text-main) !important;
+}
+
+.skill-item:hover .skill-icon {
+    /* La moto s'anime aussi */
+    transform: scale(1.1) rotate(-10deg) !important;
+}

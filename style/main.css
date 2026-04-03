@@ -1,0 +1,256 @@
+/* --- CONFIGURATION DES COULEURS & VARIABLES --- */
+:root {
+    --bg-body: #0f172a;
+    --bg-nav: rgba(15, 23, 42, 0.95);
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-sub: #94a3b8;
+    --primary: #3b82f6;
+    --primary-glow: rgba(59, 130, 246, 0.6);
+    --secondary-btn: rgba(255, 255, 255, 0.05);
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.light-mode {
+    --bg-body: #f1f5f9;
+    --bg-nav: rgba(255, 255, 255, 0.95);
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-sub: #64748b;
+    --primary-glow: rgba(59, 130, 246, 0.3);
+    --secondary-btn: rgba(15, 23, 42, 0.05);
+    --card-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- BASE & UTILS --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+body { 
+    font-family: 'Inter', system-ui, sans-serif; 
+    background-color: var(--bg-body); 
+    color: var(--text-main); 
+    transition: background-color 0.4s ease, color 0.4s ease;
+    line-height: 1.6;
+    width: 100%;
+}
+
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+/* --- NAVIGATION --- */
+nav { 
+    background: var(--bg-nav); 
+    padding: 1rem 5%; 
+    top: 0; width: 100%; z-index: 1000; 
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
+.nav-logo-img {
+    height: 70px;
+    /* Grand logo aussi sur PC */
+    margin-right: 15px;
+    width: auto;
+}
+.logo { display: flex; align-items: center; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+nav ul { display: flex; list-style: none; align-items: center; gap: 24px; }
+
+.theme-btn { background: none; border: none; color: var(--text-main); cursor: pointer; font-size: 1.2rem; transition: transform 0.3s ease; }
+.theme-btn:hover { transform: rotate(15deg); color: var(--primary); }
+
+/* --- COMPOSANTS UI (Boutons) --- */
+/* --- Bouton 1 --- */
+.hero-btns {
+    display: flex;
+    flex-direction: column; /* Empilement vertical */
+    gap: 15px;
+    width: 100%;
+    max-width: 650px; /* Largeur fixe pour correspondre à l'image */
+}
+.btn-primary { 
+    background: var(--primary); 
+    color: white !important; 
+    padding: 16px 30px; 
+    border-radius: 12px; 
+    font-weight: 700; 
+    width: 100%;            /* Prend toute la largeur du conteneur (500px) */
+    text-align: center;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px var(--primary-glow), 0 0 30px 2px var(--primary-glow);
+}
+/* --- Bouton 2 --- */
+.btn-secondary { 
+    background: var(--secondary-btn); 
+    color: var(--text-main) !important;
+    padding: 16px 30px; 
+    border-radius: 12px; 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;            /* Prend toute la largeur du conteneur */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+/* --- Bouton CV --- */
+.btn-cv { 
+    background: var(--primary); 
+    color: white !important; 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    font-weight: 600;
+}
+.btn-cv:hover {
+    box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+/* --- Securité (anti-scroll) --- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+/* --- COMPOSANTS UI (texte) --- */
+ nav ul li a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    /* 2. Hero Section : On réduit les textes pour qu'ils ne sortent pas de l'écran */
+    .hero {
+        padding: 60px 15px; /* Moins de padding en haut pour voir le contenu de suite */
+    }
+
+    .hero h1 {
+        letter-spacing: -1px; /* On desserre un peu les lettres pour la lisibilité */
+        margin: 15px 0;
+    }
+
+    .description {
+        font-size: 1rem; /* Texte un peu plus petit pour le confort de lecture */
+        margin-bottom: 30px;
+    }
+
+    .hero .subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* Boutons l'un au-dessus de l'autre sur petit écran */
+   .hero-btns {
+    display: flex;
+    flex-direction: column; /* Empile les boutons l'un sur l'autre */
+    align-items: center;    /* Centre les boutons horizontalement */
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;       /* Largeur maximale pour correspondre à l'image */
+    margin: 30px auto 0;    /* Centre le bloc et ajoute de l'espace au-dessus */
+}
+.hero-btns .btn-primary, 
+.hero-btns .btn-secondary {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 3. Grille de compétences : 1 seule colonne sur mobile */
+    .skills-grid {
+        grid-template-columns: 1fr; 
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .skill-item {
+        padding: 20px;
+        justify-content: center;
+    }
+/* --- Empêche la sélection de texte sur les éléments interactifs --- */
+.point, .btn-primary, .btn-secondary, .theme-btn, .nav-container a {
+    user-select: none; /* Standard */
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    -webkit-touch-callout: none; /* Empêche le menu contextuel sur iOS */
+}
+
+/* --- BOUTON RETOUR (À mettre HORS du bloc @media pour qu'il marche partout) --- */
+.back-btn-floating {
+    position: fixed;
+    bottom: 25px; /* En bas à droite : zone de confort du pouce */
+    right: 20px;
+    background: var(--primary);
+    color: white !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-btn-floating.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.back-btn-floating span {
+    display: none; /* On ne garde que l'icône sur mobile */
+}
+
+/* --- BOUTON FLOTTANT RETOUR EN HAUT --- */
+.back-btn-floating {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #3b82f6; /* Ton bleu primary */
+    color: white !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 2000;
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.back-btn-floating.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-btn-floating:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}

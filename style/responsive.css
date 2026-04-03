@@ -1,0 +1,83 @@
+/* --- CONFIGURATION MOBILE UNIQUE ET PROPRE --- */
+@media (max-width: 768px) {
+    /* 1. Navigation : On garde tout sur une seule ligne */
+    .nav-container {
+        flex-direction: row !important; 
+        justify-content: space-between;
+        padding: 5px 15px;
+    }
+
+    /* 2. On réduit la taille du logo pour gagner de la place */
+    .nav-logo-img {
+        height: 45px !important; 
+        margin-right: 0;
+    }
+
+    /* 3. On cache le texte "PORTFOLIO GMP" sur mobile (trop long) */
+    .logo span {
+        display: none !important; 
+    }
+
+    /* 4. On ajuste les liens du menu pour qu'ils ne se chevauchent pas */
+    nav ul {
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+        padding: 5px;
+    }
+
+    /* 5. Le bouton CV devient un peu plus discret */
+    .btn-cv {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* 6. Grille de compétences (Accueil) : une seule colonne */
+ .skills-grid {
+        grid-template-columns: 1fr !important; /* Une seule colonne sur mobile */
+    }
+
+    .skill-item {
+        width: 100%;
+        max-width: none;
+    }
+.contact-page {
+        padding-top: 120px !important;
+    }
+    
+    .contact-container {
+        padding: 0 20px 60px;
+        gap: 30px;
+    }
+
+    .contact-info, .contact-form-container {
+        min-width: 100%; /* Prend toute la largeur sur mobile */
+    }
+
+    .contact-header h1 {
+        font-size: 1.8rem;
+    }
+    .hero-btns {
+        max-width: 100%; /* Les boutons prennent tout l'écran sur mobile */
+    }
+}
+
+/* --- CONFIGURATION PC UNIQUE --- */
+@media (min-width: 769px) {
+    .floating-contact { display: none; } 
+}
+
+/* --- CONFIGURATION pour les contacte --- */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-page {
+        padding-top: 100px;
+    }
+}
