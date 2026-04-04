@@ -23,11 +23,17 @@
     }
 
     nav ul {
-        gap: 8px;
+        gap: 6px;
         margin: 0;
-        padding: 0;
+        padding: 0 4px 0 0; /* petit padding droite pour ne pas coller au bord */
         flex-wrap: nowrap;
         align-items: center;
+    }
+
+    /* Bouton thème : s'assure qu'il ne touche pas le bord */
+    .theme-btn {
+        padding: 6px 8px;
+        font-size: 1rem;
     }
 
     nav ul li a {

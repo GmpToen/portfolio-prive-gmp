@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <script>
-        // Ce petit bout de code doit être en haut pour éviter le flash blanc
         if (localStorage.getItem("theme") === "light") {
             document.documentElement.classList.add("light-mode");
         }
@@ -15,14 +14,280 @@
 
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/page.css">
- 
     <link rel="stylesheet" href="style/perso1.CSS">
     <link rel="stylesheet" href="style/responsive.css">
     <link rel="stylesheet" href="style/ui.css">
     <link rel="icon" type="image/png" href="common/mon-icone.png">
+
+    <style>
+        /* ===== HERO AMÉLIORÉ ===== */
+        .hero {
+            position: relative;
+            padding: 40px 20px 80px;
+            overflow: hidden;
+        }
+
+/* ===== LUEURS GLOBALES SUR TOUTE LA PAGE ===== */
+.page-glow-bg {
+    position: fixed; /* Reste fixe à l'écran */
+    inset: 0;       /* Couvre tout le viewport */
+    z-index: -2;    /* Passe DERRIÈRE la grille (.hero-grid-bg est à -1) */
+    pointer-events: none; /* Laisse passer les clics */
+    
+    /* Tes dégradés radiaux pour le mode SOMBRE */
+    background: 
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(59,130,246,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(99,102,241,0.08) 0%, transparent 60%);
+}
+
+/* ===== MODE CLAIR ===== */
+.light-mode .page-glow-bg {
+    /* Tes dégradés radiaux pour le mode CLAIR */
+    background: 
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(59,130,246,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(99,102,241,0.05) 0%, transparent 60%);
+}
+
+.hero-grid-bg {
+    position: fixed; /* Reste fixe pendant le scroll */
+    inset: 0;       /* Couvre tout l'écran */
+    z-index: -1;    /* Passe derrière tout le contenu */
+    
+    background-image: 
+        linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+
+    /* OPTIONNEL : Supprime les lignes ci-dessous si tu veux la grille 
+       partout de façon nette, sans dégradé vers le transparent */
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    
+    pointer-events: none;
+}
+
+        .light-mode .hero-grid-bg {
+            background-image: 
+                linear-gradient(rgba(59,130,246,0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59,130,246,0.07) 1px, transparent 1px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            margin: 0 auto 24px;
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.2), 0 10px 30px rgba(59,130,246,0.3);
+            animation: avatarPulse 3s ease-in-out infinite;
+            letter-spacing: -1px;
+        }
+
+        @keyframes avatarPulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(59,130,246,0.2), 0 10px 30px rgba(59,130,246,0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(59,130,246,0.1), 0 15px 40px rgba(59,130,246,0.4); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1.05;
+            margin: 12px 0 16px;
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .hero .subtitle {
+            animation: fadeUp 0.6s 0.1s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), #6366f1);
+            border-radius: 99px;
+            margin: 20px auto;
+            animation: fadeUp 0.6s 0.2s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0 30px;
+            animation: fadeUp 0.6s 0.3s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .hero-tag {
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.2);
+            color: #60a5fa;
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-tag:hover {
+            background: rgba(59,130,246,0.18);
+            transform: translateY(-2px);
+        }
+
+        .light-mode .hero-tag { color: #2563eb; }
+
+        .hero-btns {
+            animation: fadeUp 0.6s 0.4s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        /* ===== STATS BAND ===== */
+        .stats-band {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .light-mode .stats-band { border-color: rgba(0,0,0,0.06); }
+
+        .stat-item {
+            flex: 1;
+            min-width: 150px;
+            padding: 28px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .light-mode .stat-item:not(:last-child)::after { background: rgba(0,0,0,0.07); }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        /* ===== DISPONIBILITÉ BANNER ===== */
+.availability-banner {
+    /* On dit : prends 100% de la largeur MOINS 40px (20px de chaque côté) */
+    /* Mais ne dépasse jamais 800px */
+    width: min(800px, calc(100% - 40px));
+    
+    /* Pour centrer l'élément horizontalement avec des marges automatiques */
+    margin: 22px auto; 
+    
+    /* Le reste de ton code... */
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(16, 185, 129, 0.05));
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 16px;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+        .avail-dot {
+            width: 10px;
+            height: 10px;
+            min-width: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
+            50% { box-shadow: 0 0 0 6px rgba(34,197,94,0.1); }
+        }
+
+        .avail-text {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        .avail-text strong { color: #22c55e; }
+
+        .section-title {
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        /* Descriptions dans les cartes skills */
+        .skill-item p {
+            color: var(--text-sub);
+            font-size: 0.88rem;
+            margin-top: 10px;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 600px) {
+            .stats-band { border-radius: 16px; }
+            .stat-item { min-width: 120px; padding: 20px 12px; }
+            .stat-number { font-size: 1.6rem; }
+            .availability-banner { flex-direction: column; text-align: center; gap: 10px; }
+            .hero-avatar { width: 72px; height: 72px; font-size: 1.6rem; }
+        }
+    </style>
 </head>
 <body>
-
+    <div class="hero-grid-bg"></div>
+    <div class="page-glow-bg"></div>
 <nav>
     <div class="nav-container">
         <a href="index.html" class="logo">
@@ -32,57 +297,106 @@
         <ul>
             <li><a href="index.html" class="active">Accueil</a></li>
             <li><a href="competences.html">Compétences</a></li>
-            <li><a href="projets.html" >Projets</a></li>
+            <li><a href="projets.html">Projets</a></li>
             <li><a href="common/cv.pdf" target="_blank" class="btn-cv">Mon CV</a></li>
             <li><button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button></li>
         </ul>
     </div>
 </nav>
- 
-<header class="hero">
-   
-    <div class="hero-content">
-        <span class="badge">Étudiant en BUT 1</span>
-        
-        <h1>Enzo Sanchez Sartori</h1>
-        <p class="subtitle"><strong>Mon portefolio en ligne </strong></p>
-        <p class="subtitle">Génie Mécanique et Productique</p>
 
-<div class="hero-btns">
-    <a href="projets.html" class="btn-primary">
-        Voir mes réalisations
-    </a>
-               
-    <a href="contact.html" class="btn-secondary">
-        Me contacter <i class="fa-solid fa-paper-plane"></i>
-    </a>
+<header class="hero">
+
+    <div class="hero-content">
+<!-- Bannière disponibilité -->
+<div class="availability-banner">
+    <div class="avail-dot"></div>
+    <p class="avail-text">
+        <strong>Disponible pour une alternance</strong> — Je recherche un contrat de 1 ou 2 ans en Usinage, Bureau d'études ou Maintenance (région parisienne).
+        <a href="contact.html" style="color: var(--primary); margin-left: 6px; font-weight: 600;">Me contacter →</a>
+    </p>
 </div>
+
+        <span class="badge">Étudiant BUT GMP — 1ère année</span>
+
+        <h1>Enzo Sanchez<br>Sartori</h1>
+
+        <div class="hero-divider"></div>
+
+        <p class="subtitle"><strong>Génie Mécanique et Productique</strong></p>
+        <p class="subtitle" style="margin-bottom: 0;">IUT de la région parisienne</p>
+
+        <div class="hero-tags">
+            <span class="hero-tag"><i class="fa-solid fa-gear"></i> CAO & SolidWorks</span>
+            <span class="hero-tag"><i class="fa-solid fa-hammer"></i> Usinage</span>
+            <span class="hero-tag"><i class="fa-solid fa-print"></i> Impression 3D</span>
+            <span class="hero-tag"><i class="fa-solid fa-microchip"></i> Industrialisation</span>
+        </div>
+
+        <div class="hero-btns">
+            <a href="projets.html" class="btn-primary">
+                <i class="fa-solid fa-folder-open" style="margin-right: 8px;"></i>
+                Voir mes réalisations
+            </a>
+            <a href="contact.html" class="btn-secondary">
+                Me contacter <i class="fa-solid fa-paper-plane"></i>
+            </a>
+        </div>
     </div>
 </header>
 
+
+
+<!-- Stats <div class="stats-band">
+    <div class="stat-item">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Semestres validés</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">9</div>
+        <div class="stat-label">SAÉ réalisées</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">3+</div>
+        <div class="stat-label">Projets perso</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">80%</div>
+        <div class="stat-label">SolidWorks</div>
+    </div>
+</div>-->
+
+
+<!-- Compétences -->
 <section class="skills-preview">
-     <h2 style="margin-bottom: 30px; border-left: 4px solid var(--primary); padding-left: 15px;">Mes compétences💪:</h2>
+    <h2 class="section-title">💪 Mes compétences</h2>
     <div class="skills-grid">
         <a href="competences.html#cao" class="skill-item">
-            <i class="fa-solid fa-gear"></i> 
+            <i class="fa-solid fa-gear"></i>
             <span>CAO (SolidWorks)</span>
+            <p>Modélisation 3D, assemblages paramétriques et mise en plan normalisée ISO.</p>
         </a>
         <a href="competences.html#indus" class="skill-item">
-            <i class="fa-solid fa-microchip"></i> 
+            <i class="fa-solid fa-microchip"></i>
             <span>Industrialisation</span>
+            <p>Gammes de fabrication, indicateurs (Top, Takt), implantation d'atelier.</p>
         </a>
         <a href="competences.html#atelier" class="skill-item">
-            <i class="fa-solid fa-hammer"></i> 
-            <span>Usinage & Montage</span>
+            <i class="fa-solid fa-hammer"></i>
+            <span>Usinage & Atelier</span>
+            <p>Tour et fraiseuse conventionnels, CN, métrologie dimensionnelle.</p>
         </a>
     </div>
 </section>
+
+<!-- Bouton retour en haut -->
+<a href="#" id="back-top" class="back-btn-floating" aria-label="Retour en haut">
+    <i class="fa-solid fa-chevron-up"></i>
+</a>
 
 <script>
     const btn = document.getElementById("theme-toggle");
     const icon = btn.querySelector("i");
 
-    // Fonction pour mettre à jour l'icône selon le thème actuel
     function updateIcon() {
         if (document.documentElement.classList.contains("light-mode")) {
             icon.classList.replace("fa-moon", "fa-sun");
@@ -91,18 +405,23 @@
         }
     }
 
-    updateIcon(); // Au chargement
+    updateIcon();
 
     btn.addEventListener("click", () => {
-        // On bascule la classe sur <html>
         const isLight = document.documentElement.classList.toggle("light-mode");
-        
-        // ON ENREGISTRE LE CHOIX ICI :
         localStorage.setItem("theme", isLight ? "light" : "dark");
-        
         updateIcon();
+    });
+
+    const backBtn = document.getElementById("back-top");
+    window.addEventListener("scroll", () => {
+        backBtn.classList.toggle("visible", window.scrollY > 300);
+    });
+    backBtn.addEventListener("click", e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 </script>
 
 </body>
-</html> 
+</html>

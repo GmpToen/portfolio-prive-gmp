@@ -148,7 +148,12 @@
     color: #22c55e;
     border: 1px solid rgba(34, 197, 94, 0.25);
 }
-
+a.skill-item .comp-level--advanced, 
+.comp-level--advanced {
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e !important; /* Le !important est ici ton meilleur ami */
+    border: 1px solid rgba(34, 197, 94, 0.25);
+}
 .comp-level--intermediate {
     background: rgba(250, 204, 21, 0.12);
     color: #eab308;
@@ -210,12 +215,7 @@
 /* =========================================
    TAGS
    ========================================= */
-.comp-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 4px;
-}
+
 
 .comp-tags span {
     background: rgba(59, 130, 246, 0.1);

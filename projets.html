@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style/perso1.CSS">
     <link rel="stylesheet" href="style/responsive.css">
     <link rel="stylesheet" href="style/ui.css">
+    <link rel="stylesheet" href="style/competences.css">
 </head>
 
 <body>
@@ -90,7 +91,7 @@
 
         <a href="common/projects/projet-pocket/projet-pocket.html" class="skill-item">
             <div style="display: flex; align-items: center; justify-content: flex-start; gap: 15px; margin-bottom: 20px;">
-                <img src="common/projects/projet-pocket/pocket-bike.png" class="skill-icon" style="height: 2.5rem; width: auto; margin: 0;">
+                <img src="common/projects/projet-pocket/pocket-bike.png" class="skill-icon" style="height: 3rem; width: auto; margin: 0;">
                 <span style="font-size: 1.1rem; font-weight: 800; margin: 0;">Réparation Pocket Bike</span>
                 <i class="fa-solid fa-wrench wrench-icon"></i>
             </div>
@@ -105,37 +106,32 @@
         </a>
 <a href="common/projects/projet-impression3D/projet-impression3d.html" class="skill-item">
             <div style="display: flex; align-items: center; justify-content: flex-start; gap: 15px; margin-bottom: 20px;">
-                <img src="common/projects/projet-pocket/pocket-bike.png" class="skill-icon" style="height: 2.5rem; width: auto; margin: 0;">
-                <span style="font-size: 1.1rem; font-weight: 800; margin: 0;">Réparation Pocket Bike</span>
-                <i class="fa-solid fa-wrench wrench-icon"></i>
+                <img src="common/projects/projet-impression3D/printer-icon.png" class="skill-icon" style="height: 4rem; width: auto; margin: 0;" alt="Imprimante 3D" onerror="this.style.display='none'">
+                <span style="font-size: 1.1rem; font-weight: 800; margin: 0;">Impression 3D & DIY</span>
+                <i class="fa-solid fa-print wrench-icon"></i>
             </div>
 
             <p style="color: var(--text-sub); font-size: 0.9rem; text-align: left;">
-                À partir d'une pocket bike non fonctionnelle, j'ai réussi à changer des pièces et à la réparer pour la remettre en marche.
+                Maintenance d'imprimante FDM, paramétrage des slicers et conception d'accessoires sur-mesure en PLA et PETG.
             </p>
 
             <div class="comp-tags" style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
-                <span>Atelier</span> <span>Mécanique</span>
+                <span>FDM</span> <span>SolidWorks</span> <span>Cura</span>
             </div>
         </a>
 
-        <div class="skill-item">
-            <i class="fa-solid fa-cube"></i>
-            <span>Impression 3D & DIY</span>
-            <p style="color: var(--text-sub); font-size: 0.9rem; margin-top: 10px;">Maintenance d'imprimante FDM et conception d'accessoires sur-mesure.</p>
-            <div class="comp-tags" style="justify-content: center; margin-top: 15px;">
-                <span>FDM</span> <span>SolidWorks</span>
-            </div>
-        </div>
-
     </div>
 </main>
+
+<!-- Bouton retour en haut -->
+<a href="#" id="back-top" class="back-btn-floating" aria-label="Retour en haut">
+    <i class="fa-solid fa-chevron-up"></i>
+</a>
 
 <script>
     const btn = document.getElementById("theme-toggle");
     const icon = btn.querySelector("i");
 
-    // Fonction pour mettre à jour l'icône
     function updateIcon(isLight) {
         if (isLight) {
             icon.classList.replace("fa-moon", "fa-sun");
@@ -144,19 +140,24 @@
         }
     }
 
-    // Appliquer le thème au chargement si besoin (pour l'icône)
     if (localStorage.getItem("theme") === "light") {
         updateIcon(true);
     }
 
     btn.addEventListener("click", () => {
-        // On bascule la classe
-        const isLight = document.body.classList.toggle("light-mode");
-        
-        // --- LA LIGNE MANQUANTE ÉTAIT ICI ---
+        const isLight = document.documentElement.classList.toggle("light-mode");
         localStorage.setItem("theme", isLight ? "light" : "dark");
-        
         updateIcon(isLight);
+    });
+
+    // Bouton retour en haut
+    const backBtn = document.getElementById("back-top");
+    window.addEventListener("scroll", () => {
+        backBtn.classList.toggle("visible", window.scrollY > 300);
+    });
+    backBtn.addEventListener("click", e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 </script>
 
