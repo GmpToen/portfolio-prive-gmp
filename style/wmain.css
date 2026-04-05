@@ -59,7 +59,7 @@ a, a:visited, a:hover, a:active {
 
 /* --- NAVIGATION --- */
 nav {
-    position: sticky;
+    position: sticky; /* FIX : était sans position, donc pas sticky */
     background: var(--bg-nav);
     padding: 1rem 5%;
     top: 0;
@@ -67,7 +67,6 @@ nav {
     z-index: 1000;
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-sizing: border-box;
 }
 
 .nav-container {

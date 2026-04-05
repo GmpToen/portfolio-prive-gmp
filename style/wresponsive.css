@@ -9,13 +9,7 @@
     .nav-container {
         flex-direction: row !important;
         justify-content: space-between;
-        align-items: center;
-        padding: 5px 12px 5px 8px; /* gauche réduit pour coller le logo */
-    }
-
-    .logo {
-        padding-left: 0;
-        margin-left: 0;
+        padding: 5px 15px;
     }
 
     .nav-logo-img {
@@ -29,27 +23,27 @@
     }
 
     nav ul {
-        gap: 4px;
+        gap: 6px;
         margin: 0;
-        padding: 0;
+        padding: 0 4px 0 0; /* petit padding droite pour ne pas coller au bord */
         flex-wrap: nowrap;
         align-items: center;
     }
 
-    /* Bouton thème collé au bord droit */
+    /* Bouton thème : s'assure qu'il ne touche pas le bord */
     .theme-btn {
         padding: 6px 8px;
         font-size: 1rem;
     }
 
     nav ul li a {
-        font-size: 0.8rem;
-        padding: 5px 4px;
+        font-size: 0.85rem;
+        padding: 5px;
     }
 
     .btn-cv {
-        padding: 6px 8px;
-        font-size: 0.72rem;
+        padding: 6px 10px;
+        font-size: 0.75rem;
         white-space: nowrap;
         flex-shrink: 0;
     }

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAÉ 1.1 — Analyse d'un système mécanique | Portfolio Enzo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+    <link rel="stylesheet" href="../../../../../style/main.css">
+    <link rel="stylesheet" href="../../../../../style/page.css">
+    <link rel="stylesheet" href="../../../../../style/perso1.CSS">
+    <link rel="stylesheet" href="../../../../../style/responsive.css">
+    <link rel="stylesheet" href="../../../../../style/ui.css">
+    <link rel="stylesheet" href="../../../../../style/competences.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="../../../../../index.html" class="logo">
+            <img src="../../../../../common/Logo_IUT.png" alt="Logo IUT" class="nav-logo-img">
+            <span>PORTFOLIO GMP</span>
+        </a>
+        <ul>
+            <li><a href="../../../../../index.html">Accueil</a></li>
+            <li><a href="../../../../../competences.html">Compétences</a></li>
+            <li><a href="../../../../../projets.html" class="active">Projets</a></li>
+            <li><a href="../../../../../common/cv.pdf" target="_blank" class="btn-cv">Mon CV</a></li>
+            <li><button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero" style="padding: 80px 20px 40px;">
+    <div class="hero-content">
+        <span class="badge">BUT GMP — SEMESTRE 1</span>
+        <h1>SAÉ 1.1</h1>
+        <p class="description">Analyse d'un système mécanique — Boulonneuse à choc</p>
+    </div>
+</header>
+
+<main class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px 100px;">
+
+    <!-- Breadcrumb -->
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap;">
+        <a href="../../../../../projets.html" style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-sub); font-size: 0.88rem;">
+            <i class="fa-solid fa-arrow-left"></i> Projets
+        </a>
+        <i class="fa-solid fa-chevron-right" style="color: var(--text-sub); font-size: 0.7rem;"></i>
+        <a href="../../S1/S1.html" style="color: var(--text-sub); font-size: 0.88rem;">Semestre 1</a>
+        <i class="fa-solid fa-chevron-right" style="color: var(--text-sub); font-size: 0.7rem;"></i>
+        <span style="color: var(--primary); font-size: 0.88rem; font-weight: 700;">SAÉ 1.1</span>
+    </div>
+
+    <!-- En-tête SAE -->
+    <div class="sae-intro-card">
+        <div class="sae-intro-left">
+            <div class="sae-num-big">SAÉ 1.1</div>
+            <div class="ue-badge ue-rouge">UE 1.1</div>
+            <span class="comp-level comp-level--advanced">Réalisée</span>
+        </div>
+        <div class="sae-intro-right">
+            <h2>Analyse d'un système mécanique</h2>
+            <p>Lors de la SAÉ 1.1 nous avions l'objectif d'analyser un système mécanique et de l'expliquer à travers une présentation et un rapport. Notre système : une <strong>boulonneuse à choc</strong>.</p>
+            <div class="comp-tags" style="margin-top: 16px;">
+                <span>Analyse fonctionnelle</span>
+                <span>Nomenclature</span>
+                <span>Liaisons</span>
+                <span>Modélisation 3D</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÉTAPE 1 : Démontage & analyse -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num">01</div>
+            <div>
+                <h3>Démontage & analyse du système</h3>
+                <p class="step-sub">Comprendre chaque pièce, leur rôle et leurs interactions</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>Nous avons tout d'abord <strong>démonté la boulonneuse à choc</strong> pour comprendre chaque pièce, leur utilité, afin de réaliser une nomenclature, une gamme de montage et un graphe de liaisons. Nous en avons profité pour prendre de nombreuses photos.</p>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <i class="fa-solid fa-camera"></i>
+                    <div>
+                        <div class="doc-name">Système complet</div>
+                        <div class="doc-file">system_complet.png</div>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <div>
+                        <div class="doc-name">Photo démontage</div>
+                        <div class="doc-file">demontage.png</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÉTAPE 2 : Documents techniques -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num">02</div>
+            <div>
+                <h3>Création des documents techniques</h3>
+                <p class="step-sub">Nomenclature, gamme de montage, graphe de liaisons, bête à cornes</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>Une fois le système analysé, nous sommes passés à la création des documents. En premier lieu la <strong>nomenclature sur Excel</strong> pour avoir une vision d'ensemble sur chaque pièce.</p>
+            <p style="margin-top: 12px;">Ensuite une <strong>gamme de montage</strong> qui permettrait à n'importe qui, sans connaissance préalable du système, de pouvoir le démonter et le remonter.</p>
+            <p style="margin-top: 12px;">Et finalement, pour bien comprendre les liaisons et le fonctionnement de la boulonneuse à choc, nous avons réalisé un <strong>graphe de liaisons</strong> et une <strong>bête à cornes</strong>.</p>
+
+            <div class="docs-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="doc-card">
+                    <i class="fa-solid fa-table"></i>
+                    <div>
+                        <div class="doc-name">Nomenclature</div>
+                        <div class="doc-file">nomenclature.xlsx</div>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <div>
+                        <div class="doc-name">Gamme de montage</div>
+                        <div class="doc-file">gamme_montage.png</div>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <div>
+                        <div class="doc-name">Graphe des liaisons</div>
+                        <div class="doc-file">graph_liaisons.png</div>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <i class="fa-solid fa-circle-nodes"></i>
+                    <div>
+                        <div class="doc-name">Bête à cornes</div>
+                        <div class="doc-file">bete_a_cornes.png</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÉTAPE 3 : Présentation & rapport -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num">03</div>
+            <div>
+                <h3>Présentation & rapport devant jury</h3>
+                <p class="step-sub">Modélisation 3D + PowerPoint + rapport Word</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>Après avoir réalisé tous ces documents, nous nous sommes attaqués à la présentation et au rapport. Nous avons réuni tous nos documents dans un <strong>PowerPoint</strong> et un <strong>Word</strong> afin de présenter face à un jury.</p>
+            <p style="margin-top: 12px;">Pour mieux visualiser le système, nous avons également <strong>modélisé en 3D la partie mécanique</strong> de la boulonneuse (engrenages planétaires, ressort, masse…).</p>
+
+            <div class="docs-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="doc-card">
+                    <i class="fa-solid fa-cube"></i>
+                    <div>
+                        <div class="doc-name">Système modélisé 3D</div>
+                        <div class="doc-file">systeme_3D.png</div>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <div>
+                        <div class="doc-name">Rapport</div>
+                        <div class="doc-file">rapport_SAE11.pdf</div>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <i class="fa-solid fa-file-powerpoint"></i>
+                    <div>
+                        <div class="doc-name">Présentation</div>
+                        <div class="doc-file">presentation_SAE11.pdf</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Annexe -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num" style="background: rgba(148,163,184,0.12); color: var(--text-sub); border-color: rgba(148,163,184,0.2);">+</div>
+            <div>
+                <h3>Annexe</h3>
+                <p class="step-sub">Journal de bord</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>J'ai tenu un <strong>journal de bord</strong> tout au long de la SAÉ afin de suivre au fil des séances d'autonomie notre avancée et notre progression.</p>
+            <div class="docs-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="doc-card">
+                    <i class="fa-solid fa-book-open"></i>
+                    <div>
+                        <div class="doc-name">Journal de bord</div>
+                        <div class="doc-file">journal_de_bord.pdf</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bilan -->
+    <div class="sae-bilan">
+        <div class="bilan-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div>
+            <h3>Ce que j'ai appris</h3>
+            <p>Cette SAÉ m'a permis de découvrir la démarche d'analyse fonctionnelle et structurelle d'un système mécanique réel. Démonter, comprendre, documenter et modéliser un système en équipe m'a appris à structurer ma pensée technique et à communiquer mes analyses devant un jury.</p>
+        </div>
+    </div>
+
+</main>
+
+<a href="#" id="back-top" class="back-btn-floating" aria-label="Retour en haut">
+    <i class="fa-solid fa-chevron-up"></i>
+</a>
+
+<style>
+    /* ===== INTRO CARD ===== */
+    .sae-intro-card {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+        background: var(--bg-card);
+        border-radius: 20px;
+        padding: 35px;
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        box-shadow: var(--card-shadow);
+        margin-bottom: 50px;
+    }
+
+    .sae-intro-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        min-width: 100px;
+    }
+
+    .sae-num-big {
+        font-family: monospace;
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--primary);
+        background: rgba(59, 130, 246, 0.12);
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        padding: 6px 14px;
+        border-radius: 8px;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+    }
+
+    .ue-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 99px;
+        white-space: nowrap;
+    }
+
+    .ue-rouge {
+        background: rgba(239, 68, 68, 0.12);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.25);
+    }
+
+    .sae-intro-right h2 {
+        font-size: 1.6rem;
+        font-weight: 900;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .sae-intro-right p {
+        color: var(--text-sub);
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* ===== STEPS ===== */
+    .sae-step {
+        margin-bottom: 40px;
+    }
+
+    .step-header {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 20px;
+    }
+
+    .step-num {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: monospace;
+        font-size: 1rem;
+        font-weight: 900;
+        color: var(--primary);
+    }
+
+    .step-header h3 {
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 4px;
+    }
+
+    .step-sub {
+        color: var(--text-sub);
+        font-size: 0.88rem;
+    }
+
+    .step-content {
+        background: var(--bg-card);
+        border-radius: 16px;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: var(--card-shadow);
+    }
+
+    .light-mode .step-content {
+        border-color: rgba(0, 0, 0, 0.06);
+    }
+
+    .step-content p {
+        color: var(--text-sub);
+        font-size: 0.93rem;
+        line-height: 1.7;
+    }
+
+    .step-content p strong {
+        color: var(--text-main);
+    }
+
+    /* ===== DOCS GRID ===== */
+    .docs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 22px;
+    }
+
+    .doc-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: rgba(59, 130, 246, 0.05);
+        border: 1px solid rgba(59, 130, 246, 0.12);
+        border-radius: 12px;
+        padding: 14px 16px;
+        transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        cursor: default;
+    }
+
+    .doc-card:hover {
+        background: rgba(59, 130, 246, 0.1);
+        border-color: rgba(59, 130, 246, 0.25);
+        transform: translateY(-2px);
+    }
+
+    .doc-card i {
+        font-size: 1.4rem;
+        color: var(--primary);
+        min-width: 24px;
+    }
+
+    .doc-name {
+        font-weight: 700;
+        font-size: 0.88rem;
+        color: var(--text-main);
+        margin-bottom: 3px;
+    }
+
+    .doc-file {
+        font-size: 0.76rem;
+        color: var(--text-sub);
+        font-family: monospace;
+    }
+
+    /* ===== BILAN ===== */
+    .sae-bilan {
+        background: var(--bg-card);
+        border-radius: 20px;
+        padding: 35px;
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        box-shadow: var(--card-shadow);
+        display: flex;
+        align-items: flex-start;
+        gap: 25px;
+        margin-top: 50px;
+    }
+
+    .bilan-icon {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        background: rgba(59, 130, 246, 0.12);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        color: var(--primary);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .sae-bilan h3 {
+        font-size: 1.1rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+    }
+
+    .sae-bilan p {
+        color: var(--text-sub);
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+        .sae-intro-card {
+            flex-direction: column;
+            gap: 20px;
+            padding: 24px;
+        }
+        .sae-intro-left {
+            flex-direction: row;
+            min-width: unset;
+        }
+        .sae-intro-right h2 {
+            font-size: 1.3rem;
+        }
+        .step-content {
+            padding: 20px;
+        }
+        .docs-grid {
+            grid-template-columns: 1fr;
+        }
+        .sae-bilan {
+            flex-direction: column;
+            gap: 15px;
+            padding: 24px;
+        }
+    }
+</style>
+
+<script>
+    const btn = document.getElementById("theme-toggle");
+    const icon = btn.querySelector("i");
+    function updateIcon() {
+        icon.className = document.documentElement.classList.contains("light-mode")
+            ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    }
+    updateIcon();
+    btn.addEventListener("click", () => {
+        const isLight = document.documentElement.classList.toggle("light-mode");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        updateIcon();
+    });
+
+    const backBtn = document.getElementById("back-top");
+    window.addEventListener("scroll", () => { backBtn.classList.toggle("visible", window.scrollY > 300); });
+    backBtn.addEventListener("click", e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+</script>
+</body>
+</html>
