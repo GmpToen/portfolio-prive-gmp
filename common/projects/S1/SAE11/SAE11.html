@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAÉ 1.1 — Analyse d'un système mécanique | Portfolio Enzo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+    <link rel="stylesheet" href="../../../../../style/main.css">
+    <link rel="stylesheet" href="../../../../../style/page.css">
+    <link rel="stylesheet" href="../../../../../style/perso1.CSS">
+    <link rel="stylesheet" href="../../../../../style/responsive.css">
+    <link rel="stylesheet" href="../../../../../style/ui.css">
+    <link rel="stylesheet" href="../../../../../style/competences.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="../../../../../index.html" class="logo">
+            <img src="../../../../../common/Logo_IUT.png" alt="Logo IUT" class="nav-logo-img">
+            <span>PORTFOLIO GMP</span>
+        </a>
+        <ul>
+            <li><a href="../../../../../index.html">Accueil</a></li>
+            <li><a href="../../../../../competences.html">Compétences</a></li>
+            <li><a href="../../../../../projets.html" class="active">Projets</a></li>
+            <li><a href="../../../../../common/cv.pdf" target="_blank" class="btn-cv">Mon CV</a></li>
+            <li><button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" style="padding: 80px 20px 40px;">
+    <div class="hero-content">
+        <span class="badge">BUT GMP — SEMESTRE 1</span>
+        <h1>SAÉ 1.1</h1>
+        <p class="description">Analyse d'un système mécanique — Boulonneuse à choc</p>
+
+    </div>
+</header>
+
+<main class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px 100px;">
+
+    <!-- Breadcrumb -->
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:40px;flex-wrap:wrap;">
+        <a href="../../../../../projets.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-sub);font-size:0.88rem;">
+            <i class="fa-solid fa-arrow-left"></i> Projets
+        </a>
+        <i class="fa-solid fa-chevron-right" style="color:var(--text-sub);font-size:0.7rem;"></i>
+        <a href="../../S1/S1.html" style="color:var(--text-sub);font-size:0.88rem;">Semestre 1</a>
+        <i class="fa-solid fa-chevron-right" style="color:var(--text-sub);font-size:0.7rem;"></i>
+        <span style="color:var(--primary);font-size:0.88rem;font-weight:700;">SAÉ 1.1</span>
+    </div>
+
+    <!-- En-tête SAE -->
+    <div class="sae-intro-card">
+        <div class="sae-intro-left">
+            <div class="sae-num-big">SAÉ 1.1</div>
+            <div class="ue-badge ue-rouge">UE 1.1</div>
+            <span class="comp-level comp-level--advanced">Réalisée</span>
+        </div>
+        <div class="sae-intro-right">
+            <h2>Analyse d'un système mécanique</h2>
+            <p>Lors de la SAÉ 1.1 nous avions l'objectif d'analyser un système mécanique et de l'expliquer à travers une présentation et un rapport. Notre système : une <strong>boulonneuse à choc</strong>.</p>
+            <div class="comp-tags" style="margin-top:16px;">
+                <span>Analyse fonctionnelle</span>
+                <span>Nomenclature</span>
+                <span>Liaisons</span>
+                <span>Modélisation 3D</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Ce que j'ai appris, sous la tuile intro -->
+    <div style="display:flex;justify-content:center;margin-bottom:40px;">
+        <a href="#bilan" id="btn-scroll-bilan" class="btn-scroll-bilan">
+            <i class="fa-solid fa-lightbulb"></i>
+            Ce que j'ai appris
+            <i class="fa-solid fa-arrow-down"></i>
+        </a>
+    </div>
+
+    <!-- ════════════════════════════════
+         ÉTAPE 1 : Démontage & photos
+    ════════════════════════════════ -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num">01</div>
+            <div>
+                <h3>Démontage &amp; analyse du système</h3>
+                <p class="step-sub">Comprendre chaque pièce, leur rôle et leurs interactions</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>Nous avons tout d'abord <strong>démonté la boulonneuse à choc</strong> pour comprendre chaque pièce, leur utilité, afin de réaliser une nomenclature, une gamme de montage et un graphe de liaisons. Nous en avons profité pour prendre de nombreuses photos.</p>
+
+            <div class="img-duo-grid">
+
+                <!-- Image système complet → ouvert -->
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap">
+                        <img src="systeme_complet.png" alt="Système" class="viewer-img" id="img-systeme">
+                        <button class="img-open-btn" onclick="toggleSysteme()">
+                            <i id="icon-systeme" class="fa-solid fa-box-open"></i>
+                            <span id="label-systeme">Ouvrir</span>
+                        </button>
+                    </div>
+                    <div class="img-caption" id="caption-systeme">
+                        <i class="fa-solid fa-camera"></i> Système complet (fermé)
+                    </div>
+                </div>
+
+                <!-- Image démontage -->
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap">
+                        <img src="demontage.png" alt="Démontage" class="viewer-img">
+                    </div>
+                    <div class="img-caption">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> Démontage du système
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         ÉTAPE 2 : Documents techniques
+    ════════════════════════════════ -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num">02</div>
+            <div>
+                <h3>Création des documents techniques</h3>
+                <p class="step-sub">Nomenclature, gamme de montage, graphe de liaisons, bête à cornes, diagramme pieuvre</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>Une fois le système analysé, nous sommes passés à la création des documents : <strong>nomenclature</strong>, <strong>gamme de montage</strong>, <strong>graphe de liaisons</strong>, <strong>bête à cornes</strong> et <strong>diagramme pieuvre</strong>.</p>
+
+            <!-- Nomenclature PDF uniquement -->
+            <div class="pdf-open-row">
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.6rem;flex-shrink:0;"></i>
+                    <div style="flex:1;">
+                        <div class="doc-name">Nomenclature</div>
+                        <div class="doc-file">nomenclature.pdf</div>
+                    </div>
+                    <a href="nomenclature.pdf" target="_blank" class="pdf-open-btn">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir
+                    </a>
+                </div>
+            </div>
+
+            <!-- Carrousel -->
+            <div class="carousel-wrap">
+                <div class="carousel-header">
+                    <div class="carousel-title-row">
+                        <i id="carousel-icon" class="fa-solid fa-list-ol"></i>
+                        <span id="carousel-title">Gamme de montage</span>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="car-btn" onclick="carouselPrev()"><i class="fa-solid fa-chevron-left"></i></button>
+                        <span id="carousel-counter">1 / 4</span>
+                        <button class="car-btn" onclick="carouselNext()"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="carousel-track-wrap">
+                    <div class="carousel-track" id="carousel-track">
+                        <div class="carousel-slide"><img src="gamme_montage.png" alt="Gamme de montage" class="carousel-img"></div>
+                        <div class="carousel-slide"><img src="graph_liaisons.png" alt="Graphe des liaisons" class="carousel-img"></div>
+                        <div class="carousel-slide"><img src="bete_a_cornes.png" alt="Bête à cornes" class="carousel-img"></div>
+                        <div class="carousel-slide"><img src="diagramme_pieuvre.png" alt="Diagramme pieuvre" class="carousel-img"></div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="carousel-dots">
+                    <button class="car-dot active" onclick="carouselGoTo(0)"></button>
+                    <button class="car-dot" onclick="carouselGoTo(1)"></button>
+                    <button class="car-dot" onclick="carouselGoTo(2)"></button>
+                    <button class="car-dot" onclick="carouselGoTo(3)"></button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         ÉTAPE 3 : Présentation & rapport
+    ════════════════════════════════ -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num">03</div>
+            <div>
+                <h3>Présentation &amp; rapport devant jury</h3>
+                <p class="step-sub">Modélisation 3D + PowerPoint + rapport Word</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>Après avoir réalisé tous ces documents, nous nous sommes attaqués à la présentation et au rapport. Pour mieux visualiser le système, nous avons également <strong>modélisé en 3D la partie mécanique</strong> de la boulonneuse (engrenages planétaires, ressort, masse…).</p>
+
+            <!-- Image 3D visible (taille réduite) -->
+            <div class="img-viewer-card" style="margin-top:20px;max-width:480px;margin-left:auto;margin-right:auto;">
+                <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                    <img src="systeme_3D.png" alt="Modèle 3D" class="viewer-img">
+                </div>
+                <div class="img-caption">
+                    <i class="fa-solid fa-cube"></i> Modélisation 3D de la partie mécanique
+                </div>
+            </div>
+
+            <!-- Barre Rapport / Présentation -->
+            <div class="docs-bar-row">
+                <a href="rapport_SAE11.pdf" target="_blank" class="docs-bar-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Rapport</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square docs-bar-arrow"></i>
+                </a>
+                <div class="docs-bar-sep"></div>
+                <a href="presentation_SAE11.pdf" target="_blank" class="docs-bar-item">
+                    <i class="fa-solid fa-file-powerpoint"></i>
+                    <span>Présentation</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square docs-bar-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         ANNEXE
+    ════════════════════════════════ -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num" style="background:rgba(148,163,184,0.12);color:var(--text-sub);border-color:rgba(148,163,184,0.2);">+</div>
+            <div>
+                <h3>Annexe</h3>
+                <p class="step-sub">Journal de bord</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>J'ai tenu un <strong>journal de bord</strong> tout au long de la SAÉ afin de suivre notre avancée au fil des séances d'autonomie.</p>
+
+
+            <!-- PDF -->
+            <div class="pdf-open-row" style="margin-top:14px;">
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.6rem;flex-shrink:0;"></i>
+                    <div style="flex:1;">
+                        <div class="doc-name">Journal de bord complet</div>
+                        <div class="doc-file">journal_de_bord.pdf</div>
+                    </div>
+                    <a href="journal_de_bord.pdf" target="_blank" class="pdf-open-btn">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         BILAN
+    ════════════════════════════════ -->
+    <div class="sae-bilan" id="bilan">
+        <div class="bilan-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div>
+            <h3>Ce que j'ai appris</h3>
+            <p>Cette SAÉ m'a permis de découvrir la démarche d'analyse fonctionnelle et structurelle d'un système mécanique réel. Démonter, comprendre, documenter et modéliser un système en équipe m'a appris à structurer ma pensée technique et à communiquer mes analyses devant un jury.</p>
+        </div>
+    </div>
+
+</main>
+
+<a href="#" id="back-top" class="back-btn-floating" aria-label="Retour en haut">
+    <i class="fa-solid fa-chevron-up"></i>
+</a>
+
+<style>
+/* ── Bouton scroll vers bilan ── */
+.btn-scroll-bilan {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.3);
+    color: #60a5fa;
+    padding: 10px 20px;
+    border-radius: 99px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+.btn-scroll-bilan:hover { background: rgba(59,130,246,0.22); transform: translateY(-2px); }
+.light-mode .btn-scroll-bilan { color: #2563eb; }
+
+/* ── comp-tags : flex-wrap pour mobile ── */
+.comp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.comp-tags span { white-space: normal; word-break: break-word; }
+
+/* ── Intro card ── */
+.sae-intro-card {
+    display: flex; gap: 30px; align-items: flex-start;
+    background: var(--bg-card); border-radius: 20px; padding: 35px;
+    border: 1px solid rgba(59,130,246,0.15);
+    box-shadow: var(--card-shadow); margin-bottom: 50px;
+}
+.sae-intro-left { display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 100px; }
+.sae-num-big {
+    font-family: monospace; font-size: 1rem; font-weight: 800;
+    color: var(--primary); background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.25);
+    padding: 6px 14px; border-radius: 8px; letter-spacing: 0.05em; white-space: nowrap;
+}
+.ue-badge { font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; white-space: nowrap; }
+.ue-rouge { background: rgba(239,68,68,0.12); color: #ef4444; border: 1px solid rgba(239,68,68,0.25); }
+.sae-intro-right h2 { font-size: 1.6rem; font-weight: 900; margin-bottom: 12px; line-height: 1.2; }
+.sae-intro-right p { color: var(--text-sub); font-size: 0.95rem; line-height: 1.7; }
+
+/* ── Steps ── */
+.sae-step { margin-bottom: 40px; }
+.step-header { display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
+.step-num {
+    width: 48px; height: 48px; min-width: 48px;
+    background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    font-family: monospace; font-size: 1rem; font-weight: 900; color: var(--primary);
+}
+.step-header h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 4px; }
+.step-sub { color: var(--text-sub); font-size: 0.88rem; }
+.step-content {
+    background: var(--bg-card); border-radius: 16px; padding: 28px;
+    border: 1px solid rgba(255,255,255,0.05); box-shadow: var(--card-shadow);
+}
+.light-mode .step-content { border-color: rgba(0,0,0,0.06); }
+.step-content p { color: var(--text-sub); font-size: 0.93rem; line-height: 1.7; }
+.step-content p strong { color: var(--text-main); }
+
+/* ── Image viewer ── */
+.img-duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+.img-viewer-card {
+    border-radius: 14px; overflow: hidden;
+    background: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+.light-mode .img-viewer-card { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.07); }
+.img-viewer-wrap { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; display:flex; align-items:center; justify-content:center; }
+.viewer-img {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+    transition: opacity 0.3s ease;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.img-open-btn {
+    position: absolute; bottom: 10px; right: 10px;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--primary); color: white;
+    border: none; border-radius: 8px; padding: 7px 14px;
+    font-size: 0.82rem; font-weight: 700; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+    transition: transform 0.2s, background 0.2s;
+    font-family: inherit;
+}
+.img-open-btn:hover { transform: scale(1.05); background: #2563eb; }
+.img-caption {
+    padding: 10px 14px; font-size: 0.8rem; color: var(--text-sub);
+    display: flex; align-items: center; gap: 8px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.light-mode .img-caption { border-top-color: rgba(0,0,0,0.06); }
+
+/* ── PDF open row ── */
+.pdf-open-row { margin-top: 20px; }
+.pdf-open-card {
+    display: flex; align-items: center; gap: 14px;
+    background: rgba(59,130,246,0.05);
+    border: 1px solid rgba(59,130,246,0.14);
+    border-radius: 12px; padding: 14px 18px;
+}
+.doc-name { font-weight: 700; font-size: 0.9rem; color: var(--text-main); margin-bottom: 2px; }
+.doc-file { font-size: 0.75rem; color: var(--text-sub); font-family: monospace; }
+.pdf-open-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--primary); color: white !important;
+    border-radius: 8px; padding: 8px 16px;
+    font-size: 0.82rem; font-weight: 700; white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.pdf-open-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(59,130,246,0.4); }
+
+/* ── Carrousel ── */
+.carousel-wrap {
+    background: rgba(0,0,0,0.1); border-radius: 16px;
+    overflow: hidden; border: 1px solid rgba(255,255,255,0.06);
+    margin-top: 24px;
+}
+.light-mode .carousel-wrap { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.07); }
+.carousel-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.light-mode .carousel-header { border-bottom-color: rgba(0,0,0,0.07); }
+.carousel-title-row {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 800; font-size: 0.95rem; color: var(--text-main);
+}
+.carousel-title-row i { color: var(--primary); font-size: 1rem; }
+.carousel-controls { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--text-sub); }
+.car-btn {
+    width: 32px; height: 32px;
+    background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
+    border-radius: 8px; color: var(--primary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; transition: background 0.2s;
+}
+.car-btn:hover { background: rgba(59,130,246,0.22); }
+.carousel-track-wrap { overflow: hidden; }
+.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+.carousel-slide { min-width: 100%; aspect-ratio: 16/9; }
+.carousel-img {
+    width: 100%; height: 100%; object-fit: contain;
+    display: block; padding: 12px; box-sizing: border-box;
+}
+.carousel-dots { display: flex; justify-content: center; gap: 8px; padding: 12px; }
+.car-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); border: none;
+    cursor: pointer; transition: background 0.2s, transform 0.2s; padding: 0;
+}
+.light-mode .car-dot { background: rgba(0,0,0,0.12); }
+.car-dot.active { background: var(--primary); transform: scale(1.3); }
+
+/* ── Barre Rapport / Présentation ── */
+.docs-bar-row {
+    display: flex; align-items: stretch;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(59,130,246,0.25);
+    background: rgba(59,130,246,0.06);
+    margin-top: 20px;
+}
+.docs-bar-item {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    gap: 10px; padding: 14px 20px;
+    font-weight: 700; font-size: 0.9rem; color: #60a5fa !important;
+    text-decoration: none; transition: background 0.2s;
+}
+.docs-bar-item:hover { background: rgba(59,130,246,0.14); }
+.docs-bar-item i { font-size: 1rem; }
+.docs-bar-arrow { font-size: 0.75rem; margin-left: auto; opacity: 0.7; }
+.docs-bar-sep { width: 1px; background: rgba(59,130,246,0.25); align-self: stretch; flex-shrink: 0; }
+.light-mode .docs-bar-item { color: #2563eb !important; }
+
+/* ── Bilan ── */
+.sae-bilan {
+    background: var(--bg-card); border-radius: 20px; padding: 35px;
+    border: 1px solid rgba(59,130,246,0.15); box-shadow: var(--card-shadow);
+    display: flex; align-items: flex-start; gap: 25px; margin-top: 50px;
+}
+.bilan-icon {
+    width: 56px; height: 56px; min-width: 56px;
+    background: rgba(59,130,246,0.12); border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: var(--primary);
+    border: 1px solid rgba(59,130,246,0.2);
+}
+.sae-bilan h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.sae-bilan p { color: var(--text-sub); font-size: 0.92rem; line-height: 1.65; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .sae-intro-card { flex-direction: column; gap: 20px; padding: 24px; }
+    .sae-intro-left { flex-direction: row; min-width: unset; align-items: center; flex-wrap: wrap; }
+    .sae-intro-right h2 { font-size: 1.3rem; }
+    .step-content { padding: 18px; }
+    .img-duo-grid { grid-template-columns: 1fr; }
+    .sae-bilan { flex-direction: column; gap: 15px; padding: 24px; }
+    .docs-bar-item { padding: 12px 10px; font-size: 0.82rem; gap: 6px; }
+    .pdf-open-card { flex-wrap: wrap; }
+    .pdf-open-btn { width: 100%; justify-content: center; margin-top: 8px; }
+}
+</style>
+
+<script>
+/* ── Thème ── */
+const btn = document.getElementById("theme-toggle");
+const icon = btn.querySelector("i");
+function updateIcon() {
+    icon.className = document.documentElement.classList.contains("light-mode")
+        ? "fa-solid fa-sun" : "fa-solid fa-moon";
+}
+updateIcon();
+btn.addEventListener("click", () => {
+    const isLight = document.documentElement.classList.toggle("light-mode");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+    updateIcon();
+});
+
+/* ── Retour en haut ── */
+const backBtn = document.getElementById("back-top");
+window.addEventListener("scroll", () => { backBtn.classList.toggle("visible", window.scrollY > 300); });
+backBtn.addEventListener("click", e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+/* ── Scroll vers bilan ── */
+document.getElementById("btn-scroll-bilan").addEventListener("click", e => {
+    e.preventDefault();
+    document.getElementById("bilan").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+/* ── Toggle système : 3 états (fermé → ouvert → démonté) ── */
+// états : 0 = fermé (systeme_complet.png), 1 = ouvert (systeme_ouvert.png), 2 = démonté (demontage.png... ou systeme_complet)
+// cycle: Ouvrir → Démonter → Fermer → Ouvrir …
+let systemeEtat = 0; // 0=fermé, 1=ouvert, 2=démonté
+const systemeStates = [
+    { src: "systeme_complet.png", label: "Ouvrir",   icon: "fa-solid fa-box-open",          caption: '<i class="fa-solid fa-camera"></i> Système complet (fermé)' },
+    { src: "systeme_ouvert.png",  label: "Démonter", icon: "fa-solid fa-screwdriver-wrench", caption: '<i class="fa-solid fa-box-open"></i> Système ouvert'          },
+    { src: "systeme_demonte.png", label: "Fermer",   icon: "fa-solid fa-xmark",              caption: '<i class="fa-solid fa-screwdriver-wrench"></i> Système démonté' },
+];
+function toggleSysteme() {
+    systemeEtat = (systemeEtat + 1) % systemeStates.length;
+    const s       = systemeStates[systemeEtat];
+    const img     = document.getElementById("img-systeme");
+    const label   = document.getElementById("label-systeme");
+    const iconEl  = document.getElementById("icon-systeme");
+    const caption = document.getElementById("caption-systeme");
+    img.style.opacity = "0";
+    setTimeout(() => {
+        img.src            = s.src;
+        label.textContent  = s.label;
+        iconEl.className   = s.icon;
+        caption.innerHTML  = s.caption;
+        img.style.opacity  = "1";
+    }, 200);
+}
+
+/* ── Carrousel ── */
+const carouselData = [
+    { title: "Gamme de montage",    icon: "fa-solid fa-list-ol" },
+    { title: "Graphe des liaisons", icon: "fa-solid fa-diagram-project" },
+    { title: "Bête à cornes",       icon: "fa-solid fa-circle-nodes" },
+    { title: "Diagramme pieuvre",   icon: "fa-solid fa-circle-dot" },
+];
+let carIdx = 0;
+
+function carouselUpdate() {
+    document.getElementById("carousel-track").style.transform = `translateX(-${carIdx * 100}%)`;
+    document.getElementById("carousel-title").textContent     = carouselData[carIdx].title;
+    document.getElementById("carousel-icon").className        = carouselData[carIdx].icon;
+    document.getElementById("carousel-counter").textContent   = `${carIdx + 1} / ${carouselData.length}`;
+    document.querySelectorAll(".car-dot").forEach((d, i) => d.classList.toggle("active", i === carIdx));
+}
+function carouselNext() { carIdx = (carIdx + 1) % carouselData.length; carouselUpdate(); }
+function carouselPrev() { carIdx = (carIdx - 1 + carouselData.length) % carouselData.length; carouselUpdate(); }
+function carouselGoTo(i) { carIdx = i; carouselUpdate(); }
+
+/* ── Swipe tactile ── */
+(function() {
+    const wrap = document.querySelector(".carousel-track-wrap");
+    let startX = 0, startY = 0, isDragging = false;
+    wrap.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isDragging = true;
+    }, { passive: true });
+    wrap.addEventListener("touchend", e => {
+        if (!isDragging) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        const dy = e.changedTouches[0].clientY - startY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+            dx < 0 ? carouselNext() : carouselPrev();
+        }
+        isDragging = false;
+    }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
