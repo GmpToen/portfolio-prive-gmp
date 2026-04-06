@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
         <ul>
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="index.html">Compétences</a></li>
             <li><a href="projets.html">Projets</a></li>
             <li><a href="common/cv.pdf" target="_blank" class="btn-cv">Mon CV</a></li>
             <li><button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button></li>
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <i class="fa-solid fa-envelope"></i>
                     <div>
                         <h3>Email</h3>
-                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="482d2632273b29262b202d327a71797a082f25292124662b2725">[email&#160;protected]</a></p>
+                        <p>enzosanchez2912@gmail.com</p>
                     </div>
                 </div>
                 <div class="info-item">
@@ -143,49 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <button id="floating-btn" class="floating-contact">
-    <span class="btn-text">Me contacter</span>
+    <span class="btn-text">Me contacter </span>
     <i class="fa-solid fa-chevron-down"></i>
 </button>
 
-<style>
-/* Fix superposition texte / icône du bouton flottant */
-.floating-contact {
-    justify-content: space-between !important;
-    padding: 0 18px 0 20px !important;
-    gap: 0 !important;
-}
-.floating-contact .btn-text {
-    position: static !important;
-    opacity: 1;
-    white-space: nowrap;
-    flex: 1;
-    text-align: left;
-    transition: opacity 0.2s ease-in-out;
-}
-.floating-contact i {
-    position: static !important;
-    font-size: 1rem;
-    flex-shrink: 0;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
-}
-/* État replié (rond) */
-.floating-contact.is-up {
-    width: 55px !important;
-    padding: 0 !important;
-    justify-content: center !important;
-}
-.floating-contact.is-up .btn-text {
-    opacity: 0 !important;
-    width: 0 !important;
-    overflow: hidden !important;
-    flex: 0 !important;
-}
-.floating-contact.is-up i {
-    transform: rotate(180deg) !important;
-}
-</style>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 
     // Gestion du Bouton Flottant
     const floatBtn = document.getElementById('floating-btn');
@@ -210,4 +172,11 @@ window.addEventListener('scroll', () => {
             // Remonter tout en haut
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            // Descendre au formulaire avec un petit décalage pour l
+            // Descendre au formulaire avec un petit décalage pour le titre
+            const yOffset = 300; 
+            const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    });
+</script>
+</body>

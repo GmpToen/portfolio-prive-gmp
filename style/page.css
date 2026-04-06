@@ -170,6 +170,7 @@
 }
 
 /* --- BOUTON FLOTTANT DYNAMIQUE --- */
+/* --- BOUTON FLOTTANT DYNAMIQUE --- */
 .floating-contact {
     position: fixed;
     bottom: 25px;
@@ -179,22 +180,22 @@
     border: none;
     
     height: 55px;
-    width: 160px; /* Largeur fixe du mode pilule */
+    width: 175px; /* Augmenté légèrement pour laisser de la place */
     border-radius: 50px;
     box-shadow: 0 5px 20px var(--primary-glow);
     z-index: 2000;
     
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Aligne le contenu vers la gauche */
-    cursor: pointer;
-    overflow: hidden; /* Coupe tout ce qui dépasse pendant l'animation */
+    justify-content: space-between; /* Écarte le texte et l'icône aux extrémités */
+    padding: 0 20px; /* Ajoute une marge interne fixe */
     
+    cursor: pointer;
+    overflow: hidden;
     font-family: inherit;
     font-weight: 700;
-    font-size: 1.1rem;
-
-    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s;
 }
 
 /* LE TEXTE : Reste sur une seule ligne quoi qu'il arrive */
