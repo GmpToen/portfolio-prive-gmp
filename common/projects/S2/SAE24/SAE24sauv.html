@@ -35,27 +35,6 @@
     </div>
 </nav>
 
-<!-- BANDEAU TÉLÉCHARGEMENT RAPPORT -->
-<div id="rapport-banner" style="background: linear-gradient(135deg, rgba(59,130,246,0.18) 0%, rgba(99,102,241,0.18) 100%); border-bottom: 1px solid rgba(59,130,246,0.25); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; position: sticky; top: 0; z-index: 999; backdrop-filter: blur(12px);">
-    <div style="display:flex;align-items:center;gap:12px;">
-        <div style="width:38px;height:38px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <i class="fa-solid fa-file-word" style="color:#3b82f6;font-size:1.1rem;"></i>
-        </div>
-        <div>
-            <div style="font-weight:800;font-size:0.88rem;color:var(--text-main);">Rapport final SAÉ 2.3/2.4 — Moteur pneumatique</div>
-            <div style="font-size:0.74rem;color:var(--text-sub);font-family:monospace;">rapport_final_V9.pdf · Enzo SANCHEZ SARTORI</div>
-        </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-
-        <a href="rapport_final_V9.pdf" download="rapport_final_V9.pdf" style="display:inline-flex;align-items:center;gap:7px;background:var(--primary);color:white !important;border-radius:9px;padding:9px 18px;font-size:0.82rem;font-weight:800;white-space:nowrap;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 14px rgba(59,130,246,0.35);"
-            onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 22px rgba(59,130,246,0.5)'"
-            onmouseout="this.style.transform='';this.style.boxShadow='0 4px 14px rgba(59,130,246,0.35)'">
-            <i class="fa-solid fa-download"></i> Télécharger le rapport
-        </a>
-    </div>
-</div>
-
 <!-- HERO -->
 <header class="hero" style="padding: 80px 20px 40px;">
     <div class="hero-content">
@@ -107,55 +86,8 @@
     </div>
 
     <!-- ══════════════════════════════════════════
-         SAE 2.3 : Création des documents de fabrication
+         ÉTAPE 1 : Contexte & Calculs théoriques
     ══════════════════════════════════════════ -->
-    <section class="sae-step">
-        <div class="step-header">
-            <div class="step-num" style="background:rgba(99,102,241,0.1);color:#818cf8;border-color:rgba(99,102,241,0.25);">2.3</div>
-            <div>
-                <h3>Création des documents de fabrication</h3>
-                <p class="step-sub">Contrat de phase — Phases 30 &amp; 40 du volant</p>
-            </div>
-        </div>
-        <div class="step-content">
-            <p>Lors de la SAÉ 2.3, j'ai principalement travaillé sur le <strong>contrat de phase du volant</strong>, notamment les phases 30 et 40. Ce contrat comprend : la gamme d'usinage, le choix des outils, les paramètres de coupe (vitesse, avance, profondeur) ainsi que les cotes fabriquées et tolérances associées.</p>
-
-            <div class="two-col-grid" style="margin-top:20px;">
-                <div class="info-block">
-                    <div class="info-block-header">
-                        <i class="fa-solid fa-screwdriver-wrench" style="color:var(--primary);"></i>
-                        <span>Contenu du contrat de phase</span>
-                    </div>
-                    <ul class="check-list" style="margin-top:8px;">
-                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Désignation des opérations (ébauche, finition, filetage)</li>
-                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Paramètres de coupe calculés selon matière et outil</li>
-                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Moyens de contrôle pour chaque cote</li>
-                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Sélection d'outils catalogue Hoffmann</li>
-                    </ul>
-                </div>
-                <div class="info-block">
-                    <div class="info-block-header">
-                        <i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b;"></i>
-                        <span>Difficulté principale</span>
-                    </div>
-                    <p>Le choix des outils était complexe : aucun outil théoriquement adapté n'était disponible en atelier. J'ai donc mené une recherche dans le catalogue Hoffmann et proposé <strong>deux outils pour la même opération</strong> : un disponible en stock, un idéal pour achat.</p>
-                </div>
-            </div>
-
-            <div class="pdf-open-row" style="margin-top:20px;">
-                <div class="pdf-open-card">
-                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.6rem;flex-shrink:0;"></i>
-                    <div style="flex:1;">
-                        <div class="doc-name">Contrat de phase — Phases 30 &amp; 40</div>
-                        <div class="doc-file">contrat_de_phase.pdf</div>
-                    </div>
-                    <a href="contrat_de_phase.pdf" target="_blank" class="pdf-open-btn">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="sae-step">
         <div class="step-header">
             <div class="step-num">01</div>
@@ -366,198 +298,53 @@
     </section>
 
     <!-- ══════════════════════════════════════════
-         ÉTAPE 4 : Usinage
+         ÉTAPE 4 : Visual Management & TRS
     ══════════════════════════════════════════ -->
     <section class="sae-step">
         <div class="step-header">
             <div class="step-num">04</div>
             <div>
-                <h3>Usinage — Résultats réels</h3>
-                <p class="step-sub">Phase 10 support sur machine conventionnelle · 8h</p>
+                <h3>Usinage</h3>
+                <p class="step-sub">Session d'usinage de 18 heure</p>
             </div>
         </div>
         <div class="step-content">
-            <p>J'ai été affecté à la <strong>phase 10 du support</strong> sur machine conventionnelle horizontale. Une difficulté de perpendicularité est apparue dès le début, résolue en renforçant le serrage avec deux brides supplémentaires sur la table.</p>
+            <p>L'<strong>l'usinage</strong> en cours <strong>18 heure</strong> une semaine d'usinage avec un phase attribuée .</p>
 
+            <!-- 3 colonnes TRS -->
             <div class="trs-grid" style="margin-top:22px;">
                 <div class="trs-card">
-                    <div class="trs-letter">Pièces produites</div>
-                    <div class="trs-val">20</div>
-                    <div class="trs-desc">Phase 10 — Support</div>
+                    <div class="trs-letter">Nombres de pièces</div>
+                    <div class="trs-val">30</div>
+                    <div class="trs-desc"></div>
                 </div>
                 <div class="trs-card">
-                    <div class="trs-letter">Poste</div>
-                    <div class="trs-val">Ph. 10</div>
-                    <div class="trs-desc">+ Ph. 40 pistons en renfort</div>
+                    <div class="trs-letter">Support</div>
+                    <div class="trs-val">Phase 10</div>
+                    <div class="trs-desc"></div>
                 </div>
                 <div class="trs-card trs-card--do">
-                    <div class="trs-letter">Rebuts</div>
-                    <div class="trs-val">0</div>
-                    <div class="trs-desc">Tq = 100 %</div>
+                    <div class="trs-letter">Bonne</div>
+                    <div class="trs-val">???</div>
+                    <div class="trs-desc"></div>
                 </div>
             </div>
 
             <div class="trs-result">
-                <span>20 pièces terminées en</span>
-                <span class="trs-result-val">≈ 8 h → renfort sur pistons Ph. 40</span>
+                <span>Tq</span>
+                <span class="trs-result-val">= ???</span>
             </div>
 
+            <!-- Note Visual Management -->
             <div class="info-block" style="margin-top:20px;">
                 <div class="info-block-header">
-                    <i class="fa-solid fa-rotate" style="color:#f59e0b;"></i>
-                    <span>Problème de perpendicularité — Solution</span>
+                    <i class="fa-solid fa-display" style="color:var(--primary);"></i>
+                    <span>Avis general</span>
                 </div>
-                <p>La machine conventionnelle est horizontale, la pièce perpendiculaire à l'outil et le montage mobile. Une opération de <strong>dressage/dégauchissage</strong> était indispensable. Après renforcement du serrage, l'enchaînement s'est effectué sans difficulté.</p>
-            </div>
-
-            <div class="info-block" style="margin-top:16px;">
-                <div class="info-block-header">
-                    <i class="fa-solid fa-users" style="color:var(--primary);"></i>
-                    <span>Changement de poste en milieu de semaine</span>
-                </div>
-                <p>Ayant terminé mes 20 pièces rapidement, j'ai rejoint le poste <strong>pistons phase 40</strong> (tour conventionnel) — phase critique pour le fonctionnement du moteur (~70 pièces à produire). Nouvelle prise en main complète : réglage du tour, lecture du contrat de phase, adaptation au rythme de production.</p>
-            </div>
-
-            <div class="pdf-open-row" style="margin-top:18px;">
-                <div class="pdf-open-card">
-                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.6rem;flex-shrink:0;"></i>
-                    <div style="flex:1;">
-                        <div class="doc-name">Fiche d'instruction opérateur — Phase 10 support</div>
-                        <div class="doc-file">Fiche_de_suivi_SANCHEZ.pdf</div>
-                    </div>
-                    <a href="Fiche_de_suivi_SANCHEZ.pdf" download class="pdf-open-btn">
-                        <i class="fa-solid fa-download"></i> Télécharger
-                    </a>
-                    <a href="Fiche_de_suivi_SANCHEZ.pdf" target="_blank" class="pdf-open-btn" style="background:transparent;border:1px solid rgba(59,130,246,0.35);color:#60a5fa !important;">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir
-                    </a>
-                </div>
+                <p>a determiner en fin de semaine</p>
             </div>
         </div>
     </section>
-
-    <!-- ══════════════════════════════════════════
-         ÉTAPE 5 : Analyse de performance réelle
-    ══════════════════════════════════════════ -->
-    <section class="sae-step">
-        <div class="step-header">
-            <div class="step-num">05</div>
-            <div>
-                <h3>Analyse de performance — Le réel vs la théorie</h3>
-                <p class="step-sub">Comparaison des indicateurs calculés et observés</p>
-            </div>
-        </div>
-        <div class="step-content">
-            <p>Après discussion avec les opérateurs de la phase 20 du raccord (CTX200), voici la comparaison entre mes calculs théoriques et les résultats réels <em>(valeurs divisées par 2 car seule la moitié des pièces a été usinée)</em>.</p>
-
-            <!-- Tableau de comparaison -->
-            <div style="overflow-x:auto;margin-top:20px;">
-                <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
-                    <thead>
-                        <tr style="background:rgba(59,130,246,0.12);">
-                            <th style="padding:12px 16px;text-align:left;border-bottom:1px solid rgba(59,130,246,0.2);font-weight:800;color:var(--text-main);">Indicateur</th>
-                            <th style="padding:12px 16px;text-align:center;border-bottom:1px solid rgba(59,130,246,0.2);font-weight:800;color:var(--primary);">Mes calculs</th>
-                            <th style="padding:12px 16px;text-align:center;border-bottom:1px solid rgba(59,130,246,0.2);font-weight:800;color:#22c55e;">Résultat réel</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-                            <td style="padding:11px 16px;color:var(--text-sub);">Tcyeff</td>
-                            <td style="padding:11px 16px;text-align:center;font-weight:700;color:var(--text-main);">11,25 min</td>
-                            <td style="padding:11px 16px;text-align:center;font-weight:700;color:#22c55e;">3,16 min</td>
-                        </tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
-                            <td style="padding:11px 16px;color:var(--text-sub);">Capacité horaire</td>
-                            <td style="padding:11px 16px;text-align:center;font-weight:700;color:var(--text-main);">5 pcs/h</td>
-                            <td style="padding:11px 16px;text-align:center;font-weight:700;color:#22c55e;">18 pcs/h</td>
-                        </tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-                            <td style="padding:11px 16px;color:var(--text-sub);">Charge</td>
-                            <td style="padding:11px 16px;text-align:center;font-weight:700;color:var(--text-main);">3,75 h</td>
-                            <td style="padding:11px 16px;text-align:center;font-weight:700;color:#22c55e;">1,1 h</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:11px 16px;color:var(--text-sub);">Pièces entrantes</td>
-                            <td style="padding:11px 16px;text-align:center;font-weight:700;color:var(--text-main);">20</td>
-                            <td style="padding:11px 16px;text-align:center;font-weight:700;color:#22c55e;">22</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Explication des écarts -->
-            <div style="overflow-x:auto;margin-top:20px;">
-                <p style="font-size:0.88rem;color:var(--text-sub);margin-bottom:10px;">L'écart le plus important concerne la <strong style="color:var(--text-main);">mesure</strong> — probablement grâce à l'expérience acquise au fil des cycles :</p>
-                <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
-                    <thead>
-                        <tr style="background:rgba(59,130,246,0.08);">
-                            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid rgba(59,130,246,0.15);font-weight:800;color:var(--text-main);">Étape</th>
-                            <th style="padding:10px 14px;text-align:center;border-bottom:1px solid rgba(59,130,246,0.15);font-weight:800;color:var(--primary);">Estimé</th>
-                            <th style="padding:10px 14px;text-align:center;border-bottom:1px solid rgba(59,130,246,0.15);font-weight:800;color:#22c55e;">Réel</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td style="padding:9px 14px;color:var(--text-sub);">Mise en place</td><td style="padding:9px 14px;text-align:center;color:var(--text-main);">30 sec</td><td style="padding:9px 14px;text-align:center;color:#22c55e;">5 sec</td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);"><td style="padding:9px 14px;color:var(--text-sub);">Usinage</td><td style="padding:9px 14px;text-align:center;color:var(--text-main);">43 sec</td><td style="padding:9px 14px;text-align:center;color:#22c55e;">40 sec</td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td style="padding:9px 14px;color:var(--text-sub);">Ébavurage</td><td style="padding:9px 14px;text-align:center;color:var(--text-main);">30 sec</td><td style="padding:9px 14px;text-align:center;color:#22c55e;">30 sec</td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);"><td style="padding:9px 14px;color:var(--text-sub);font-weight:700;">Mesure ⚡</td><td style="padding:9px 14px;text-align:center;color:#ef4444;font-weight:700;">300 sec</td><td style="padding:9px 14px;text-align:center;color:#22c55e;font-weight:700;">40 sec</td></tr>
-                        <tr><td style="padding:9px 14px;color:var(--text-sub);">Fiche de contrôle</td><td style="padding:9px 14px;text-align:center;color:var(--text-main);">30 sec</td><td style="padding:9px 14px;text-align:center;color:#22c55e;">10 sec</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="info-block" style="margin-top:20px;">
-                <div class="info-block-header">
-                    <i class="fa-solid fa-lightbulb" style="color:#f59e0b;"></i>
-                    <span>Conclusion — Variable d'apprentissage</span>
-                </div>
-                <p>Au fil des cycles, le temps de mesure a chuté de 300 sec à 40 sec grâce à l'expérience. <strong>Cette variable d'apprentissage devrait être intégrée dans le calcul du Tcyeff</strong> pour obtenir des prévisions plus réalistes.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════
-         ÉTAPE 6 : Réponses aux questions
-    ══════════════════════════════════════════ -->
-    <section class="sae-step">
-        <div class="step-header">
-            <div class="step-num">06</div>
-            <div>
-                <h3>Réponses aux questions</h3>
-                <p class="step-sub">Organisation de la semaine &amp; bilan personnel</p>
-            </div>
-        </div>
-        <div class="step-content">
-            <div class="info-block">
-                <div class="info-block-header">
-                    <i class="fa-solid fa-calendar-week" style="color:var(--primary);"></i>
-                    <span>Organisation de la semaine — personnelle et générale</span>
-                </div>
-                <p>La semaine était bien organisée grâce à l'Excel partagé : bon suivi, aucun problème majeur. J'ai cependant dû changer de poste en milieu de semaine, ce qui a nécessité de tout réapprendre. Ce changement s'est révélé bénéfique car il m'a permis de voir <strong>deux types d'opérations différentes</strong> sur la même semaine (machine conventionnelle horizontale + tour conventionnel).</p>
-            </div>
-
-            <div class="info-block" style="margin-top:16px;">
-                <div class="info-block-header">
-                    <i class="fa-solid fa-trophy" style="color:#f59e0b;"></i>
-                    <span>Résultat final — Moteur pneumatique</span>
-                </div>
-                <p>Au terme de la semaine, chaque étudiant a assemblé, huilé et rodé son moteur afin qu'il tourne librement. Mon moteur a atteint :</p>
-                <div class="trs-grid" style="margin-top:14px;grid-template-columns:1fr 1fr;">
-                    <div class="trs-card" style="border-color:rgba(59,130,246,0.3);">
-                        <div class="trs-letter" style="font-size:0.8rem;">Vitesse officielle</div>
-                        <div class="trs-val" style="color:var(--primary);">2 200</div>
-                        <div class="trs-desc">tr/min</div>
-                    </div>
-                    <div class="trs-card trs-card--do">
-                        <div class="trs-letter" style="font-size:0.8rem;">Vitesse officieuse</div>
-                        <div class="trs-val" style="color:#22c55e;">3 150</div>
-                        <div class="trs-desc">tr/min</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
  <!-- ════════════════════════════════
          Journal de bord
     ════════════════════════════════ -->
@@ -650,7 +437,7 @@
         <div class="bilan-icon"><i class="fa-solid fa-chart-line"></i></div>
         <div>
             <h3>Ce que j'ai appris</h3>
-            <p>La semaine était intense mais très enrichissante. Malgré le début difficile lié aux problèmes de perpendicularité, on prend rapidement ses marques. J'ai particulièrement apprécié la phase du piston, qui illustre bien comment l'expérience permet d'accélérer l'usinage sans compromis sur la sécurité. Au terme de la semaine, nous avons chacun assemblé, huilé et rodé notre moteur — le mien a atteint officiellement <strong>2 200 tr/min</strong>, et officieusement <strong>3 150 tr/min</strong>. Cette SAÉ m'a permis de comprendre avec un cas réel l'utilisation des indicateurs de production (Takt, Top, Tcyeff) et l'importance de la variable d'apprentissage dans les prévisions de temps.</p>
+            <p>Cette SAÉ n'est pas finie, mais m'a permis de comprendre avec un cas réel l'utilisation des indicateurs de production (Takt, Top, Tcyeff, TRS). Le fait de travailler sur une phase créée par un camarade permet d'analyser un document technique réel. Puis vient la partie usinage qui est en cours...</p>
         </div>
     </div>
 
