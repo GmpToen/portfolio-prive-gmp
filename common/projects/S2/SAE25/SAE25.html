@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAÉ 2.5 — Pièce de sécurité / Portique vertical | Portfolio Enzo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+    <link rel="stylesheet" href="../../../../../style/main.css">
+    <link rel="stylesheet" href="../../../../../style/page.css">
+    <link rel="stylesheet" href="../../../../../style/perso1.CSS">
+    <link rel="stylesheet" href="../../../../../style/responsive.css">
+    <link rel="stylesheet" href="../../../../../style/ui.css">
+    <link rel="stylesheet" href="../../../../../style/competences.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="../../../../../index.html" class="logo">
+            <img src="../../../../../common/Logo_IUT.png" alt="Logo IUT" class="nav-logo-img">
+            <span>PORTFOLIO GMP</span>
+        </a>
+        <ul>
+            <li><a href="../../../../../index.html">Accueil</a></li>
+            <li><a href="../../../../../competences.html">Compétences</a></li>
+            <li><a href="../../../../../projets.html" class="active">Projets</a></li>
+            <li><a href="../../../../../common/cv.pdf" target="_blank" class="btn-cv">Mon CV</a></li>
+            <li><button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero" style="padding: 80px 20px 40px;">
+    <div class="hero-content">
+        <span class="badge">BUT GMP — SEMESTRE 2</span>
+        <h1>SAÉ 2.5</h1>
+        <p class="description">Conception d'une pièce de sécurité — Portique vertical en treillis bi-articulé</p>
+    </div>
+</header>
+
+<main class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px 100px;">
+
+    <!-- Breadcrumb -->
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:40px;flex-wrap:wrap;">
+        <a href="../../../../../projets.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-sub);font-size:0.88rem;">
+            <i class="fa-solid fa-arrow-left"></i> Projets
+        </a>
+        <i class="fa-solid fa-chevron-right" style="color:var(--text-sub);font-size:0.7rem;"></i>
+        <a href="../../S2/s2.html" style="color:var(--text-sub);font-size:0.88rem;">Semestre 2</a>
+        <i class="fa-solid fa-chevron-right" style="color:var(--text-sub);font-size:0.7rem;"></i>
+        <span style="color:var(--primary);font-size:0.88rem;font-weight:700;">SAÉ 2.5</span>
+    </div>
+
+    <!-- Carte intro -->
+    <div class="sae-intro-card">
+        <div class="sae-intro-left">
+            <div class="sae-num-big">SAÉ 2.5</div>
+            <div class="ue-badge ue-violet">UE 2.5</div>
+            <span class="comp-level comp-level--advanced">Réalisée</span>
+            <div style="font-size:0.72rem;color:var(--text-sub);text-align:center;margin-top:4px;">Binôme<br><strong style="color:var(--text-main);">OUALI &amp; SANCHEZ</strong></div>
+        </div>
+        <div class="sae-intro-right">
+            <h2>Conception d'une pièce de sécurité — Portique vertical</h2>
+            <p>Étude mécanique complète d'un <strong>portique vertical en treillis bi-articulé</strong> soumis à une force F = 750 N (sujet 11A). L'objectif : identifier la barre la plus chargée en traction, concevoir et valider une pièce de sécurité capable de résister sans plastification.</p>
+            <div class="comp-tags" style="margin-top:14px;">
+                <span>Statique / PFS</span>
+                <span>DDS — Traction, Matage, Cisaillement</span>
+                <span>Coefficient Kt (abaques)</span>
+                <span>SolidWorks CAO + Simulation</span>
+                <span>Découpe laser CypCut</span>
+                <span>Essai de traction</span>
+                <span>RDM le Mans</span>
+            </div>
+            <!-- Résumé rapide -->
+            <div class="quick-facts" style="margin-top:16px;">
+                <div class="qf-item"><span class="qf-label">Force F</span><span class="qf-val">750 N</span></div>
+                <div class="qf-item"><span class="qf-label">Barre critique</span><span class="qf-val">N2 = 1 250 N</span></div>
+                <div class="qf-item"><span class="qf-label">Matériau barres</span><span class="qf-val">Acier S235</span></div>
+                <div class="qf-item"><span class="qf-label">Épaisseur</span><span class="qf-val">e = 4 mm</span></div>
+                <div class="qf-item"><span class="qf-label">Axe retenu</span><span class="qf-val">Ø 6 mm</span></div>
+                <div class="qf-item"><span class="qf-label">Écart max simu</span><span class="qf-val">16 % (trou treillis)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav interne -->
+    <div class="inner-nav">
+        <a href="#statique">01 Statique</a>
+        <a href="#dds">02 DDS</a>
+        <a href="#cao">03 CAO</a>
+        <a href="#cypcut">04 CypCut</a>
+        <a href="#traction">05 Traction</a>
+        <a href="#simulation">06 Simulation</a>
+        <a href="#bilan">Bilan</a>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         ÉTAPE 1 — Statique & RDM le Mans
+    ══════════════════════════════════════════ -->
+    <section class="sae-step" id="statique">
+        <div class="step-header">
+            <div class="step-num">01</div>
+            <div>
+                <h3>Calculs de statique &amp; RDM le Mans</h3>
+                <p class="step-sub">PFS nœud par nœud — 5 barres — Validation par ossature</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>Le système est un portique vertical bi-articulé composé de <strong>5 barres</strong> en acier S235 (e = 4 mm), soumis à F = 750 N au nœud A. En appliquant le <strong>PFS</strong> sur l'ensemble puis nœud par nœud (A → C → D), on obtient les efforts axiaux de chaque barre.</p>
+                    <div class="formule-box" style="margin-top:16px;">
+                        <div class="formule-row">
+                            <span class="formule-label">PFS global</span>
+                            <span class="formule-eq">Xb = 2F = 1 500 N · Yb = 0</span>
+                        </div>
+                        <div class="formule-row">
+                            <span class="formule-label">α (barre 4)</span>
+                            <span class="formule-eq">arctan(b/a) = arctan(300/400)</span>
+                            <span class="formule-vals">= 36,87°</span>
+                        </div>
+                        <div class="formule-row">
+                            <span class="formule-label">β (barre 2)</span>
+                            <span class="formule-eq">arctan(a/b) = arctan(400/300)</span>
+                            <span class="formule-vals">= 53,13°</span>
+                        </div>
+                    </div>
+
+                    <!-- Tableau des efforts -->
+                    <div style="margin-top:18px;">
+                        <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+                            <i class="fa-solid fa-table" style="color:var(--primary);"></i> Tableau récapitulatif des efforts
+                        </div>
+                        <div class="efforts-table">
+                            <div class="et-head"><span>Barre</span><span>Effort N (N)</span><span>Type</span></div>
+                            <div class="et-row"><span>Barre 1 (BD)</span><span>− 999,99</span><span class="tag-comp">Compression</span></div>
+                            <div class="et-row et-row--star"><span>Barre 2 (DC) ★</span><span>+ 1 249,98</span><span class="tag-tract">Traction ★</span></div>
+                            <div class="et-row"><span>Barre 3 (AC)</span><span>+ 999,99</span><span class="tag-tract">Traction</span></div>
+                            <div class="et-row"><span>Barre 4 (BA)</span><span>− 1 249,99</span><span class="tag-comp">Compression</span></div>
+                            <div class="et-row"><span>Barre 5 (BC)</span><span>− 749,99</span><span class="tag-comp">Compression</span></div>
+                        </div>
+                    </div>
+
+                    <div class="result-banner" style="margin-top:14px;background:rgba(245,158,11,0.07);border-color:rgba(245,158,11,0.2);">
+                        <i class="fa-solid fa-star" style="color:#f59e0b;font-size:1.1rem;flex-shrink:0;"></i>
+                        <div>
+                            <strong style="color:#f59e0b;">Barre dimensionnante : Barre 2 (DC)</strong>
+                            <p style="color:var(--text-sub);font-size:0.83rem;margin:2px 0 0;">|N2| = 1 249,98 N en traction — c'est cette barre qui fera l'objet du dimensionnement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Images RDM + Rapport ossature -->
+                <div style="display:flex;flex-direction:column;gap:14px;">
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                            <img src="portique.png" alt="Schéma portique" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-drafting-compass"></i> Schéma portique vertical — sujet 11A (α=36,87° · β=53,13°)</div>
+                    </div>
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="rdm_leman.png" alt="RDM le Mans" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-calculator"></i> Logiciel Ossature (RDM Le Mans) — validation 100%</div>
+                    </div>
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="rapport_ossature.png" alt="Rapport ossature" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-file-lines"></i> Rapport généré par Ossature — efforts identiques aux calculs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pdf-open-row" style="margin-top:20px;">
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.5rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Rapport complet SAÉ 2.5 (29 pages)</div><div class="doc-file">word_SAE_2_5_OUALI_SANCHEZ.pdf</div></div>
+                    <a href="word_SAE_2_5_OUALI_SANCHEZ.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i> Télécharger</a>
+                    <a href="word_SAE_2_5_OUALI_SANCHEZ.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ÉTAPE 2 — DDS complet
+    ══════════════════════════════════════════ -->
+    <section class="sae-step" id="dds">
+        <div class="step-header">
+            <div class="step-num">02</div>
+            <div>
+                <h3>Dimensionnement des Structures (DDS)</h3>
+                <p class="step-sub">Traction · Matage · Cisaillement · Coefficient Kt</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <!-- 4 cartes DDS en grille -->
+            <div class="dds-grid">
+                <div class="dds-card">
+                    <div class="dds-card-header"><i class="fa-solid fa-arrow-right-arrow-left"></i> Section minimale</div>
+                    <div class="dds-body">
+                        <p>Rpe = Re/S = 285/2 = <strong>142,5 MPa</strong></p>
+                        <p>S ≥ |N2|/Rpe = 1249,98/142,5 = <strong>8,77 mm²</strong></p>
+                        <p>Hc = S/e = 8,77/4 = 2,19 mm → arrondi : <strong>Hc = 3 mm</strong></p>
+                        <p>S centrale = 3 × 4 = <strong>12 mm²</strong></p>
+                        <p>σnom = 1250/12 = <strong>104,17 MPa &lt; Rpe ✓</strong></p>
+                    </div>
+                </div>
+                <div class="dds-card">
+                    <div class="dds-card-header"><i class="fa-solid fa-circle-dot"></i> Vérification matage</div>
+                    <div class="dds-body">
+                        <p>Padm = 530 MPa · Eeq = 200 000 MPa</p>
+                        <p>neq = 0,175 × F × E / (L × Padm²) = <strong>38,94 mm</strong></p>
+                        <p>Ømin = 2 × naxe_mini = 2 × 2,83 = <strong>5,66 mm</strong></p>
+                        <p>→ Ø retenu = <strong>6 mm ≥ 5,66 mm ✓</strong></p>
+                    </div>
+                </div>
+                <div class="dds-card">
+                    <div class="dds-card-header"><i class="fa-solid fa-scissors"></i> Vérification cisaillement</div>
+                    <div class="dds-body">
+                        <p>Rpg = Re/S = 780/3 = <strong>260 MPa</strong></p>
+                        <p>Saxe = π×6²/4 = <strong>28,27 mm²</strong></p>
+                        <p>τ = N2/Saxe = 1249,98/28,27</p>
+                        <p>τ = <strong>22,10 MPa &lt; Rpg (260 MPa) ✓</strong></p>
+                    </div>
+                </div>
+                <div class="dds-card dds-card--kt">
+                    <div class="dds-card-header"><i class="fa-solid fa-magnifying-glass-chart"></i> Coefficient Kt (abaques)</div>
+                    <div class="dds-body">
+                        <p>Hc = 3 mm → H = d+Hc = 9 mm · d/H = 0,667 → <strong>Kt ≈ 2,1</strong></p>
+                        <p>σmax = 104×2,1 ≈ 208 MPa <span style="color:#ef4444;">❌ &gt; Rpe</span></p>
+                        <p>Itération Hc=5 mm → H=11 mm · d/H=0,545 → <strong>Kt ≈ 2,17</strong></p>
+                        <p>σmax = (1250/20)×2,17 ≈ <strong>134 MPa &lt; Rpe ✓</strong></p>
+                        <p style="margin-top:8px;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Treillis — extrémité : d/l=6/12=0,5 → <strong>Kt ≈ 2,7</strong></p>
+                        <p>σmax = (1250/24)×2,7 ≈ <strong>140,6 MPa &lt; Rpe ✓</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Allongement -->
+            <div class="info-block" style="margin-top:16px;">
+                <div class="info-block-header"><i class="fa-solid fa-ruler-horizontal" style="color:var(--primary);"></i><span>Allongement de la barre N2</span></div>
+                <p>ΔL₂ = N₂ × L₂ / (E × S) = 1249,98 × 300 / (200 000 × 12) = <strong>0,15 mm</strong> — valeur trop faible pour influer sur le reste de la SAÉ, mais calculée pour la DDS.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ÉTAPE 3 — CAO & Mises en plan
+    ══════════════════════════════════════════ -->
+    <section class="sae-step" id="cao">
+        <div class="step-header">
+            <div class="step-num">03</div>
+            <div>
+                <h3>Modélisation CAO &amp; Mises en plan</h3>
+                <p class="step-sub">Éprouvette d'essai + Treillis N2 — SolidWorks</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>Nous avons modélisé <strong>deux pièces</strong> sur SolidWorks : l'éprouvette d'essai (avec trou central Ø6) et la biellette de liaison N2 (treillis réel). Les dessins de définition respectent les règles de cotation ISO avec cotes bi-limites, tolérances et spécifications géométriques.</p>
+                    <div class="info-block" style="margin-top:14px;">
+                        <div class="info-block-header"><i class="fa-solid fa-ruler-combined" style="color:var(--primary);"></i><span>Dimensions finales retenues</span></div>
+                        <div class="two-col-mini" style="margin-top:8px;">
+                            <div>
+                                <div style="font-size:0.78rem;font-weight:800;color:var(--text-sub);margin-bottom:6px;">ÉPROUVETTE</div>
+                                <ul class="check-list">
+                                    <li><i class="fa-solid fa-circle" style="color:var(--primary);font-size:0.45rem;margin-top:5px;"></i> Longueur : 140 ±0,5 mm</li>
+                                    <li><i class="fa-solid fa-circle" style="color:var(--primary);font-size:0.45rem;margin-top:5px;"></i> Zone centrale : 69,5 + 55,5 mm</li>
+                                    <li><i class="fa-solid fa-circle" style="color:var(--primary);font-size:0.45rem;margin-top:5px;"></i> Hc = 5,5 mm · R14,5</li>
+                                    <li><i class="fa-solid fa-circle" style="color:var(--primary);font-size:0.45rem;margin-top:5px;"></i> Ø6 ±0,1 · e = 4 mm</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div style="font-size:0.78rem;font-weight:800;color:var(--text-sub);margin-bottom:6px;">TREILLIS N2</div>
+                                <ul class="check-list">
+                                    <li><i class="fa-solid fa-circle" style="color:#8b5cf6;font-size:0.45rem;margin-top:5px;"></i> Longueur : 300 ±0,05 mm</li>
+                                    <li><i class="fa-solid fa-circle" style="color:#8b5cf6;font-size:0.45rem;margin-top:5px;"></i> R15,00 · Hc extrémité = 6 mm</li>
+                                    <li><i class="fa-solid fa-circle" style="color:#8b5cf6;font-size:0.45rem;margin-top:5px;"></i> Ø6 ±0,1 · R6 +0,5/0,0</li>
+                                    <li><i class="fa-solid fa-circle" style="color:#8b5cf6;font-size:0.45rem;margin-top:5px;"></i> Objectif : ratio rigidité/masse max</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="cao_eprouvette.png" alt="CAO éprouvette" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-cube"></i> CAO SolidWorks — Éprouvette d'essai</div>
+                    </div>
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="cao_treillis.png" alt="CAO treillis" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-cube"></i> CAO SolidWorks — Biellette Treillis N2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 mises en plan -->
+            <div class="img-duo-grid" style="margin-top:16px;">
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                        <img src="mep_eprouvette.png" alt="Mise en plan éprouvette" class="viewer-img">
+                    </div>
+                    <div class="img-caption"><i class="fa-solid fa-ruler"></i> Dessin de définition — Éprouvette (BU T GMP S2 - SAÉ 2.5)</div>
+                </div>
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                        <img src="mep_treillis.png" alt="Mise en plan treillis" class="viewer-img">
+                    </div>
+                    <div class="img-caption"><i class="fa-solid fa-ruler"></i> Dessin de définition — Treillis N2 (échelle 2:3)</div>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.4rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Mise en plan — Éprouvette</div><div class="doc-file">mep_eprouvette_SAE25.pdf</div></div>
+                    <a href="mep_eprouvette_SAE25.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i> Télécharger</a>
+                    <a href="mep_eprouvette_SAE25.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                </div>
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.4rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Mise en plan — Treillis N2</div><div class="doc-file">mep_treillis_SAE25.pdf</div></div>
+                    <a href="mep_treillis_SAE25.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i> Télécharger</a>
+                    <a href="mep_treillis_SAE25.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ÉTAPE 4 — CypCut & Fiche de contrôle
+    ══════════════════════════════════════════ -->
+    <section class="sae-step" id="cypcut">
+        <div class="step-header">
+            <div class="step-num">04</div>
+            <div>
+                <h3>Découpe laser CypCut &amp; Fiche de contrôle</h3>
+                <p class="step-sub">Panoplie TD — CUM 49% — Contrôle métrologique</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>Deux fichiers CypCut ont été créés : un fichier pièce seule pour paramétrer les entrées/surépaisseurs, et un <strong>fichier panoplie</strong> incluant toutes les éprouvettes du TD. Notre panoplie a été <strong>sélectionnée pour la découpe réelle</strong>.</p>
+                    <div class="conn-banner" style="margin-top:14px;background:rgba(34,197,94,0.07);border-color:rgba(34,197,94,0.2);">
+                        <i class="fa-solid fa-check-circle" style="color:#22c55e;font-size:1.2rem;flex-shrink:0;"></i>
+                        <div><strong style="color:#22c55e;">Panoplie sélectionnée pour la découpe</strong><p style="font-size:0.82rem;color:var(--text-sub);margin:2px 0 0;">CUM optimisé à 49% · 2ème plaque de 5 pièces obligatoire (géométrie)</p></div>
+                    </div>
+
+                    <!-- Fiche de contrôle -->
+                    <div style="margin-top:16px;">
+                        <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+                            <i class="fa-solid fa-clipboard-check" style="color:var(--primary);"></i> Fiche de contrôle
+                        </div>
+                        <div class="ctrl-table">
+                            <div class="ctrl-head"><span>Côtes à contrôler</span><span>Machine utilisée</span></div>
+                            <div class="ctrl-row"><span>Ø6 ±0,1</span><span>Métrios ou tampon lisse</span></div>
+                            <div class="ctrl-row"><span>Côte encadrée 40 ±0,5 mm</span><span>Pied à coulisse</span></div>
+                            <div class="ctrl-row"><span>Côte encadrée 5,5 ±0,5 mm</span><span>Pige dans l'alésage + pied à coulisse</span></div>
+                            <div class="ctrl-row"><span>Côte encadrée 69,5+55,5 ±0,5 mm</span><span>Pied à coulisse + pige (sans rayon)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="eprouvette_cypcut.png" alt="Éprouvette CypCut" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-crosshairs"></i> Éprouvette seule sur CypCut</div>
+                    </div>
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="panoplie_cypcut.png" alt="Panoplie CypCut" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-layer-group"></i> Panoplie TD — CypCut Laser Cutting System</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pdf-open-row" style="margin-top:16px;">
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-code" style="color:#8b5cf6;font-size:1.5rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Fichier panoplie CypCut (TD)</div><div class="doc-file">panoplie_TD_SAE25.lxd</div></div>
+                    <a href="panoplie_TD_SAE25.lxd" download class="pdf-open-btn" style="background:#8b5cf6;"><i class="fa-solid fa-download"></i> Télécharger</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ÉTAPE 5 — Essai de traction
+    ══════════════════════════════════════════ -->
+    <section class="sae-step" id="traction">
+        <div class="step-header">
+            <div class="step-num">05</div>
+            <div>
+                <h3>Essai de traction &amp; interprétation</h3>
+                <p class="step-sub">Banc RDM — Éprouvette sans trou vs avec trou — Graphe σ/ε</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>Après découpe laser et ébavurage, les éprouvettes ont été testées en laboratoire RDM. Deux essais comparatifs : une éprouvette <strong>sans trou</strong> (référence — même module de Young) et <strong>notre éprouvette avec trou</strong> pour obtenir le graphe contrainte/déformation combiné.</p>
+                    <div class="img-duo-grid" style="margin-top:14px;grid-template-columns:1fr 1fr;">
+                        <div class="img-viewer-card">
+                            <div class="img-viewer-wrap" style="aspect-ratio:3/4;">
+                                <img src="piece_banc.png" alt="Pièce sur banc" class="viewer-img">
+                            </div>
+                            <div class="img-caption"><i class="fa-solid fa-wrench"></i> Banc d'essai traction</div>
+                        </div>
+                        <div class="img-viewer-card">
+                            <div class="img-viewer-wrap" style="aspect-ratio:3/4;">
+                                <img src="piece_cassee.png" alt="Pièce cassée" class="viewer-img">
+                            </div>
+                            <div class="img-caption"><i class="fa-solid fa-circle-xmark"></i> Éprouvette après rupture</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap" style="aspect-ratio:16/10;">
+                        <img src="graph_traction.png" alt="Graphe traction" class="viewer-img">
+                    </div>
+                    <div class="img-caption"><i class="fa-solid fa-chart-line"></i> Contrainte (MPa) en fonction de la déformation (%) — orange: sans trou · bleu: avec trou</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ÉTAPE 6 — Simulation SolidWorks
+    ══════════════════════════════════════════ -->
+    <section class="sae-step" id="simulation">
+        <div class="step-header">
+            <div class="step-num">06</div>
+            <div>
+                <h3>Simulation SolidWorks VS Calcul</h3>
+                <p class="step-sub">4 zones analysées — Écart max 16% au trou du treillis</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <p>Un tableur Excel réunit toutes les valeurs pour simplifier les calculs répétitifs et générer les graphes de comparaison. La simulation SolidWorks a été réalisée à différents niveaux d'effort (250 N à 5000 N) sur 4 zones.</p>
+
+            <div class="img-duo-grid" style="margin-top:16px;">
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                        <img src="simu_eprouvette.png" alt="Simulation éprouvette" class="viewer-img">
+                    </div>
+                    <div class="img-caption"><i class="fa-solid fa-cube"></i> Simulation Von Mises — Trou éprouvette (5000 N → 500,6 MPa)</div>
+                </div>
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                        <img src="simu_treillis.png" alt="Simulation treillis" class="viewer-img">
+                    </div>
+                    <div class="img-caption"><i class="fa-solid fa-cube"></i> Simulation Von Mises — Extrémité treillis (trou)</div>
+                </div>
+            </div>
+
+            <!-- Tableau comparatif 4 zones -->
+            <div class="compare-table-wrap" style="margin-top:22px;">
+                <h4 class="table-title"><i class="fa-solid fa-table"></i> Synthèse calcul vs simulation — 4 zones</h4>
+                <div class="compare-table-grid four-col">
+
+                    <div class="compare-table-card card-green">
+                        <div class="ctc-header">Éprouvette (trou)</div>
+                        <div class="ctc-row ctc-head"><span>N (N)</span><span>Calculé</span><span>Simulé</span><span>Écart</span></div>
+                        <div class="ctc-row"><span>5000</span><span>495,45</span><span>500,6</span><span class="ecart-ok">+1%</span></div>
+                        <div class="ctc-row"><span>1250</span><span>123,86</span><span>125</span><span class="ecart-ok">+1%</span></div>
+                        <div class="ctc-row"><span>750</span><span>74,32</span><span>74,64</span><span class="ecart-ok">0%</span></div>
+                        <div class="ctc-note">Calcul très proche de la simulation ≈ 0–1%</div>
+                    </div>
+
+                    <div class="compare-table-card card-blue">
+                        <div class="ctc-header">Treillis trou</div>
+                        <div class="ctc-row ctc-head"><span>N (N)</span><span>Calculé</span><span>Simulé</span><span>Écart</span></div>
+                        <div class="ctc-row"><span>5000</span><span>552,08</span><span>473,90</span><span class="ecart-neg">-16%</span></div>
+                        <div class="ctc-row"><span>1250</span><span>138,02</span><span>118,5</span><span class="ecart-neg">-16%</span></div>
+                        <div class="ctc-row"><span>750</span><span>82,81</span><span>71,22</span><span class="ecart-neg">-16%</span></div>
+                        <div class="ctc-note">Calcul surestime — différence constante -16% (Kt?)</div>
+                    </div>
+
+                    <div class="compare-table-card" style="border-color:rgba(148,163,184,0.2);">
+                        <div class="ctc-header" style="background:rgba(148,163,184,0.1);color:var(--text-sub);">Treillis section centrale</div>
+                        <div class="ctc-row ctc-head"><span>N (N)</span><span>Calculé</span><span>Simulé</span><span>Écart</span></div>
+                        <div class="ctc-row"><span>5000</span><span>416,67</span><span>417,08</span><span class="ecart-ok">0%</span></div>
+                        <div class="ctc-row"><span>1250</span><span>104,17</span><span>104,27</span><span class="ecart-ok">0%</span></div>
+                        <div class="ctc-row"><span>750</span><span>62,50</span><span>62,56</span><span class="ecart-ok">0%</span></div>
+                        <div class="ctc-note">Quasi-parfait — écart 0% sur toute la plage</div>
+                    </div>
+
+                    <div class="compare-table-card card-orange">
+                        <div class="ctc-header">Treillis rayon</div>
+                        <div class="ctc-row ctc-head"><span>N (N)</span><span>Calculé</span><span>Simulé</span><span>Écart</span></div>
+                        <div class="ctc-row"><span>5000</span><span>455,42</span><span>432,65</span><span class="ecart-pos">-5%</span></div>
+                        <div class="ctc-row"><span>1250</span><span>113,85</span><span>108,16</span><span class="ecart-pos">-5%</span></div>
+                        <div class="ctc-row"><span>750</span><span>68,31</span><span>64,90</span><span class="ecart-pos">-5%</span></div>
+                        <div class="ctc-note">Calcul surestime légèrement — ≈ -5%</div>
+                    </div>
+
+                </div>
+                <div class="ctc-conclusion">
+                    <i class="fa-solid fa-circle-info" style="color:var(--primary);flex-shrink:0;margin-top:2px;"></i>
+                    <p>L'éprouvette et la section centrale donnent des résultats quasi-identiques (0–1%). L'écart de <strong>16% au trou du treillis</strong> est probablement dû à une imprécision dans la lecture des abaques pour le Kt — une valeur Kt = 2,27 au lieu de 2,7 suffirait à annuler l'écart.</p>
+                </div>
+            </div>
+
+            <div class="img-viewer-card" style="margin-top:16px;">
+                <div class="img-viewer-wrap" style="aspect-ratio:16/7;">
+                    <img src="graphiques_comparaison.png" alt="Graphiques comparaison" class="viewer-img">
+                </div>
+                <div class="img-caption"><i class="fa-solid fa-chart-area"></i> Graphiques de comparaison calcul / simulation — 4 zones (Excel)</div>
+            </div>
+
+            <div class="pdf-open-row" style="margin-top:16px;">
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-excel" style="color:#22c55e;font-size:1.5rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Tableau comparatif calcul / simulation (Excel)</div><div class="doc-file">comparatif_simulation_SAE25.xlsx</div></div>
+                    <a href="comparatif_simulation_SAE25.xlsx" download class="pdf-open-btn" style="background:#22c55e;"><i class="fa-solid fa-download"></i> Télécharger</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal de bord -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num" style="background:rgba(148,163,184,0.12);color:var(--text-sub);border-color:rgba(148,163,184,0.2);font-size:0.9rem;">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div><h3>Journal de bord</h3><p class="step-sub">5 séances d'autonomie</p></div>
+        </div>
+        <div class="step-content">
+            <div class="jdb-grid">
+                <div class="jdb-entry">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie 1</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> 17 avril 2026</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Calcul manuscrit — expressions littérales et applications numériques</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Utilisation de RDM le Mans et convergence des résultats</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Étude DDS sur la pièce d'essai</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Croquis cotés et commentés des 2 pièces</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Diaporama de convergence déposé sur le réseau</li>
+                    </ul>
+                </div>
+                <div class="jdb-entry">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie 2</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> 10 juin 2026</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Finalisation CAO et dessins de définition des 2 versions</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Personnalisation du cartouche et choix des vues</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Intégration cotes bi-limites, tolérances et spécifications géométriques</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Dépôt des 4 fichiers CAO sur le réseau</li>
+                    </ul>
+                </div>
+                <div class="jdb-entry">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie CypCut</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> 27 mai 2026</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Réalisation de la panoplie pour la découpe (TD et TP)</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Comparaison de l'utilisation de matière entre configurations</li>
+                    </ul>
+                </div>
+                <div class="jdb-entry">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie 4</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> 10 juin 2026</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Finalisation du fichier de découpe individuel au format LXD</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Rédaction de la fiche de contrôle qualité numérisée</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Rassemblement des fichiers pour la mise en bande globale du TD</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Optimisation et calcul du CUM</li>
+                    </ul>
+                </div>
+                <div class="jdb-entry" style="grid-column:1/-1;">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie 5</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> 11 juin 2026</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Rapport final de la SAÉ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Annexe -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num" style="background:rgba(148,163,184,0.12);color:var(--text-sub);border-color:rgba(148,163,184,0.2);">+</div>
+            <div><h3>Annexe — Tous les documents</h3><p class="step-sub">Téléchargement de l'ensemble des livrables</p></div>
+        </div>
+        <div class="step-content">
+            <div class="docs-grid">
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.4rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Rapport complet SAÉ 2.5 (29 p.)</div><div class="doc-file">word_SAE_2_5_OUALI_SANCHEZ.pdf</div></div>
+                    <a href="word_SAE_2_5_OUALI_SANCHEZ.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i></a>
+                    <a href="word_SAE_2_5_OUALI_SANCHEZ.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                </div>
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.4rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Mise en plan — Éprouvette</div><div class="doc-file">mep_eprouvette_SAE25.pdf</div></div>
+                    <a href="mep_eprouvette_SAE25.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i></a>
+                    <a href="mep_eprouvette_SAE25.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                </div>
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.4rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Mise en plan — Treillis N2</div><div class="doc-file">mep_treillis_SAE25.pdf</div></div>
+                    <a href="mep_treillis_SAE25.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i></a>
+                    <a href="mep_treillis_SAE25.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                </div>
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-code" style="color:#8b5cf6;font-size:1.4rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Panoplie CypCut — TD</div><div class="doc-file">panoplie_TD_SAE25.lxd</div></div>
+                    <a href="panoplie_TD_SAE25.lxd" download class="pdf-open-btn" style="background:#8b5cf6;"><i class="fa-solid fa-download"></i> Télécharger</a>
+                </div>
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-excel" style="color:#22c55e;font-size:1.4rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Tableau comparatif calcul/simulation</div><div class="doc-file">comparatif_simulation_SAE25.xlsx</div></div>
+                    <a href="comparatif_simulation_SAE25.xlsx" download class="pdf-open-btn" style="background:#22c55e;"><i class="fa-solid fa-download"></i> Télécharger</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BILAN -->
+    <div class="sae-bilan" id="bilan">
+        <div class="bilan-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div>
+            <h3>Ce que j'ai appris</h3>
+            <p>Cette SAÉ m'a littéralement fait un déblocage sur la compréhension du dimensionnement des structures. J'ai pu développer mes compétences en <strong>calcul de contraintes</strong> (matage, nominal, Kt) et en analyse de résultats simulés vs calculés. La démarche complète — de l'étude statique jusqu'à la pièce réelle testée sur banc — consolide une méthodologie d'ingénierie structurée et rigoureuse.</p>
+        </div>
+    </div>
+
+</main>
+
+<a href="#" id="back-top" class="back-btn-floating"><i class="fa-solid fa-chevron-up"></i></a>
+
+<style>
+/* ── Badges ── */
+.ue-violet{background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.25);}
+.comp-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.comp-tags span{white-space:normal;word-break:break-word;}
+
+/* ── Quick facts ── */
+.quick-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.qf-item{display:flex;flex-direction:column;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.15);border-radius:8px;padding:6px 12px;min-width:90px;}
+.qf-label{font-size:.68rem;color:var(--text-sub);font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+.qf-val{font-size:.88rem;font-weight:800;color:var(--primary);}
+
+/* ── Inner nav ── */
+.inner-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;padding:16px;background:var(--bg-card);border-radius:14px;border:1px solid rgba(255,255,255,.05);box-shadow:var(--card-shadow);}
+.light-mode .inner-nav{border-color:rgba(0,0,0,.06);}
+.inner-nav a{font-size:.82rem;font-weight:700;color:var(--text-sub);padding:6px 14px;border-radius:8px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);transition:all .2s;}
+.inner-nav a:hover{background:rgba(59,130,246,.15);color:var(--primary);}
+
+/* ── Intro card ── */
+.sae-intro-card{display:flex;gap:30px;align-items:flex-start;background:var(--bg-card);border-radius:20px;padding:35px;border:1px solid rgba(59,130,246,.15);box-shadow:var(--card-shadow);margin-bottom:30px;}
+.sae-intro-left{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:100px;}
+.sae-num-big{font-family:monospace;font-size:1rem;font-weight:800;color:var(--primary);background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.25);padding:6px 14px;border-radius:8px;letter-spacing:.05em;white-space:nowrap;}
+.ue-badge{font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;white-space:nowrap;}
+.sae-intro-right h2{font-size:1.45rem;font-weight:900;margin-bottom:10px;line-height:1.2;}
+.sae-intro-right p{color:var(--text-sub);font-size:.93rem;line-height:1.7;}
+
+/* ── Steps ── */
+.sae-step{margin-bottom:40px;}
+.step-header{display:flex;align-items:center;gap:18px;margin-bottom:20px;}
+.step-num{width:48px;height:48px;min-width:48px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:1rem;font-weight:900;color:var(--primary);}
+.step-header h3{font-size:1.12rem;font-weight:800;margin-bottom:4px;}
+.step-sub{color:var(--text-sub);font-size:.87rem;}
+.step-content{background:var(--bg-card);border-radius:16px;padding:26px;border:1px solid rgba(255,255,255,.05);box-shadow:var(--card-shadow);}
+.light-mode .step-content{border-color:rgba(0,0,0,.06);}
+.step-content>p{color:var(--text-sub);font-size:.92rem;line-height:1.7;margin-bottom:0;}
+.step-content>p+p{margin-top:8px;}
+.step-content>p strong{color:var(--text-main);}
+
+/* ── 2 col ── */
+.two-col-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.two-col-mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+/* ── Info block ── */
+.info-block{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.13);border-radius:14px;padding:16px;}
+.info-block-header{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.92rem;color:var(--text-main);margin-bottom:8px;}
+.info-block p{color:var(--text-sub);font-size:.87rem;line-height:1.6;}
+.info-block p strong{color:var(--text-main);}
+
+/* ── Efforts table ── */
+.efforts-table{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
+.light-mode .efforts-table{border-color:rgba(0,0,0,.07);}
+.et-head{display:grid;grid-template-columns:1.5fr 1fr 1fr;padding:8px 14px;background:rgba(59,130,246,.1);font-size:.75rem;font-weight:800;color:var(--primary);}
+.et-row{display:grid;grid-template-columns:1.5fr 1fr 1fr;padding:7px 14px;border-top:1px solid rgba(255,255,255,.04);font-size:.8rem;color:var(--text-sub);align-items:center;}
+.light-mode .et-row{border-top-color:rgba(0,0,0,.05);}
+.et-row--star{background:rgba(245,158,11,.06)!important;font-weight:700;color:var(--text-main)!important;}
+.tag-comp{display:inline-block;background:rgba(239,68,68,.12);color:#ef4444;padding:2px 8px;border-radius:6px;font-size:.7rem;font-weight:700;width:fit-content;}
+.tag-tract{display:inline-block;background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;border-radius:6px;font-size:.7rem;font-weight:700;width:fit-content;}
+
+/* ── Result banner ── */
+.result-banner{display:flex;align-items:flex-start;gap:12px;border-radius:12px;padding:14px 16px;}
+.result-banner strong{display:block;font-size:.9rem;}
+
+/* ── Formule box ── */
+.formule-box{background:rgba(0,0,0,.12);border-radius:12px;border:1px solid rgba(255,255,255,.05);overflow:hidden;}
+.light-mode .formule-box{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.07);}
+.formule-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);font-size:.83rem;}
+.light-mode .formule-row{border-bottom-color:rgba(0,0,0,.06);}
+.formule-row:last-child{border-bottom:none;}
+.formule-label{font-family:monospace;font-weight:900;color:var(--primary);background:rgba(59,130,246,.1);padding:2px 8px;border-radius:6px;white-space:nowrap;font-size:.79rem;}
+.formule-eq{color:var(--text-main);font-weight:600;}
+.formule-vals{color:var(--text-sub);font-size:.78rem;font-style:italic;}
+
+/* ── DDS grid ── */
+.dds-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;}
+.dds-card{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.13);border-radius:14px;overflow:hidden;}
+.dds-card--kt{border-color:rgba(245,158,11,.2);background:rgba(245,158,11,.04);}
+.dds-card-header{padding:10px 16px;font-weight:800;font-size:.83rem;background:rgba(59,130,246,.1);color:var(--primary);display:flex;align-items:center;gap:8px;}
+.dds-card--kt .dds-card-header{background:rgba(245,158,11,.1);color:#f59e0b;}
+.dds-body{padding:14px 16px;display:flex;flex-direction:column;gap:5px;}
+.dds-body p{font-size:.8rem;color:var(--text-sub);line-height:1.55;margin:0;}
+.dds-body p strong{color:var(--text-main);}
+
+/* ── Check list ── */
+.check-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin:0;padding:0;}
+.check-list li{display:flex;align-items:flex-start;gap:8px;color:var(--text-sub);font-size:.86rem;line-height:1.5;}
+.check-list li i{margin-top:2px;flex-shrink:0;}
+
+/* ── Ctrl table ── */
+.ctrl-table{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
+.light-mode .ctrl-table{border-color:rgba(0,0,0,.07);}
+.ctrl-head{display:grid;grid-template-columns:1.4fr 1.6fr;padding:8px 14px;background:rgba(59,130,246,.1);font-size:.75rem;font-weight:800;color:var(--primary);}
+.ctrl-row{display:grid;grid-template-columns:1.4fr 1.6fr;padding:7px 14px;border-top:1px solid rgba(255,255,255,.04);font-size:.79rem;color:var(--text-sub);}
+.light-mode .ctrl-row{border-top-color:rgba(0,0,0,.05);}
+
+/* ── Conn banner ── */
+.conn-banner{display:flex;align-items:center;gap:12px;border-radius:12px;padding:14px 18px;}
+.conn-banner strong{display:block;font-size:.88rem;}
+
+/* ── Images ── */
+.img-duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.img-viewer-card{border-radius:14px;overflow:hidden;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);}
+.light-mode .img-viewer-card{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.07);}
+.img-viewer-wrap{position:relative;width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.viewer-img{width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;}
+.img-caption{padding:8px 14px;font-size:.78rem;color:var(--text-sub);display:flex;align-items:center;gap:7px;border-top:1px solid rgba(255,255,255,.05);}
+.light-mode .img-caption{border-top-color:rgba(0,0,0,.06);}
+
+/* ── Compare table ── */
+.compare-table-wrap{background:rgba(0,0,0,.08);border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,.05);}
+.light-mode .compare-table-wrap{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.06);}
+.table-title{font-size:.9rem;font-weight:800;color:var(--text-main);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.table-title i{color:var(--primary);}
+.compare-table-grid.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.compare-table-card{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
+.light-mode .compare-table-card{border-color:rgba(0,0,0,.08);}
+.card-green{border-color:rgba(34,197,94,.2);}
+.card-blue{border-color:rgba(59,130,246,.2);}
+.card-orange{border-color:rgba(249,115,22,.2);}
+.ctc-header{padding:9px 12px;font-weight:800;font-size:.78rem;text-align:center;background:rgba(59,130,246,.1);color:var(--primary);}
+.card-green .ctc-header{background:rgba(34,197,94,.1);color:#22c55e;}
+.card-orange .ctc-header{background:rgba(249,115,22,.1);color:#fb923c;}
+.ctc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:5px 10px;font-size:.72rem;border-top:1px solid rgba(255,255,255,.04);}
+.light-mode .ctc-row{border-top-color:rgba(0,0,0,.05);}
+.ctc-head{background:rgba(255,255,255,.03);font-weight:700;color:var(--text-sub);font-size:.68rem;}
+.light-mode .ctc-head{background:rgba(0,0,0,.03);}
+.ctc-row span{color:var(--text-sub);}
+.ecart-ok{color:#22c55e!important;font-weight:700;}
+.ecart-pos{color:#f59e0b!important;font-weight:700;}
+.ecart-neg{color:#ef4444!important;font-weight:700;}
+.ctc-note{grid-column:1/-1;padding:6px 10px;font-size:.7rem;color:var(--text-sub);font-style:italic;border-top:1px solid rgba(255,255,255,.06);}
+.light-mode .ctc-note{border-top-color:rgba(0,0,0,.06);}
+.ctc-conclusion{display:flex;align-items:flex-start;gap:10px;margin-top:14px;background:rgba(59,130,246,.06);border-radius:10px;padding:12px 16px;}
+.ctc-conclusion p{font-size:.83rem;color:var(--text-sub);margin:0;line-height:1.6;}
+.ctc-conclusion p strong{color:var(--text-main);}
+
+/* ── JDB ── */
+.jdb-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.jdb-entry{background:rgba(59,130,246,.04);border:1px solid rgba(59,130,246,.1);border-radius:14px;padding:18px;}
+.jdb-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.jdb-num{font-family:monospace;font-size:.8rem;font-weight:900;color:var(--primary);background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2);padding:3px 10px;border-radius:6px;}
+.jdb-date{font-size:.76rem;color:var(--text-sub);display:flex;align-items:center;gap:5px;}
+
+/* ── PDF open ── */
+.pdf-open-row{margin-top:16px;}
+.pdf-open-card{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:12px;padding:12px 16px;}
+.doc-name{font-weight:700;font-size:.88rem;color:var(--text-main);margin-bottom:2px;}
+.doc-file{font-size:.73rem;color:var(--text-sub);font-family:monospace;}
+.pdf-open-btn{display:inline-flex;align-items:center;gap:5px;background:var(--primary);color:white!important;border-radius:8px;padding:7px 14px;font-size:.8rem;font-weight:700;white-space:nowrap;flex-shrink:0;transition:transform .2s,box-shadow .2s;}
+.pdf-open-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(59,130,246,.4);}
+.btn-outline{background:transparent!important;border:1px solid rgba(59,130,246,.35);color:#60a5fa!important;}
+.light-mode .btn-outline{color:#2563eb!important;}
+.docs-grid{display:flex;flex-direction:column;gap:10px;}
+
+/* ── Bilan ── */
+.sae-bilan{background:var(--bg-card);border-radius:20px;padding:32px;border:1px solid rgba(59,130,246,.15);box-shadow:var(--card-shadow);display:flex;align-items:flex-start;gap:22px;margin-top:50px;}
+.bilan-icon{width:54px;height:54px;min-width:54px;background:rgba(59,130,246,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--primary);border:1px solid rgba(59,130,246,.2);}
+.sae-bilan h3{font-size:1.05rem;font-weight:800;margin-bottom:7px;}
+.sae-bilan p{color:var(--text-sub);font-size:.9rem;line-height:1.65;}
+.sae-bilan p strong{color:var(--text-main);}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+    .dds-grid{grid-template-columns:1fr;}
+    .compare-table-grid.four-col{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+    .sae-intro-card{flex-direction:column;gap:18px;padding:22px;}
+    .sae-intro-left{flex-direction:row;min-width:unset;align-items:center;flex-wrap:wrap;}
+    .sae-intro-right h2{font-size:1.25rem;}
+    .step-content{padding:16px;}
+    .two-col-grid,.img-duo-grid,.two-col-mini{grid-template-columns:1fr;}
+    .dds-grid{grid-template-columns:1fr;}
+    .jdb-grid{grid-template-columns:1fr;}
+    .compare-table-grid.four-col{grid-template-columns:1fr;}
+    .sae-bilan{flex-direction:column;gap:14px;padding:22px;}
+    .inner-nav{gap:6px;}
+    .quick-facts{gap:6px;}
+}
+</style>
+
+<script>
+const btn = document.getElementById("theme-toggle");
+const icon = btn.querySelector("i");
+function updateIcon(){icon.className=document.documentElement.classList.contains("light-mode")?"fa-solid fa-sun":"fa-solid fa-moon";}
+updateIcon();
+btn.addEventListener("click",()=>{const l=document.documentElement.classList.toggle("light-mode");localStorage.setItem("theme",l?"light":"dark");updateIcon();});
+const backBtn=document.getElementById("back-top");
+window.addEventListener("scroll",()=>{backBtn.classList.toggle("visible",window.scrollY>300);});
+backBtn.addEventListener("click",e=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});});
+// Smooth scroll nav interne
+document.querySelectorAll('.inner-nav a').forEach(a=>{
+    a.addEventListener('click',e=>{
+        const target=document.querySelector(a.getAttribute('href'));
+        if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+});
+</script>
+</body>
+</html>
