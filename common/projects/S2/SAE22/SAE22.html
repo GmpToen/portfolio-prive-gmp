@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAÉ 2.2 — Implantation d'un îlot robotisé | Portfolio Enzo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+    <link rel="stylesheet" href="../../../../../style/main.css">
+    <link rel="stylesheet" href="../../../../../style/page.css">
+    <link rel="stylesheet" href="../../../../../style/perso1.CSS">
+    <link rel="stylesheet" href="../../../../../style/responsive.css">
+    <link rel="stylesheet" href="../../../../../style/ui.css">
+    <link rel="stylesheet" href="../../../../../style/competences.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="../../../../../index.html" class="logo">
+            <img src="../../../../../common/Logo_IUT.png" alt="Logo IUT" class="nav-logo-img">
+            <span>PORTFOLIO GMP</span>
+        </a>
+        <ul>
+            <li><a href="../../../../../index.html">Accueil</a></li>
+            <li><a href="../../../../../competences.html">Compétences</a></li>
+            <li><a href="../../../../../projets.html" class="active">Projets</a></li>
+            <li><a href="../../../../../common/cv.pdf" target="_blank" class="btn-cv">Mon CV</a></li>
+            <li><button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero" style="padding: 80px 20px 40px;">
+    <div class="hero-content">
+        <span class="badge">BUT GMP — SEMESTRE 2</span>
+        <h1>SAÉ 2.2</h1>
+        <p class="description">Implantation d'un îlot robotisé de production — Soudage MIG automatisé</p>
+    </div>
+</header>
+
+<main class="container" style="max-width:1100px;margin:0 auto;padding:0 20px 100px;">
+
+    <!-- Breadcrumb -->
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:40px;flex-wrap:wrap;">
+        <a href="../../../../../projets.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-sub);font-size:.88rem;"><i class="fa-solid fa-arrow-left"></i> Projets</a>
+        <i class="fa-solid fa-chevron-right" style="color:var(--text-sub);font-size:.7rem;"></i>
+        <a href="../../S2/s2.html" style="color:var(--text-sub);font-size:.88rem;">Semestre 2</a>
+        <i class="fa-solid fa-chevron-right" style="color:var(--text-sub);font-size:.7rem;"></i>
+        <span style="color:var(--primary);font-size:.88rem;font-weight:700;">SAÉ 2.2</span>
+    </div>
+
+    <!-- Carte intro -->
+    <div class="sae-intro-card">
+        <div class="sae-intro-left">
+            <div class="sae-num-big">SAÉ 2.2</div>
+            <div class="ue-badge ue-red">UE 2.2</div>
+            <span class="comp-level comp-level--advanced">Réalisée</span>
+            <div style="font-size:.72rem;color:var(--text-sub);text-align:center;margin-top:4px;">Binôme<br><strong style="color:var(--text-main);">BABA &amp; SANCHEZ</strong></div>
+        </div>
+        <div class="sae-intro-right">
+            <h2>Implantation d'un îlot robotisé de production</h2>
+            <p>Pré-étude de la <strong>robotisation d'une opération de soudage MIG</strong> actuellement manuelle. Mission : prouver la viabilité technique et économique de la solution pour valider une cadence de <strong>1 500 pièces/mois</strong>, via simulation Robot Studio ABB et dossier de présentation à la hiérarchie.</p>
+            <div class="comp-tags" style="margin-top:14px;">
+                <span>Robot Studio ABB</span>
+                <span>Soudage MIG</span>
+                <span>CAO SolidWorks</span>
+                <span>Implantation MIP</span>
+                <span>Préhenseur CMG20</span>
+                <span>Colonne lumineuse</span>
+                <span>Sécurité industrielle</span>
+                <span>Calcul débit</span>
+            </div>
+            <div class="quick-facts" style="margin-top:14px;">
+                <div class="qf-item"><span class="qf-label">Cadence</span><span class="qf-val">1 500 pcs/mois</span></div>
+                <div class="qf-item"><span class="qf-label">Robot soudage</span><span class="qf-val">ABB IRB 1300-90</span></div>
+                <div class="qf-item"><span class="qf-label">Robot décharge</span><span class="qf-val">ABB IRB 1300-140</span></div>
+                <div class="qf-item"><span class="qf-label">Torche</span><span class="qf-val">Binzel A300 L443</span></div>
+                <div class="qf-item"><span class="qf-label">Préhenseur</span><span class="qf-val">CMG20 ×4</span></div>
+                <div class="qf-item"><span class="qf-label">Vitesse soudage</span><span class="qf-val">6,17 mm/s</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inner nav -->
+    <div class="inner-nav">
+        <a href="#sujet">01 Sujet</a>
+        <a href="#pre-etude">02 Pré-étude</a>
+        <a href="#cao">03 CAO</a>
+        <a href="#robotstudio">04 Robot Studio</a>
+        <a href="#traj">05 Trajectoires</a>
+        <a href="#station3d">🔷 Station 3D</a>
+        <a href="#securite">06 Sécurité</a>
+        <a href="#bilan">Bilan</a>
+    </div>
+
+    <!-- ══════ 01 — Sujet 4A ══════ -->
+    <section class="sae-step" id="sujet">
+        <div class="step-header">
+            <div class="step-num">01</div>
+            <div><h3>Sujet 4A — Assemblage à robotiser</h3><p class="step-sub">Structure métallique en acier · 10 barres · 1 160,36 mm de longueur</p></div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>L'assemblage <strong>Sujet 4A</strong> est une structure métallique en acier qui pèse 4,06 kg au total, entièrement construite à partir de barres. Notre structure fait 1 160,36 mm de longueur, 325 mm de hauteur et 25 mm d'épaisseur.</p>
+                    <div style="margin-top:14px;">
+                        <div style="font-size:.8rem;font-weight:800;color:var(--text-main);margin-bottom:8px;display:flex;align-items:center;gap:6px;"><i class="fa-solid fa-list" style="color:var(--primary);"></i> Détail des barres (10 au total)</div>
+                        <div class="barres-table">
+                            <div class="bt-head"><span>Qté</span><span>Longueur</span></div>
+                            <div class="bt-row"><span>1 barre</span><span>510,4 mm</span></div>
+                            <div class="bt-row"><span>2 barres</span><span>459,6 mm</span></div>
+                            <div class="bt-row"><span>1 barre</span><span>365,4 mm</span></div>
+                            <div class="bt-row"><span>2 barres</span><span>282,8 mm</span></div>
+                            <div class="bt-row"><span>2 barres</span><span>237,1 mm</span></div>
+                            <div class="bt-row"><span>2 barres</span><span>187,1 mm</span></div>
+                        </div>
+                    </div>
+                    <div class="info-block" style="margin-top:14px;">
+                        <div class="info-block-header"><i class="fa-solid fa-ruler" style="color:var(--primary);"></i><span>Contexte industriel</span></div>
+                        <p>Soudage actuellement <strong>manuel</strong>. Objectif : robotiser l'opération, prouver la viabilité technique et économique pour <strong>convaincre la hiérarchie</strong> de débloquer les financements. Contrainte : utiliser uniquement la gamme <strong>ABB</strong>.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                            <img src="sujet_4A.png" alt="Sujet 4A" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-drafting-compass"></i> Assemblage Sujet 4A — Structure métallique à souder</div>
+                    </div>
+                    <div class="img-viewer-card" style="margin-top:12px;">
+                        <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                            <img src="nomenclature.png" alt="Nomenclature" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-table"></i> Nomenclature et données d'entrée</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pdf-open-row" style="margin-top:16px;">
+                <div class="pdf-open-card">
+                    <i class="fa-solid fa-file-powerpoint" style="color:#d97706;font-size:1.4rem;flex-shrink:0;"></i>
+                    <div style="flex:1;"><div class="doc-name">Présentation SAÉ 2.2</div><div class="doc-file">Présentation_SAE_2_2.pdf</div></div>
+                    <a href="Présentation_SAE_2_2.pdf" download class="pdf-open-btn" style="background:#d97706;"><i class="fa-solid fa-download"></i> Télécharger</a>
+                    <a href="Présentation_SAE_2_2.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ 02 — Pré-étude ══════ -->
+    <section class="sae-step" id="pre-etude">
+        <div class="step-header">
+            <div class="step-num">02</div>
+            <div><h3>Pré-étude &amp; choix d'implantation</h3><p class="step-sub">MIP · Torche · Robot · Préhenseur · Calcul débit &amp; vitesse</p></div>
+        </div>
+        <div class="step-content">
+
+            <!-- Grille 3 choix -->
+            <div class="choix-grid">
+                <div class="choix-card">
+                    <div class="choix-icon" style="background:rgba(239,68,68,.1);color:#ef4444;border-color:rgba(239,68,68,.2);"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <div class="choix-title">Torche de soudage</div>
+                    <div class="choix-val">Binzel A300 L443</div>
+                    <p class="choix-desc">Angle 0° · matériau acier · prix minimum · 1 seule torche suffisante. Vitesse de soudage : 2,7 m en 1 min → <strong>6,17 mm/s</strong></p>
+                </div>
+                <div class="choix-card">
+                    <div class="choix-icon" style="background:rgba(59,130,246,.1);color:var(--primary);border-color:rgba(59,130,246,.2);"><i class="fa-solid fa-robot"></i></div>
+                    <div class="choix-title">Robot de soudage</div>
+                    <div class="choix-val">ABB IRB 1300-90</div>
+                    <p class="choix-desc">Reach 0,9 m — couvre entièrement la zone de travail (1 160 mm). Charge 11 kg &gt; pièce (4,06 kg). Famille commune avec le robot de décharge.</p>
+                </div>
+                <div class="choix-card">
+                    <div class="choix-icon" style="background:rgba(34,197,94,.1);color:#22c55e;border-color:rgba(34,197,94,.2);"><i class="fa-solid fa-hand"></i></div>
+                    <div class="choix-title">Robot de décharge</div>
+                    <div class="choix-val">ABB IRB 1300-140</div>
+                    <p class="choix-desc">Reach 1,40 m · Payload 12 kg. Même famille technologique. Préhenseur magnétique CMG20 Ø20 mm × 4 unités — capacité 4,06 kg ✓</p>
+                </div>
+            </div>
+
+            <div class="two-col-grid" style="margin-top:16px;">
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                        <img src="implantation_mip.png" alt="Implantation MIP" class="viewer-img">
+                    </div>
+                    <div class="img-caption"><i class="fa-solid fa-pencil"></i> Schéma d'implantation 2D avec symboles MIP</div>
+                </div>
+                <div class="img-viewer-card">
+                    <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                        <img src="mip_v2.png" alt="MIP V2" class="viewer-img">
+                    </div>
+                    <div class="img-caption"><i class="fa-solid fa-table-cells"></i> Table de mise en position MIP V2</div>
+                </div>
+            </div>
+
+            <!-- Arbre des choix préhenseur -->
+            <div class="info-block" style="margin-top:14px;">
+                <div class="info-block-header"><i class="fa-solid fa-sitemap" style="color:var(--primary);"></i><span>Choix du préhenseur — CMG20 magnétique</span></div>
+                <p>Le préhenseur magnétique CMG20 (Ø20 mm) est adapté à nos barres carrées de 25 mm de côté. Jusqu'à 22 N de maintien, soit 2,2 kg par unité → 4 unités = 8,8 kg de capacité. Les 4 petits préhenseurs pèsent 360 g, bien en dessous des <strong>11 kg de charge max</strong> du robot IRB 1300-140.</p>
+            </div>
+
+            <div class="img-viewer-card" style="margin-top:12px;">
+                <div class="img-viewer-wrap" style="aspect-ratio:16/7;">
+                    <img src="arbre_choix.png" alt="Arbre des choix préhenseur" class="viewer-img">
+                </div>
+                <div class="img-caption"><i class="fa-solid fa-code-branch"></i> Arbre des choix de préhenseur</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ 03 — CAO ══════ -->
+    <section class="sae-step" id="cao">
+        <div class="step-header">
+            <div class="step-num">03</div>
+            <div><h3>CAO — Bague d'adaptation &amp; Préhenseur</h3><p class="step-sub">SolidWorks · Bague torche sur-mesure · Préhenseur CMG20</p></div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>Pour fixer la torche Binzel A300 L443 sur le bras articulé de l'IRB 1300-90, nous avons <strong>entièrement conçu et modélisé une bague d'adaptation</strong> sur SolidWorks, adaptant ses formes et dimensions aux caractéristiques géométriques du robot et de la torche.</p>
+                    <p style="margin-top:10px;">Le <strong>préhenseur CMG20</strong> a également été modélisé pour être implanté dans Robot Studio, avec son système attaché/détaché piloté par la logique de station.</p>
+                    <div class="pdf-open-row" style="margin-top:14px;">
+                        <div class="pdf-open-card" style="flex-direction:column;gap:8px;">
+                            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                                <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.3rem;flex-shrink:0;"></i>
+                                <div style="flex:1;"><div class="doc-name">Plan préhenseur CMG20</div><div class="doc-file">plan_prehenseur_SAE22.pdf</div></div>
+                                <a href="plan_prehenseur_SAE22.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i> Télécharger</a>
+                                <a href="plan_prehenseur_SAE22.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                            <img src="cao_prehenseur.png" alt="CAO préhenseur" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-cube"></i> CAO SolidWorks — Préhenseur CMG20 × 4</div>
+                    </div>
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                            <img src="bague_adaptation.png" alt="Bague adaptation" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-circle-dot"></i> Bague d'adaptation torche — conçue sur-mesure</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Données techniques CMG20 -->
+            <div class="info-block" style="margin-top:14px;">
+                <div class="info-block-header"><i class="fa-solid fa-file-lines" style="color:#f59e0b;"></i><span>Données techniques CMG20</span></div>
+                <div class="kpi-grid-3" style="margin-top:10px;">
+                    <div class="kpi-chip"><span class="kf-k">Diamètre</span><span class="kf-v">Ø 20 mm</span></div>
+                    <div class="kpi-chip"><span class="kf-k">Force maintien (1 aimant)</span><span class="kf-v">22 N</span></div>
+                    <div class="kpi-chip"><span class="kf-k">Masse (×4)</span><span class="kf-v">360 g</span></div>
+                    <div class="kpi-chip"><span class="kf-k">Pression alim.</span><span class="kf-v">3,5 – 6 bar</span></div>
+                    <div class="kpi-chip"><span class="kf-k">Temp. fonctionnement</span><span class="kf-v">-5 à 70°C</span></div>
+                    <div class="kpi-chip"><span class="kf-k">Capacité totale (×4)</span><span class="kf-v">4,06 kg ✓</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ 04 — Robot Studio ══════ -->
+    <section class="sae-step" id="robotstudio">
+        <div class="step-header">
+            <div class="step-num">04</div>
+            <div><h3>Environnement Robot Studio</h3><p class="step-sub">Implantation · Logique de station · Colonne lumineuse</p></div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>L'environnement a été construit dans Robot Studio en utilisant les modèles 3D de la librairie, complétés par des <strong>modèles 3D externes</strong> (extincteur, bouton, poste à souder) pour une station plus réaliste.</p>
+
+                    <div class="colonne-box" style="margin-top:14px;">
+                        <div style="font-size:.82rem;font-weight:800;color:var(--text-main);margin-bottom:10px;display:flex;align-items:center;gap:8px;"><i class="fa-solid fa-tower-broadcast" style="color:var(--primary);"></i> Colonne lumineuse (SC StackLight)</div>
+                        <div class="col-lum-row"><div class="col-dot" style="background:#ef4444;"></div><span><strong>Rouge</strong> — Soudage en cours</span></div>
+                        <div class="col-lum-row"><div class="col-dot" style="background:#f97316;"></div><span><strong>Orange</strong> — Déplacement robot soudage</span></div>
+                        <div class="col-lum-row"><div class="col-dot" style="background:#22c55e;"></div><span><strong>Vert</strong> — Déplacement robot de décharge</span></div>
+                        <div class="col-lum-row"><div class="col-dot" style="background:#3b82f6;"></div><span><strong>Bleu</strong> — Déplacement robot de décharge</span></div>
+                    </div>
+
+                    <div class="info-block" style="margin-top:14px;">
+                        <div class="info-block-header"><i class="fa-solid fa-diagram-project" style="color:var(--primary);"></i><span>Logique de station</span></div>
+                        <p>Le Robot 2 effectue sa tâche à la suite du Robot 1. La logique SR Latch pilote le système <strong>Attacher/Détacher</strong> pour que le préhenseur s'accroche à la pièce, puis la dépose en lançant le déplacement via LinearMover2.</p>
+                    </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="robotstudio_v1.png" alt="Robot Studio V1" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-cube"></i> Environnement Robot Studio — version finale</div>
+                    </div>
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="logique_station.png" alt="Logique de station" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-diagram-project"></i> Logique de station — Attacher/Détacher + colonne</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ 05 — Trajectoires ══════ -->
+    <section class="sae-step" id="traj">
+        <div class="step-header">
+            <div class="step-num">05</div>
+            <div><h3>Trajectoires &amp; simulation</h3><p class="step-sub">Points d'approche · Points process · Temps de cycle · Vidéo</p></div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>Les trajectoires ont été réalisées pour le robot de soudage (IRB 1300-90), avec des <strong>erreurs d'orientation d'axes</strong> rencontrées et corrigées en configurant certains axes et points de passage en mouvJ. Le cycle complet a été simulé et validé sans collision.</p>
+
+                    <div class="traj-steps" style="margin-top:14px;">
+                        <div class="traj-step"><div class="traj-dot"></div><span>Points de process (début/fin soudage)</span></div>
+                        <div class="traj-line"></div>
+                        <div class="traj-step"><div class="traj-dot"></div><span>Points d'approche (distance 200 mm)</span></div>
+                        <div class="traj-line"></div>
+                        <div class="traj-step"><div class="traj-dot"></div><span>Trajectoire soudage robot 1 (rouge → orange)</span></div>
+                        <div class="traj-line"></div>
+                        <div class="traj-step"><div class="traj-dot"></div><span>Trajectoire déchargement robot 2 (vert → bleu)</span></div>
+                        <div class="traj-line"></div>
+                        <div class="traj-step traj-step--ok"><div class="traj-dot traj-dot--ok"></div><span>Calcul temps de cycle depuis Robot Studio ✓</span></div>
+                    </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:16/9;">
+                            <img src="trajectoire_soudage.png" alt="Trajectoire soudage" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-route"></i> Trajectoires soudage + déchargement</div>
+                    </div>
+                    <!-- Vidéo YouTube embed -->
+                   
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+
+
+    <!-- ══════ 06 — Sécurité ══════ -->
+    <section class="sae-step" id="securite">
+        <div class="step-header">
+            <div class="step-num">06</div>
+            <div><h3>Sécurité industrielle</h3><p class="step-sub">Analyse des risques · Barrières · Passage convoyeur</p></div>
+        </div>
+        <div class="step-content">
+            <div class="two-col-grid">
+                <div>
+                    <p>Nous avons identifié tous les endroits où il pourrait y avoir un risque pour un opérateur ou pour notre installation, notamment :</p>
+                    <ul class="check-list" style="margin-top:12px;">
+                        <li><i class="fa-solid fa-shield-halved" style="color:#22c55e;"></i> Passage convoyeur sécurisé</li>
+                        <li><i class="fa-solid fa-shield-halved" style="color:#22c55e;"></i> Porte d'accès avec verrouillage</li>
+                        <li><i class="fa-solid fa-shield-halved" style="color:#22c55e;"></i> Distances murs respectées (barrières)</li>
+                        <li><i class="fa-solid fa-shield-halved" style="color:#22c55e;"></i> Fiche de sécurité rédigée selon les règles du cours d'automatisme</li>
+                    </ul>
+                    <div class="info-block" style="margin-top:14px;">
+                        <div class="info-block-header"><i class="fa-solid fa-book" style="color:#f59e0b;"></i><span>Synthèse des données de sécurité</span></div>
+                        <p>La station a été adaptée en suivant les règles données dans le cours d'automatisme. Les protections physiques (barrières, porte) et la signalisation (colonne lumineuse) ont été intégrées dans la simulation Robot Studio.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="img-viewer-card">
+                        <div class="img-viewer-wrap" style="aspect-ratio:4/3;">
+                            <img src="securite_station.png" alt="Sécurité" class="viewer-img">
+                        </div>
+                        <div class="img-caption"><i class="fa-solid fa-shield"></i> Vue de détail — barrières et passages sécurisés</div>
+                    </div>
+                    <div class="pdf-open-row" style="margin-top:12px;">
+                        <div class="pdf-open-card">
+                            <i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.3rem;flex-shrink:0;"></i>
+                            <div style="flex:1;"><div class="doc-name">Synthèse données de sécurité</div><div class="doc-file">securite_SAE22.pdf</div></div>
+                            <a href="securite_SAE22.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i></a>
+                            <a href="securite_SAE22.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal de bord -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num" style="background:rgba(148,163,184,.12);color:var(--text-sub);border-color:rgba(148,163,184,.2);font-size:.9rem;"><i class="fa-solid fa-book-open"></i></div>
+            <div><h3>Journal de bord</h3><p class="step-sub">Séances d'autonomie</p></div>
+        </div>
+        <div class="step-content">
+            <div class="jdb-grid">
+                <div class="jdb-entry">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie 1</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> TD 4h</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Distribution du sujet et synthèse de la problématique</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Réalisation des choix d'implantation et pré-étude</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Schéma MIP 2D et croquis bague d'adaptation</li>
+                    </ul>
+                </div>
+                <div class="jdb-entry">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie 2</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> 2h</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Création de l'outil de soudage depuis la CAO fournie</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Début assemblage SolidWorks + implantation Robot Studio</li>
+                    </ul>
+                </div>
+                <div class="jdb-entry">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie 3</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> 4h</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Poursuite implantation Robot Studio</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Validation des accessibilités en manuel</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Création premières trajectoires</li>
+                    </ul>
+                </div>
+                <div class="jdb-entry">
+                    <div class="jdb-header"><span class="jdb-num">Autonomie 4</span><span class="jdb-date"><i class="fa-regular fa-calendar"></i> 4h</span></div>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Finalisation trajectoires + interactions voyants</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> Logique de station attaché/détaché + LinearMover</li>
+                        <li><i class="fa-solid fa-check" style="color:#22c55e;"></i> CAO préhenseur système de prehension</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Annexe -->
+    <section class="sae-step">
+        <div class="step-header">
+            <div class="step-num" style="background:rgba(148,163,184,.12);color:var(--text-sub);border-color:rgba(148,163,184,.2);">+</div>
+            <div><h3>Annexe — Tous les documents</h3><p class="step-sub">Téléchargement de l'ensemble des livrables</p></div>
+        </div>
+        <div class="step-content">
+            <div class="docs-grid">
+                <div class="pdf-open-card"><i class="fa-solid fa-file-powerpoint" style="color:#d97706;font-size:1.3rem;flex-shrink:0;"></i><div style="flex:1;"><div class="doc-name">Présentation SAÉ 2.2</div><div class="doc-file">Présentation_SAE_2_2.pdf</div></div><a href="Présentation_SAE_2_2.pdf" download class="pdf-open-btn" style="background:#d97706;"><i class="fa-solid fa-download"></i></a><a href="Présentation_SAE_2_2.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a></div>
+               
+                <div class="pdf-open-card"><i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.3rem;flex-shrink:0;"></i><div style="flex:1;"><div class="doc-name">Plan préhenseur CMG20</div><div class="doc-file">plan_prehenseur_SAE22.pdf</div></div><a href="plan_prehenseur_SAE22.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i></a><a href="plan_prehenseur_SAE22.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a></div>
+                <div class="pdf-open-card"><i class="fa-solid fa-file-pdf" style="color:#ef4444;font-size:1.3rem;flex-shrink:0;"></i><div style="flex:1;"><div class="doc-name">Synthèse sécurité industrielle</div><div class="doc-file">securite_SAE22.pdf</div></div><a href="securite_SAE22.pdf" download class="pdf-open-btn"><i class="fa-solid fa-download"></i></a><a href="securite_SAE22.pdf" target="_blank" class="pdf-open-btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BILAN -->
+    <div class="sae-bilan" id="bilan">
+        <div class="bilan-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div>
+            <h3>Ce que j'ai appris</h3>
+            <p>Cette SAÉ a été très intéressante. Contrairement aux TD/TP encadrés, nous étions livrés à nous-mêmes pour trouver des moyens de résoudre nos problèmes. Les diverses modélisations 3D ont été réalisées avec un vrai but derrière, ce qui renforce le sentiment de création. Le challenge de trouver le bon robot, la bonne torche et le bon préhenseur parmi des dizaines d'options disponibles m'a appris à <strong>justifier méthodiquement chaque choix technique</strong>. C'est une partie intégrante de la formation en bureau d'études.</p>
+        </div>
+    </div>
+
+</main>
+
+<a href="#" id="back-top" class="back-btn-floating"><i class="fa-solid fa-chevron-up"></i></a>
+
+<!-- ═══════════════════════════════════════════════
+     THREE.JS GLB VIEWER
+═══════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<style>
+/* ── Couleurs spécifiques ── */
+.ue-red{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25);}
+
+/* ── Quick facts ── */
+.quick-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.qf-item{display:flex;flex-direction:column;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.15);border-radius:8px;padding:6px 12px;min-width:90px;}
+.qf-label{font-size:.68rem;color:var(--text-sub);font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+.qf-val{font-size:.88rem;font-weight:800;color:var(--primary);}
+
+/* ── Inner nav ── */
+.inner-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;padding:16px;background:var(--bg-card);border-radius:14px;border:1px solid rgba(255,255,255,.05);box-shadow:var(--card-shadow);}
+.light-mode .inner-nav{border-color:rgba(0,0,0,.06);}
+.inner-nav a{font-size:.82rem;font-weight:700;color:var(--text-sub);padding:6px 14px;border-radius:8px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);transition:all .2s;}
+.inner-nav a:hover{background:rgba(59,130,246,.15);color:var(--primary);}
+
+/* ── Intro card ── */
+.sae-intro-card{display:flex;gap:30px;align-items:flex-start;background:var(--bg-card);border-radius:20px;padding:35px;border:1px solid rgba(59,130,246,.15);box-shadow:var(--card-shadow);margin-bottom:30px;}
+.sae-intro-left{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:100px;}
+.sae-num-big{font-family:monospace;font-size:1rem;font-weight:800;color:var(--primary);background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.25);padding:6px 14px;border-radius:8px;letter-spacing:.05em;white-space:nowrap;}
+.ue-badge{font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;white-space:nowrap;}
+.sae-intro-right h2{font-size:1.45rem;font-weight:900;margin-bottom:10px;line-height:1.2;}
+.sae-intro-right p{color:var(--text-sub);font-size:.93rem;line-height:1.7;}
+
+/* ── Steps ── */
+.sae-step{margin-bottom:40px;}
+.step-header{display:flex;align-items:center;gap:18px;margin-bottom:20px;}
+.step-num{width:48px;height:48px;min-width:48px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:1rem;font-weight:900;color:var(--primary);}
+.step-header h3{font-size:1.12rem;font-weight:800;margin-bottom:4px;}
+.step-sub{color:var(--text-sub);font-size:.87rem;}
+.step-content{background:var(--bg-card);border-radius:16px;padding:26px;border:1px solid rgba(255,255,255,.05);box-shadow:var(--card-shadow);}
+.light-mode .step-content{border-color:rgba(0,0,0,.06);}
+.step-content>p{color:var(--text-sub);font-size:.92rem;line-height:1.7;}
+.step-content>p strong{color:var(--text-main);}
+
+/* ── 2 col ── */
+.two-col-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+/* ── Info block ── */
+.info-block{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.13);border-radius:14px;padding:16px;}
+.info-block-header{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.92rem;color:var(--text-main);margin-bottom:8px;}
+.info-block p{color:var(--text-sub);font-size:.87rem;line-height:1.6;}
+.info-block p strong{color:var(--text-main);}
+
+/* ── Check list ── */
+.check-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin:0;padding:0;}
+.check-list li{display:flex;align-items:flex-start;gap:8px;color:var(--text-sub);font-size:.86rem;line-height:1.5;}
+.check-list li i{margin-top:2px;flex-shrink:0;}
+
+/* ── Barres table ── */
+.barres-table{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
+.light-mode .barres-table{border-color:rgba(0,0,0,.07);}
+.bt-head{display:grid;grid-template-columns:1fr 1fr;padding:8px 14px;background:rgba(59,130,246,.1);font-size:.75rem;font-weight:800;color:var(--primary);}
+.bt-row{display:grid;grid-template-columns:1fr 1fr;padding:6px 14px;border-top:1px solid rgba(255,255,255,.04);font-size:.8rem;color:var(--text-sub);}
+.light-mode .bt-row{border-top-color:rgba(0,0,0,.05);}
+
+/* ── Choix cards ── */
+.choix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.choix-card{background:rgba(59,130,246,.04);border:1px solid rgba(59,130,246,.12);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;}
+.choix-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;border:1px solid;}
+.choix-title{font-size:.78rem;font-weight:700;color:var(--text-sub);text-transform:uppercase;letter-spacing:.04em;}
+.choix-val{font-size:.95rem;font-weight:900;color:var(--text-main);}
+.choix-desc{font-size:.8rem;color:var(--text-sub);line-height:1.55;}
+.choix-desc strong{color:var(--text-main);}
+
+/* ── Colonne lumineuse ── */
+.col-lum-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:.85rem;color:var(--text-sub);}
+.col-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;}
+.col-lum-row strong{color:var(--text-main);}
+
+/* ── Trajectoires steps ── */
+.traj-steps{display:flex;flex-direction:column;}
+.traj-step{display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--text-sub);font-weight:600;}
+.traj-step--ok{color:#22c55e;}
+.traj-dot{width:10px;height:10px;border-radius:50%;background:var(--primary);flex-shrink:0;}
+.traj-dot--ok{background:#22c55e;}
+.traj-line{width:2px;height:16px;background:rgba(59,130,246,.2);margin-left:4px;}
+
+/* ── KPI chips ── */
+.kpi-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.kpi-chip{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.14);border-radius:10px;padding:8px 12px;display:flex;flex-direction:column;}
+.kf-k{font-size:.67rem;color:var(--text-sub);font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+.kf-v{font-size:.88rem;font-weight:800;color:var(--primary);}
+
+/* ── Video ── */
+.video-card{background:rgba(0,0,0,.12);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;}
+.light-mode .video-card{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.07);}
+.video-card-header{padding:10px 14px;font-size:.8rem;font-weight:700;color:var(--text-sub);display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.05);}
+.light-mode .video-card-header{border-bottom-color:rgba(0,0,0,.06);}
+.video-embed-wrap{position:relative;padding-bottom:56.25%;height:0;}
+.video-embed-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+
+/* ── Images ── */
+.img-viewer-card{border-radius:14px;overflow:hidden;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);}
+.light-mode .img-viewer-card{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.07);}
+.img-viewer-wrap{position:relative;width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.viewer-img{width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;}
+.img-caption{padding:8px 14px;font-size:.78rem;color:var(--text-sub);display:flex;align-items:center;gap:7px;border-top:1px solid rgba(255,255,255,.05);}
+.light-mode .img-caption{border-top-color:rgba(0,0,0,.06);}
+
+/* ══ 3D VIEWER ══ */
+.tabs3d{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.tab3d{padding:8px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.07);background:var(--bg-card, #1e293b);color:var(--text-sub);font-size:.83rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit;display:flex;align-items:center;gap:7px;}
+.light-mode .tab3d{background:#f8fafc;border-color:rgba(0,0,0,.1);}
+.tab3d.active{background:rgba(99,102,241,.15);border-color:rgba(99,102,241,.4);color:#818cf8;}
+.tab3d:not(.active):hover{border-color:rgba(99,102,241,.3);color:#818cf8;}
+
+.canvas3d-wrap{position:relative;height:450px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#0f1729 0%,#1a2540 100%);border:1px solid rgba(99,102,241,.2);}
+.light-mode .canvas3d-wrap{background:linear-gradient(135deg,#e8eef8 0%,#d0daf0 100%);}
+#glb-canvas{display:block;width:100%!important;height:100%!important;cursor:grab;}
+#glb-canvas:active{cursor:grabbing;}
+
+.loading-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:rgba(10,15,30,.7);backdrop-filter:blur(4px);z-index:10;transition:opacity .4s;}
+.light-mode .loading-overlay{background:rgba(230,238,255,.7);}
+.loading-overlay.hidden{opacity:0;pointer-events:none;}
+.loading-spinner{width:40px;height:40px;border:3px solid rgba(129,140,248,.2);border-top-color:#818cf8;border-radius:50%;animation:spin 1s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-size:.83rem;color:#818cf8;font-weight:700;}
+
+.c3d-label{position:absolute;top:14px;left:14px;background:rgba(10,15,40,.75);backdrop-filter:blur(8px);border:1px solid rgba(99,102,241,.3);border-radius:10px;padding:7px 14px;font-size:.78rem;font-weight:700;color:#818cf8;display:flex;align-items:center;gap:6px;pointer-events:none;}
+.light-mode .c3d-label{background:rgba(255,255,255,.85);}
+.c3d-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(10,15,40,.6);backdrop-filter:blur(6px);border-radius:8px;padding:5px 14px;font-size:.72rem;color:var(--text-sub);display:flex;align-items:center;gap:10px;white-space:nowrap;pointer-events:none;}
+.hs{opacity:.3;}
+.c3d-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:20px;}
+.c3d-fallback p{font-size:.88rem;color:var(--text-sub);max-width:320px;line-height:1.6;}
+.c3d-fallback p strong{color:var(--text-main);}
+
+.ctrl-bar3d{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap;}
+.ctrl3d{display:inline-flex;align-items:center;gap:6px;background:var(--bg-card);border:1px solid rgba(255,255,255,.07);color:var(--text-sub);border-radius:9px;padding:7px 14px;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;}
+.light-mode .ctrl3d{border-color:rgba(0,0,0,.1);}
+.ctrl3d:hover{border-color:rgba(99,102,241,.4);color:#818cf8;}
+.ctrl3d.active{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.4);color:#818cf8;}
+.ctrl-sep3d{width:1px;height:24px;background:rgba(255,255,255,.07);}
+.light-mode .ctrl-sep3d{background:rgba(0,0,0,.08);}
+.color-btns3d{display:flex;gap:6px;align-items:center;}
+.cdot{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .2s,border-color .2s;display:flex;align-items:center;justify-content:center;}
+.cdot:hover{transform:scale(1.2);}
+.cdot.selected{border-color:white;transform:scale(1.15);}
+
+.upload-glb{display:flex;align-items:center;gap:12px;margin-top:14px;background:rgba(99,102,241,.04);border:1px dashed rgba(99,102,241,.3);border-radius:12px;padding:12px 16px;flex-wrap:wrap;}
+.upload-glb input[type=file]{display:none;}
+.upload-label-glb{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.8);color:white;border-radius:8px;padding:7px 16px;font-size:.8rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;white-space:nowrap;}
+.upload-label-glb:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(99,102,241,.4);}
+.upload-glb-text{font-size:.8rem;color:var(--text-sub);line-height:1.5;}
+.upload-glb-text strong{color:var(--text-main);font-family:monospace;font-size:.78rem;}
+
+/* ── PDF ── */
+.pdf-open-row{margin-top:16px;}
+.pdf-open-card{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:12px;padding:12px 16px;}
+.doc-name{font-weight:700;font-size:.88rem;color:var(--text-main);margin-bottom:2px;}
+.doc-file{font-size:.73rem;color:var(--text-sub);font-family:monospace;}
+.pdf-open-btn{display:inline-flex;align-items:center;gap:5px;background:var(--primary);color:white!important;border-radius:8px;padding:7px 14px;font-size:.8rem;font-weight:700;white-space:nowrap;flex-shrink:0;transition:transform .2s,box-shadow .2s;}
+.pdf-open-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(59,130,246,.4);}
+.btn-outline{background:transparent!important;border:1px solid rgba(59,130,246,.35);color:#60a5fa!important;}
+.light-mode .btn-outline{color:#2563eb!important;}
+.docs-grid{display:flex;flex-direction:column;gap:10px;}
+
+/* ── JDB ── */
+.jdb-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.jdb-entry{background:rgba(59,130,246,.04);border:1px solid rgba(59,130,246,.1);border-radius:14px;padding:18px;}
+.jdb-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.jdb-num{font-family:monospace;font-size:.8rem;font-weight:900;color:var(--primary);background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2);padding:3px 10px;border-radius:6px;}
+.jdb-date{font-size:.76rem;color:var(--text-sub);display:flex;align-items:center;gap:5px;}
+
+/* ── Bilan ── */
+.sae-bilan{background:var(--bg-card);border-radius:20px;padding:32px;border:1px solid rgba(59,130,246,.15);box-shadow:var(--card-shadow);display:flex;align-items:flex-start;gap:22px;margin-top:50px;}
+.bilan-icon{width:54px;height:54px;min-width:54px;background:rgba(59,130,246,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--primary);border:1px solid rgba(59,130,246,.2);}
+.sae-bilan h3{font-size:1.05rem;font-weight:800;margin-bottom:7px;}
+.sae-bilan p{color:var(--text-sub);font-size:.9rem;line-height:1.65;}
+.sae-bilan p strong{color:var(--text-main);}
+
+/* ── comp-tags ── */
+.comp-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.comp-tags span{white-space:normal;word-break:break-word;}
+
+/* ── colonne-box ── */
+.colonne-box{background:rgba(0,0,0,.1);border-radius:12px;padding:14px 16px;border:1px solid rgba(255,255,255,.06);}
+.light-mode .colonne-box{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.07);}
+
+/* ── Responsive ── */
+@media(max-width:900px){.choix-grid{grid-template-columns:1fr;} .kpi-grid-3{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){
+    .sae-intro-card{flex-direction:column;gap:18px;padding:22px;}
+    .sae-intro-left{flex-direction:row;min-width:unset;align-items:center;flex-wrap:wrap;}
+    .sae-intro-right h2{font-size:1.25rem;}
+    .step-content{padding:16px;}
+    .two-col-grid{grid-template-columns:1fr;}
+    .jdb-grid{grid-template-columns:1fr;}
+    .sae-bilan{flex-direction:column;gap:14px;padding:22px;}
+    .canvas3d-wrap{height:300px;}
+    .choix-grid{grid-template-columns:1fr;}
+    .kpi-grid-3{grid-template-columns:1fr;}
+}
+</style>
+
+<script>
+/* ════════════════════════════════════════════
+   THEME + NAV
+════════════════════════════════════════════ */
+const btn = document.getElementById("theme-toggle");
+const icon = btn.querySelector("i");
+function updateIcon(){icon.className=document.documentElement.classList.contains("light-mode")?"fa-solid fa-sun":"fa-solid fa-moon";}
+updateIcon();
+btn.addEventListener("click",()=>{const l=document.documentElement.classList.toggle("light-mode");localStorage.setItem("theme",l?"light":"dark");updateIcon();});
+const backBtn=document.getElementById("back-top");
+window.addEventListener("scroll",()=>{backBtn.classList.toggle("visible",window.scrollY>300);});
+backBtn.addEventListener("click",e=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});});
+document.querySelectorAll('.inner-nav a').forEach(a=>{
+    a.addEventListener('click',e=>{
+        const t=document.querySelector(a.getAttribute('href'));
+        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+});
+
+/* ════════════════════════════════════════════
+   THREE.JS GLB VIEWER
+════════════════════════════════════════════ */
+const glbCanvas = document.getElementById('glb-canvas');
+const wrap3D = document.getElementById('canvasWrap3D');
+const loadingOverlay = document.getElementById('loadingOverlay');
+const fallbackMsg = document.getElementById('fallbackMsg');
+
+// Scène
+const scene3D = new THREE.Scene();
+const renderer3D = new THREE.WebGLRenderer({canvas: glbCanvas, antialias: true, alpha: true});
+renderer3D.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer3D.shadowMap.enabled = true;
+renderer3D.physicallyCorrectLights = true;
+renderer3D.setClearColor(0x000000, 0);
+renderer3D.outputEncoding = 3001; // sRGB
+
+function resize3D(){
+    const w = wrap3D.clientWidth, h = wrap3D.clientHeight;
+    renderer3D.setSize(w, h, false);
+    cam3D.aspect = w/h;
+    cam3D.updateProjectionMatrix();
+}
+
+const cam3D = new THREE.PerspectiveCamera(45, 1, 0.01, 5000);
+cam3D.position.set(0, 2, 8);
+
+// Lumières
+scene3D.add(new THREE.AmbientLight(0xffffff, 1.2));
+const dl1 = new THREE.DirectionalLight(0xffffff, 1.5); dl1.position.set(5, 10, 7); scene3D.add(dl1);
+const dl2 = new THREE.DirectionalLight(0x8899ff, 0.6); dl2.position.set(-5, -3, -5); scene3D.add(dl2);
+const dl3 = new THREE.DirectionalLight(0xffffff, 0.4); dl3.position.set(0, -8, 0); scene3D.add(dl3);
+
+// Grille
+const grid3D = new THREE.GridHelper(20, 30, 0x334155, 0x1e293b);
+grid3D.position.y = -2;
+scene3D.add(grid3D);
+
+// Orbite léger
+let s3D = {theta: 0.4, phi: 1.2, r: 8};
+let pan3D = new THREE.Vector3(0,0,0);
+let drag3D = false, rightDrag3D = false, prevM3D = {x:0,y:0};
+let autoRot3D = true, isWire3D = false;
+let currentModel3D = null;
+let materialOverride = false;
+
+function updateCam3D(){
+    cam3D.position.set(
+        pan3D.x + s3D.r*Math.sin(s3D.phi)*Math.sin(s3D.theta),
+        pan3D.y + s3D.r*Math.cos(s3D.phi),
+        pan3D.z + s3D.r*Math.sin(s3D.phi)*Math.cos(s3D.theta)
+    );
+    cam3D.lookAt(pan3D.x, pan3D.y, pan3D.z);
+}
+
+glbCanvas.addEventListener('mousedown',e=>{drag3D=true;rightDrag3D=e.button===2;prevM3D={x:e.clientX,y:e.clientY};autoRot3D=false;document.getElementById('btnRot').classList.remove('active');});
+glbCanvas.addEventListener('contextmenu',e=>e.preventDefault());
+window.addEventListener('mousemove',e=>{
+    if(!drag3D)return;
+    const dx=(e.clientX-prevM3D.x)*0.01,dy=(e.clientY-prevM3D.y)*0.01;
+    if(rightDrag3D){const r=new THREE.Vector3();r.crossVectors(cam3D.getWorldDirection(new THREE.Vector3()),cam3D.up).normalize();pan3D.addScaledVector(r,-dx*s3D.r*0.5);pan3D.addScaledVector(cam3D.up,dy*s3D.r*0.5);}
+    else{s3D.theta-=dx;s3D.phi=Math.max(0.05,Math.min(Math.PI-0.05,s3D.phi+dy));}
+    prevM3D={x:e.clientX,y:e.clientY};updateCam3D();
+});
+window.addEventListener('mouseup',()=>{drag3D=false;});
+glbCanvas.addEventListener('wheel',e=>{e.preventDefault();s3D.r=Math.max(0.3,Math.min(200,s3D.r*(1+e.deltaY*0.001)));updateCam3D();},{passive:false});
+
+// Touch
+let ltd3D=0;
+glbCanvas.addEventListener('touchstart',e=>{if(e.touches.length===1){drag3D=true;rightDrag3D=false;prevM3D={x:e.touches[0].clientX,y:e.touches[0].clientY};autoRot3D=false;document.getElementById('btnRot').classList.remove('active');}else if(e.touches.length===2){ltd3D=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);}},{passive:true});
+glbCanvas.addEventListener('touchmove',e=>{e.preventDefault();if(e.touches.length===1&&drag3D){const dx=(e.touches[0].clientX-prevM3D.x)*0.012,dy=(e.touches[0].clientY-prevM3D.y)*0.012;s3D.theta-=dx;s3D.phi=Math.max(0.05,Math.min(Math.PI-0.05,s3D.phi+dy));prevM3D={x:e.touches[0].clientX,y:e.touches[0].clientY};updateCam3D();}else if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);s3D.r=Math.max(0.3,Math.min(200,s3D.r*(ltd3D/d)));ltd3D=d;updateCam3D();}},{passive:false});
+glbCanvas.addEventListener('touchend',()=>{drag3D=false;});
+
+// Chargement GLB — utilise le GLTFLoader depuis CDN via import dynamique
+let GLTFLoader = null;
+
+async function ensureGLTFLoader(){
+    if(GLTFLoader) return GLTFLoader;
+    // Loader GLB manuel (parse binaire GLTF)
+    GLTFLoader = await loadGLTFLoaderScript();
+    return GLTFLoader;
+}
+
+// Parser GLB binaire minimal (JSON chunk + BIN chunk)
+function parseGLBManual(buffer){
+    const view = new DataView(buffer);
+    // Header: magic, version, length
+    const magic = view.getUint32(0, true);
+    if(magic !== 0x46546C67) throw new Error('Not a GLB file');
+    let offset = 12;
+    let jsonChunk = null, binChunk = null;
+    while(offset < buffer.byteLength){
+        const chunkLen = view.getUint32(offset, true);
+        const chunkType = view.getUint32(offset+4, true);
+        const chunkData = buffer.slice(offset+8, offset+8+chunkLen);
+        if(chunkType === 0x4E4F534A) jsonChunk = JSON.parse(new TextDecoder().decode(chunkData));
+        if(chunkType === 0x004E4942) binChunk = chunkData;
+        offset += 8 + chunkLen;
+    }
+    return {json: jsonChunk, bin: binChunk};
+}
+
+function buildSceneFromGLTF(gltf, binBuffer){
+    const group = new THREE.Group();
+    const {json, bin} = gltf;
+    if(!json || !json.meshes) return group;
+
+    // Accesseurs
+    function getAccessorData(accIdx){
+        const acc = json.accessors[accIdx];
+        const bv = json.bufferViews[acc.bufferView];
+        const byteOffset = (acc.byteOffset||0) + (bv.byteOffset||0);
+        const count = acc.count;
+        const typeMap = {SCALAR:1,VEC2:2,VEC3:3,VEC4:4,MAT4:16};
+        const compCount = typeMap[acc.type]||1;
+        const total = count * compCount;
+        switch(acc.componentType){
+            case 5126: return new Float32Array(binBuffer, byteOffset, total);
+            case 5123: return new Uint16Array(binBuffer, byteOffset, total);
+            case 5125: return new Uint32Array(binBuffer, byteOffset, total);
+            default: return new Float32Array(binBuffer, byteOffset, total);
+        }
+    }
+
+    json.meshes.forEach(mesh=>{
+        mesh.primitives.forEach(prim=>{
+            const geo = new THREE.BufferGeometry();
+            if(prim.attributes.POSITION !== undefined){
+                geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(getAccessorData(prim.attributes.POSITION)), 3));
+            }
+            if(prim.attributes.NORMAL !== undefined){
+                geo.setAttribute('normal', new THREE.BufferAttribute(new Float32Array(getAccessorData(prim.attributes.NORMAL)), 3));
+            }
+            if(prim.indices !== undefined){
+                const idx = getAccessorData(prim.indices);
+                geo.setIndex(new THREE.BufferAttribute(new Uint32Array(idx), 1));
+            }
+            geo.computeVertexNormals();
+
+            // Matériau
+            let mat;
+            if(prim.material !== undefined && json.materials){
+                const m = json.materials[prim.material];
+                const pbr = m.pbrMetallicRoughness || {};
+                const bc = pbr.baseColorFactor || [0.8,0.8,0.8,1];
+                mat = new THREE.MeshStandardMaterial({
+                    color: new THREE.Color(bc[0],bc[1],bc[2]),
+                    metalness: pbr.metallicFactor ?? 0.3,
+                    roughness: pbr.roughnessFactor ?? 0.7,
+                });
+            } else {
+                mat = new THREE.MeshStandardMaterial({color:0x888888,metalness:0.3,roughness:0.7});
+            }
+            group.add(new THREE.Mesh(geo, mat));
+        });
+    });
+    return group;
+}
+
+// Noms de fichiers par modèle
+const modelFiles = {
+    station: 'station.glb',
+    prehenseur: 'prehenseur.glb',
+    bague: 'bague.glb'
+};
+const modelLabels = {
+    station: 'Station complète',
+    prehenseur: 'Préhenseur CMG20',
+    bague: 'Bague d\'adaptation'
+};
+
+let currentModelKey = 'station';
+
+async function loadModel(key){
+    currentModelKey = key;
+    document.querySelectorAll('.tab3d').forEach((b,i)=>{
+        b.classList.toggle('active', ['station','prehenseur','bague'][i]===key);
+    });
+    document.getElementById('modelLabelText').textContent = modelLabels[key];
+    await fetchAndLoadGLB(modelFiles[key]);
+}
+
+async function fetchAndLoadGLB(filename){
+    loadingOverlay.classList.remove('hidden');
+    loadingOverlay.style.opacity = '1';
+    document.getElementById('loadingText').textContent = 'Chargement de ' + filename + '…';
+    fallbackMsg.style.display = 'none';
+
+    try {
+        const response = await fetch(filename);
+        if(!response.ok) throw new Error('File not found');
+        const buffer = await response.arrayBuffer();
+        processGLBBuffer(buffer);
+    } catch(e) {
+        // Fichier pas encore présent → afficher placeholder procédural
+        loadingOverlay.classList.add('hidden');
+        document.getElementById('fallbackFile').textContent = filename;
+        fallbackMsg.style.display = 'flex';
+        loadProceduralPlaceholder(currentModelKey);
+    }
+}
+
+function processGLBBuffer(buffer){
+    try {
+        const gltf = parseGLBManual(buffer);
+        const model = buildSceneFromGLTF(gltf, gltf.bin);
+        placeModel(model);
+    } catch(e) {
+        console.error('GLB parse error:', e);
+        loadProceduralPlaceholder(currentModelKey);
+    }
+    loadingOverlay.classList.add('hidden');
+}
+
+function placeModel(model){
+    if(currentModel3D){ scene3D.remove(currentModel3D); }
+    currentModel3D = model;
+    scene3D.add(model);
+    // Auto-centrage
+    const box = new THREE.Box3().setFromObject(model);
+    const center = box.getCenter(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3());
+    const maxDim = Math.max(size.x, size.y, size.z);
+    pan3D.copy(center);
+    s3D.r = maxDim * 2.2;
+    s3D.theta = 0.4; s3D.phi = 1.15;
+    grid3D.position.y = box.min.y - 0.3;
+    updateCam3D();
+}
+
+// Placeholder procédural quand le GLB n'est pas encore là
+function loadProceduralPlaceholder(key){
+    const group = new THREE.Group();
+    if(key === 'station'){
+        // Table + 2 bras robots schématiques
+        const tableMat = new THREE.MeshStandardMaterial({color:0x334155,metalness:.4,roughness:.6});
+        const tableTop = new THREE.Mesh(new THREE.BoxGeometry(4,0.1,2.5), tableMat);
+        tableTop.position.y = 0; group.add(tableTop);
+        // Robot 1
+        const robMat = new THREE.MeshStandardMaterial({color:0xcc1a1a,metalness:.5,roughness:.4});
+        const r1base = new THREE.Mesh(new THREE.CylinderGeometry(.25,.3,.3,16), robMat);
+        r1base.position.set(-1.2,0.2,0); group.add(r1base);
+        const r1arm = new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,.8,12), robMat);
+        r1arm.position.set(-1.2,.75,0); group.add(r1arm);
+        // Robot 2
+        const r2base = new THREE.Mesh(new THREE.CylinderGeometry(.25,.3,.3,16), robMat);
+        r2base.position.set(1.2,0.2,0); group.add(r2base);
+        const r2arm = new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,.8,12), robMat);
+        r2arm.position.set(1.2,.75,0); group.add(r2arm);
+        // Pièce
+        const pieceMat = new THREE.MeshStandardMaterial({color:0x64748b,metalness:.6,roughness:.3});
+        const piece = new THREE.Mesh(new THREE.BoxGeometry(2,.05,.15), pieceMat);
+        piece.position.set(0,.1,0); group.add(piece);
+        // Barrières
+        const barrMat = new THREE.MeshStandardMaterial({color:0xeab308,metalness:.3,roughness:.7});
+        [[-2.5,0],[-2.5,1.2],[2.5,0],[2.5,1.2]].forEach(([x,z])=>{
+            const p = new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,1.5,8), barrMat);
+            p.position.set(x,.75,z); group.add(p);
+        });
+    } else if(key === 'prehenseur'){
+        const mat = new THREE.MeshStandardMaterial({color:0x475569,metalness:.6,roughness:.3});
+        const base = new THREE.Mesh(new THREE.CylinderGeometry(.4,.4,.12,32), mat);
+        group.add(base);
+        // 4 têtes CMG
+        const cmgMat = new THREE.MeshStandardMaterial({color:0x1e293b,metalness:.7,roughness:.2});
+        [[.3,.3],[-.3,.3],[.3,-.3],[-.3,-.3]].forEach(([x,z])=>{
+            const arm = new THREE.Mesh(new THREE.BoxGeometry(.08,.06,.3), mat);
+            arm.position.set(x*.7,-.06,z*.7); group.add(arm);
+            const cmg = new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,.05,16), cmgMat);
+            cmg.position.set(x*.7,-.12,z*.7); group.add(cmg);
+        });
+    } else {
+        const mat = new THREE.MeshStandardMaterial({color:0x64748b,metalness:.5,roughness:.5});
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(.5,.12,16,32), mat);
+        ring.rotation.x = Math.PI/2; group.add(ring);
+        const bolt = new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,.3,8), mat);
+        bolt.position.y = .15; group.add(bolt);
+    }
+    placeModel(group);
+}
+
+// Upload manuel
+function loadGLBFile(input){
+    const file = input.files[0]; if(!file) return;
+    loadingOverlay.classList.remove('hidden');
+    loadingOverlay.style.opacity = '1';
+    document.getElementById('loadingText').textContent = 'Chargement de ' + file.name + '…';
+    const reader = new FileReader();
+    reader.onload = e => {
+        try { processGLBBuffer(e.target.result); }
+        catch(err){ loadingOverlay.classList.add('hidden'); alert('Erreur GLB : ' + err.message); }
+    };
+    reader.readAsArrayBuffer(file);
+}
+
+// Contrôles
+function toggleRot(){ autoRot3D=!autoRot3D; document.getElementById('btnRot').classList.toggle('active',autoRot3D); }
+function resetCam(){
+    s3D.theta=0.4; s3D.phi=1.15; pan3D.set(0,0,0);
+    if(currentModel3D){const b=new THREE.Box3().setFromObject(currentModel3D);const sz=b.getSize(new THREE.Vector3());s3D.r=Math.max(sz.x,sz.y,sz.z)*2.2;pan3D.copy(b.getCenter(new THREE.Vector3()));}
+    updateCam3D(); autoRot3D=true; document.getElementById('btnRot').classList.add('active');
+}
+function toggleWire(){
+    isWire3D=!isWire3D; document.getElementById('btnWire3d').classList.toggle('active',isWire3D);
+    if(currentModel3D) currentModel3D.traverse(o=>{if(o.isMesh) o.material.wireframe=isWire3D;});
+}
+function setMat(mode){
+    document.querySelectorAll('.cdot').forEach((d,i)=>d.classList.toggle('selected',i===['original','blue','red','original2'][i]));
+    if(!currentModel3D) return;
+    currentModel3D.traverse(o=>{
+        if(!o.isMesh) return;
+        if(mode==='blue') o.material.color.set(0x3b82f6);
+        else if(mode==='red') o.material.color.set(0xcc1a1a);
+        // 'original' : ne rien faire si le modèle est réel (conserver les couleurs)
+    });
+}
+
+// Boucle de rendu
+function animate3D(){
+    requestAnimationFrame(animate3D);
+    resize3D();
+    if(autoRot3D && !drag3D){ s3D.theta+=0.004; updateCam3D(); }
+    renderer3D.render(scene3D, cam3D);
+}
+
+// Init
+updateCam3D();
+loadProceduralPlaceholder('station'); // placeholder par défaut
+// Essaie de charger le vrai fichier
+setTimeout(()=>{ loadModel('station'); }, 200);
+animate3D();
+</script>
+</body>
+</html>
